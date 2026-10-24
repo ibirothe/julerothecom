@@ -131,20 +131,3 @@ contactForm?.addEventListener("submit", async event => {
     button.disabled = false;
   }
 });
-
-const newsletterForm = document.getElementById("newsletter-form");
-const newsletterStatus = document.getElementById("newsletter-status");
-const newsletterAction = String(config.newsletterAction || "").trim();
-if (newsletterForm && /^https:\/\//i.test(newsletterAction)) {
-  newsletterForm.action = newsletterAction;
-  const email = newsletterForm.querySelector("#newsletter-email");
-  if (email) email.name = config.newsletterEmailField || "EMAIL";
-}
-newsletterForm?.addEventListener("submit", event => {
-  if (!newsletterAction || !/^https:\/\//i.test(newsletterAction)) {
-    event.preventDefault();
-    newsletterStatus.textContent = "Die Newsletter-Anmeldung ist noch nicht eingerichtet.";
-    return;
-  }
-  newsletterStatus.textContent = "Bitte schließe die Anmeldung im geöffneten Fenster ab.";
-});

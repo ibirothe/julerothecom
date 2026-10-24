@@ -53,16 +53,25 @@ Das Kontaktformular ist frontendseitig fertig (Validierung, Statusmeldungen, Spa
 
 Keine geheimen API-Schlüssel in `site-config.js` oder GitHub committen. Das Formular sendet direkt per HTTPS an die öffentliche Formspree-URL.
 
-## Newsletter anbinden
+## Newsletter mit EmailOctopus
 
-Die Newsletter-UI enthält E-Mail-Validierung und ein Pflichtfeld zur Einwilligung. Für einen **tatsächlichen Newsletter mit Double-Opt-in** benötigt sie einen Anbieter. Unterstützt wird derzeit ein öffentliches HTML-POST-Anmeldeformular, beispielsweise von Mailchimp:
+Im Newsletter-Bereich ist das offizielle **EmailOctopus Inline-Formular** eingebettet:
 
-1. Eine Newsletter-Liste und Double-Opt-in beim Anbieter einrichten.
-2. Die öffentliche `action`-URL des Anbieter-Anmeldeformulars in `site-config.js` als `newsletterAction` hinterlegen.
-3. Falls das E-Mail-Feld beim Anbieter anders heißt, `newsletterEmailField` anpassen (Standard `EMAIL`).
-4. Anmeldung mit einer Testadresse inklusive Bestätigungs-E-Mail prüfen.
+- Form-ID: `7ca9f130-cfae-11f1-86da-f5e17363f70f`
+- Script: `https://eocampaign1.com/form/7ca9f130-cfae-11f1-86da-f5e17363f70f.js`
+- Das Einbettungsskript steht direkt im Newsletter-Bereich von `index.html`. Das alte HTML-Formular wurde entfernt, um doppelte Eingaben und Doppelanmeldungen zu vermeiden.
+- CSS-Anpassungen in `styles.css` orientieren das Formular an der dunkelgrün-goldenen Website. Die Anbieter-Styles können sich ändern; die Einbettung auf Desktop und Mobilgerät prüfen.
 
-Die Anmeldung öffnet die Antwort des Anbieters in einem neuen Tab. Ohne Anbieter-Konfiguration wird **keine Anmeldung vorgetäuscht**; das Formular erklärt, dass es noch nicht eingerichtet ist. Bei Anbietern ohne kompatibles HTML-POST-Formular ist eine individuelle Integration erforderlich.
+**In EmailOctopus abschließen:**
+
+1. Prüfen, dass das Formular vom Typ **Inline** ist und mit der richtigen Liste verbunden wurde.
+2. Einwilligungs-Checkbox im Form-Editor konfigurieren; in der Website gibt es keine zweite Checkbox.
+3. In der Liste **Double-Opt-in** aktivieren und Bestätigungs-E-Mail prüfen.
+4. Erfolgsmeldung im EmailOctopus-Formular einrichten.
+5. Mit einer echten Testadresse Anmeldung, Zustellung der Bestätigungs-E-Mail und Aufnahme in die Liste testen.
+6. Die Datenschutzerklärung für den echten EmailOctopus-Einsatz aktualisieren; das externe Skript wird beim Seitenaufruf geladen.
+
+Das Formular benötigt keinen API-Key und kein eigenes Backend. Bei blockierten externen Skripten oder deaktiviertem JavaScript kann es nicht gerendert werden.
 
 ## Vor dem produktiven Launch
 
