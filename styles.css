@@ -145,8 +145,35 @@ button:disabled{opacity:.7;cursor:wait}
 @media(max-width:850px){
   .container{width:min(calc(100% - 48px),var(--container))}
   .site-header{height:76px}.header-content{gap:12px}
-  .menu-toggle{display:flex;flex-direction:column;justify-content:center;gap:5px;order:3;width:40px;height:40px;border:1px solid var(--rule);background:transparent;padding:9px}
-  .menu-toggle span{height:1px;background:var(--gold-light);width:100%}
+  .menu-toggle{
+    display:block;position:relative;order:3;flex:none;
+    width:40px;height:40px;padding:0;border:1px solid var(--rule);
+    border-radius:0;background:transparent;appearance:none;
+  }
+  .menu-toggle span{
+    position:absolute;left:50%;top:50%;pointer-events:none;
+    width:20px;height:1px;border:0 solid var(--gold-light);
+    background:var(--gold-light);transform-origin:center;
+    transform:translate(-50%,-50%);
+    transition:
+      transform .35s cubic-bezier(.22,1,.36,1),
+      opacity .22s ease,
+      width .35s cubic-bezier(.22,1,.36,1),
+      height .35s cubic-bezier(.22,1,.36,1),
+      border-width .35s cubic-bezier(.22,1,.36,1),
+      background-color .25s ease;
+  }
+  .menu-toggle span:first-child{transform:translate(-50%,-50%) translateY(-6px)}
+  .menu-toggle span:last-child{transform:translate(-50%,-50%) translateY(6px)}
+  /* Drei Linien treffen sich; die mittlere Linie öffnet sich zur goldenen Raute. */
+  .menu-toggle[aria-expanded="true"] span:first-child,
+  .menu-toggle[aria-expanded="true"] span:last-child{
+    opacity:0;transform:translate(-50%,-50%) scaleX(.2);
+  }
+  .menu-toggle[aria-expanded="true"] span:nth-child(2){
+    width:16px;height:16px;border-width:1px;background:transparent;
+    transform:translate(-50%,-50%) rotate(45deg);
+  }
   .site-nav{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#061e17;padding:16px 24px 24px;border-bottom:1px solid var(--rule)}
   .site-nav.is-open{display:flex}.nav-link{font-size:12px;padding:13px 6px}
   .nav-link.is-active:after{width:35px;bottom:8px}
@@ -222,3 +249,6 @@ button:disabled{opacity:.7;cursor:wait}
 @media(max-width:850px){.faq-section{padding:46px 0 55px}.faq-layout{grid-template-columns:1fr;gap:24px}.faq-intro h2{max-width:100%}}
 @media(max-width:520px){.faq-section{padding:36px 0 43px}.faq-question{font-size:24px;padding:18px 2px 18px 0;gap:16px}.faq-answer{padding-right:7px}.faq-expand-icon{width:29px;height:29px}}
 @media(prefers-reduced-motion:reduce){.faq-expand-icon{transition:none}}
+
+/* Respect reduced-motion preferences when opening or closing the mobile menu. */
+@media(prefers-reduced-motion:reduce){.menu-toggle span{transition:none!important}}
