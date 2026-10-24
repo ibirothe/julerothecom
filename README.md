@@ -200,3 +200,18 @@ python3 -m http.server 8000 --directory dist
 ```
 
 Die CI validiert `content/testimonials.json` bei jedem Commit. Neue Portraitbilder und JSON-Einträge werden automatisch über GitHub Pages veröffentlicht.
+
+## Seitenstruktur (Stand Oktober 2026)
+
+Die Startseite hat diese feste Abschnitts- und Navigationsreihenfolge:
+
+1. Start
+2. Arbeiten
+3. Newsletter
+4. Kundenstimmen
+5. Kontakt
+6. FAQ
+
+Der frühere Bereich **Über Jule** und das separate Lorem-Ipsum-Hinweisband wurden entfernt. Newsletter ist jetzt ein eigenständiger, responsiver Abschnitt. Die FAQ bleibt als letztes Element auf der Startseite erhalten. Die Haupt- und Footernavigation bieten in DE und EN dieselben sechs Abschnitte an; DE/EN steht zusätzlich als Sprachumschalter im Menü.
+
+`node scripts/check-layout.mjs` validiert Navigation und Abschnittsreihenfolge bei jedem GitHub-Actions-Build.

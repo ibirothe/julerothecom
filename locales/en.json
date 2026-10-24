@@ -8,7 +8,6 @@
   "navigation.label": "Main navigation",
   "navigation.start": "Home",
   "navigation.works": "Works",
-  "navigation.about": "About",
   "navigation.newsletter": "Newsletter",
   "navigation.contact": "Contact",
   "language.label": "Select language",
@@ -28,15 +27,6 @@
   "works.defaultTitle": "Tattoo work",
   "works.zoom": "view larger",
   "works.galleryUnavailable": "The gallery could not be loaded.",
-  "notice.aria": "Latest works",
-  "notice.kicker": "Lorem ipsum",
-  "notice.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
-  "notice.cta": "Learn more",
-  "info.aria": "More information",
-  "about.kicker": "Lorem ipsum",
-  "about.title": "Dolor sit amet consectetur.",
-  "about.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-  "about.cta": "Learn more",
   "newsletter.kicker": "Newsletter",
   "newsletter.title": "Sed do eiusmod tempor.",
   "newsletter.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
@@ -95,5 +85,6 @@
   "faq.error": "The questions could not be loaded.",
   "testimonials.kicker": "Testimonials",
   "testimonials.title": "Lorem ipsum dolor sit amet.",
-  "testimonials.demo": "Design preview · not a real customer review"
+  "testimonials.demo": "Design preview · not a real customer review",
+  "navigation.testimonials": "Testimonials"
 }

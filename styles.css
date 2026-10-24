@@ -56,21 +56,12 @@ h2{font-size:clamp(2.4rem,3.15vw,4.5rem);margin-bottom:22px}
 .work-title{display:block;margin-top:10px;font:600 10px/1.6 var(--sans);letter-spacing:.18em;color:var(--gold-light);text-transform:uppercase}
 .work-category{display:block;font:400 11px/1.4 var(--sans);color:var(--muted);margin-top:3px}
 .works-message{color:var(--muted);font-size:12px;margin:10px 0 0}
-.notice-band{padding:16px 0}
-.notice-inner{display:grid;grid-template-columns:180px 1fr 185px;align-items:center;gap:25px}
-.notice-inner>*{margin:0}
-.notice-inner>.eyebrow{border-right:1px solid var(--rule);padding:10px 0}
-.notice-inner>p{font:400 17px/1.45 var(--serif);text-align:center;max-width:665px;justify-self:center}
-.notice-inner>.text-link{justify-self:end}
-.info-section{padding:46px 0 39px}
-.info-grid{display:grid;grid-template-columns:1fr 1fr}
-.info-panel{padding:0 46px;min-width:0}
-.info-panel:first-child{padding-left:0}
-.info-panel:last-child{padding-right:0}
-.info-panel+.info-panel{border-left:1px solid var(--rule)}
-.info-panel h2{max-width:400px;font-size:clamp(2.5rem,3vw,4.1rem);line-height:1.01}
-.info-panel>p:not(.eyebrow){max-width:390px;font:400 16px/1.55 var(--serif);color:#d9d6cc;margin-bottom:20px}
-.info-panel .eyebrow{margin-bottom:12px}
+.newsletter-section{padding:59px 0 67px}
+.newsletter-layout{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.45fr);gap:clamp(36px,6.4vw,100px);align-items:start}
+.newsletter-intro{min-width:0}
+.newsletter-intro h2{font-size:clamp(2.8rem,4vw,4.6rem);line-height:1.02;max-width:430px}
+.newsletter-intro>p:not(.eyebrow){font:400 17px/1.65 var(--serif);color:#d9d6cc;max-width:420px}
+.newsletter-form-wrap{min-width:0;width:100%;max-width:560px;justify-self:start}
 .contact-form{display:flex;flex-direction:column;gap:10px}
 input:not([type=checkbox]),textarea{width:100%;min-width:0;padding:12px 13px;border:1px solid #586b61;border-radius:0;background:var(--field);color:var(--text);font:400 12px/1.4 var(--sans);outline-offset:3px}
 input::placeholder,textarea::placeholder{color:#adb3ac}
@@ -139,7 +130,6 @@ button:disabled{opacity:.7;cursor:wait}
   .site-nav{gap:18px}.nav-link{font-size:9px}.brand-name{font-size:27px}
   .hero-grid{gap:40px}.hero-media{min-height:290px}
   .works-layout{grid-template-columns:200px 1fr;gap:30px}
-  .info-panel{padding:0 25px}.info-panel h2{font-size:3rem}
   .footer-grid{grid-template-columns:1fr auto}.footer-nav{display:none}
 }
 @media(max-width:850px){
@@ -184,12 +174,6 @@ button:disabled{opacity:.7;cursor:wait}
   .works-intro{max-width:560px}.works-intro h2 br{display:none}
   .works-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .work-placeholder,.work-open img{aspect-ratio:1.5}
-  .notice-inner{grid-template-columns:1fr auto;gap:14px}
-  .notice-inner>.eyebrow{display:none}.notice-inner>p{text-align:left}
-  .info-grid{grid-template-columns:1fr;gap:30px}
-  .info-panel,.info-panel:first-child,.info-panel:last-child{padding:0}
-  .info-panel+.info-panel{border-left:0;border-top:1px solid var(--rule);padding-top:30px}
-  .info-panel h2{max-width:690px}.info-panel>p:not(.eyebrow){max-width:610px}
   .footer-grid{grid-template-columns:1fr;gap:24px}.footer-end{justify-content:flex-start;flex-wrap:wrap}
 }
 @media(max-width:520px){
@@ -204,9 +188,6 @@ button:disabled{opacity:.7;cursor:wait}
   .works-section{padding:35px 0}.works-grid{gap:10px}
   .work-placeholder,.work-open img{aspect-ratio:.8}
   .placeholder-icon{font-size:24px}.placeholder-label,.placeholder-size{font-size:8px}
-  .notice-inner{grid-template-columns:1fr;gap:13px}
-  .notice-inner>.text-link{justify-self:start}
-  .info-section{padding:36px 0}.info-panel h2{font-size:3.2rem}
   .contact-form .form-row{grid-template-columns:1fr}
   .site-footer{padding:26px 0}.footer-end{gap:16px}
 }
@@ -286,3 +267,12 @@ button:disabled{opacity:.7;cursor:wait}
   .testimonial-quote{font-size:26px}
   .contact-section{padding:35px 0 43px}
 }
+
+/* Single-column newsletter layout at tablet and phone widths. */
+@media(max-width:850px){
+  .newsletter-section{padding:43px 0 51px}
+  .newsletter-layout{grid-template-columns:1fr;gap:22px}
+  .newsletter-intro h2{max-width:690px}
+  .newsletter-form-wrap{max-width:610px}
+}
+@media(max-width:520px){.newsletter-section{padding:35px 0 43px}}

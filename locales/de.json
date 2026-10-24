@@ -8,7 +8,6 @@
   "navigation.label": "Hauptnavigation",
   "navigation.start": "Start",
   "navigation.works": "Arbeiten",
-  "navigation.about": "Über Jule",
   "navigation.newsletter": "Newsletter",
   "navigation.contact": "Kontakt",
   "language.label": "Sprache wählen",
@@ -28,15 +27,6 @@
   "works.defaultTitle": "Tattoo-Arbeit",
   "works.zoom": "vergrößern",
   "works.galleryUnavailable": "Die Galerie konnte nicht geladen werden.",
-  "notice.aria": "Aktuelle Arbeiten",
-  "notice.kicker": "Lorem ipsum",
-  "notice.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
-  "notice.cta": "Mehr erfahren",
-  "info.aria": "Weitere Informationen",
-  "about.kicker": "Lorem ipsum",
-  "about.title": "Dolor sit amet consectetur.",
-  "about.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-  "about.cta": "Mehr erfahren",
   "newsletter.kicker": "Newsletter",
   "newsletter.title": "Sed do eiusmod tempor.",
   "newsletter.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
@@ -95,5 +85,6 @@
   "faq.error": "Die Fragen konnten nicht geladen werden.",
   "testimonials.kicker": "Kundenstimmen",
   "testimonials.title": "Lorem ipsum dolor sit amet.",
-  "testimonials.demo": "Designbeispiel · keine echte Kundenstimme"
+  "testimonials.demo": "Designbeispiel · keine echte Kundenstimme",
+  "navigation.testimonials": "Kundenstimmen"
 }
