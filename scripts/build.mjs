@@ -30,11 +30,24 @@ const files = (await readdir(worksDir, { withFileTypes: true }))
 const works = files.map(name => {
   const details = metadata[name] || {};
   const fallback = path.parse(name).name.replace(/^\d{4}-\d{2}-\d{2}[-_]?/, "").replace(/[-_]+/g, " ").trim();
+  // Metadata fields accept either a string or {de, en}.
+  // Keep localized values intact in gallery.json for the client-side language switch.
+  const translatedField = (value, fallbackValue = "") => {
+    if (typeof value === "string") return value;
+    if (value && typeof value === "object" && !Array.isArray(value)) {
+      const out = {};
+      for (const locale of ["de", "en"]) {
+        if (typeof value[locale] === "string") out[locale] = value[locale];
+      }
+      return Object.keys(out).length ? out : fallbackValue;
+    }
+    return fallbackValue;
+  };
   return {
     src: "./assets/works/" + encodeURIComponent(name),
-    title: String(details.title || fallback || "Tattoo-Arbeit"),
-    alt: String(details.alt || details.title || fallback || "Tattoo-Arbeit"),
-    category: String(details.category || "")
+    title: translatedField(details.title, fallback || "Tattoo-Arbeit"),
+    alt: translatedField(details.alt, translatedField(details.title, fallback || "Tattoo-Arbeit")),
+    category: translatedField(details.category)
   };
 });
 

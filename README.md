@@ -90,3 +90,32 @@ Das Formular benötigt keinen API-Key und kein eigenes Backend. Bei blockierten 
 - `assets/works/` – neue Tattoo-Fotos und optional Metadaten.
 - `scripts/build.mjs` – kopiert die Website nach `dist/` und erstellt die Galerie.
 - `.github/workflows/deploy.yml` – automatischer GitHub-Pages-Deploy.
+
+## Mehrsprachigkeit (Issue #4)
+
+Die Website unterstützt Deutsch (`de`, Standard) und Englisch (`en`):
+
+- Deutsch: `https://ibirothe.github.io/julerothecom/?lang=de`
+- Englisch: `https://ibirothe.github.io/julerothecom/?lang=en`
+- Über den Umschalter **DE / EN** im Header bzw. mobilen Burger-Menü wechseln. Die aktuelle URL inklusive Abschnitt (`#kontakt`) bleibt dabei erhalten.
+- Die Sprachwahl wird über den URL-Parameter `lang` transportiert, nicht über Cookies oder Local Storage. Auch interne Links auf Impressum und Datenschutz übernehmen ihn.
+- `i18n.js` lädt `locales/de.json` als Grundsprache und optional `locales/en.json`. Fehlt ein einzelner englischer Text, wird automatisch die deutsche Version angezeigt. Ist die Datei nicht erreichbar, bleibt die statische deutsche Seite nutzbar.
+- Für sichtbare Texte werden `data-i18n="key"`, für Formulare `data-i18n-placeholder="key"` und für zugängliche Bezeichnungen `data-i18n-aria-label="key"` verwendet. Für Metadaten ist `data-i18n-content="key"` verfügbar.
+- Die Hauptseite aktualisiert über JavaScript `html lang`, den Dokumenttitel und die Meta-Description. Die Rechteseiten sind weiterhin ausdrücklich **unfertige Platzhalter**, aber beide Sprachfassungen sind erreichbar.
+- Die bestehende Galerie unterstützt jetzt optional strukturierte Metadaten für beide Sprachen:
+
+```json
+{
+  "2026-10-24-test-tattoo.webp": {
+    "title": {"de": "Testarbeit 01", "en": "Test work 01"},
+    "alt": {"de": "Ornamentales Tattoo", "en": "Ornamental tattoo"},
+    "category": {"de": "Ornamental", "en": "Ornamental"}
+  }
+}
+```
+
+Bestehende einfache Strings bleiben kompatibel. Für spätere FAQs kann das gleiche Objektmuster `{ "de": "...", "en": "..." }` in der FAQ-JSON verwendet werden; die FAQ-Komponente wird separat in Issue #3 umgesetzt.
+
+**Achtung EmailOctopus:** Das externe Embed-Formular wird vom Anbieter gerendert und nicht durch die Website-Übersetzung gesteuert. Die darin sichtbaren Feldnamen, Einwilligungstexte und Bestätigungen werden im EmailOctopus-Form-Editor gepflegt. Falls eine vollständig englische Registrierung benötigt wird, muss ein englisches Formular im Anbieter angelegt und dessen ID sprachabhängig eingebunden werden.
+
+**Prüfung:** `node scripts/check-i18n.mjs` validiert die Sprachdateien und alle HTML-Übersetzungsschlüssel. Der GitHub-Actions-Workflow führt diese Prüfung vor dem Build aus.

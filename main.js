@@ -1,3 +1,5 @@
+import { i18nReady } from "./i18n.js";
+const { t, language } = await i18nReady;
 const config = window.JULE_SITE_CONFIG || {};
 const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".site-nav");
@@ -12,13 +14,13 @@ const galleryUrl = new URL("./gallery.json", import.meta.url);
 menuButton?.addEventListener("click", () => {
   const isOpen = navigation.classList.toggle("is-open");
   menuButton.setAttribute("aria-expanded", String(isOpen));
-  menuButton.setAttribute("aria-label", isOpen ? "Menü schließen" : "Menü öffnen");
+  menuButton.setAttribute("aria-label", t(isOpen ? "menu.close" : "menu.open"));
 });
 navigation?.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", () => {
     navigation.classList.remove("is-open");
     menuButton.setAttribute("aria-expanded", "false");
-    menuButton.setAttribute("aria-label", "Menü öffnen");
+    menuButton.setAttribute("aria-label", t("menu.open"));
   });
 });
 document.addEventListener("keydown", event => {
@@ -29,14 +31,21 @@ document.addEventListener("keydown", event => {
   }
 });
 
+const localized = (value, fallback = "") => {
+  if (value && typeof value === "object" && !Array.isArray(value)) {
+    return typeof value[language] === "string" ? value[language] : (typeof value.de === "string" ? value.de : fallback);
+  }
+  return typeof value === "string" && value.length ? value : fallback;
+};
+
 const openLightbox = (work, src) => {
   if (typeof lightbox?.showModal !== "function") {
     window.open(src, "_blank", "noopener,noreferrer");
     return;
   }
   lightboxImage.src = src;
-  lightboxImage.alt = work.alt || work.title || "Tattoo-Arbeit";
-  lightboxCaption.textContent = work.title || "";
+  lightboxImage.alt = localized(work.alt, localized(work.title, t("works.defaultTitle")));
+  lightboxCaption.textContent = localized(work.title);
   lightbox.showModal();
 };
 document.getElementById("lightbox-close")?.addEventListener("click", () => lightbox.close());
@@ -56,10 +65,10 @@ function renderWorks() {
     const button = document.createElement("button");
     button.className = "work-open";
     button.type = "button";
-    button.setAttribute("aria-label", (work.title || "Tattoo-Arbeit") + " vergrößern");
+    button.setAttribute("aria-label", localized(work.title, t("works.defaultTitle")) + " " + t("works.zoom"));
     const picture = document.createElement("img");
     picture.src = src;
-    picture.alt = work.alt || work.title || "Tattoo-Arbeit";
+    picture.alt = localized(work.alt, localized(work.title, t("works.defaultTitle")));
     picture.loading = "lazy";
     button.append(picture);
     button.addEventListener("click", () => openLightbox(work, src));
@@ -67,19 +76,25 @@ function renderWorks() {
     if (work.title) {
       const title = document.createElement("span");
       title.className = "work-title";
-      title.textContent = work.title;
+      title.textContent = localized(work.title);
       article.append(title);
     }
     if (work.category) {
       const category = document.createElement("span");
       category.className = "work-category";
-      category.textContent = work.category;
+      category.textContent = localized(work.category);
       article.append(category);
     }
     galleryGrid.append(article);
   }
   viewAllButton.hidden = allWorks.length <= 4;
-  viewAllButton.innerHTML = showAllWorks ? 'Weniger Arbeiten <span aria-hidden="true">↑</span>' : 'Alle Arbeiten ansehen <span aria-hidden="true">→</span>';
+  viewAllButton.replaceChildren();
+  const label = document.createElement("span");
+  label.textContent = t(showAllWorks ? "works.less" : "works.more");
+  const arrow = document.createElement("span");
+  arrow.setAttribute("aria-hidden", "true");
+  arrow.textContent = showAllWorks ? "↑" : "→";
+  viewAllButton.append(label, arrow);
   worksMessage.textContent = "";
 }
 viewAllButton?.addEventListener("click", () => {
@@ -98,7 +113,8 @@ async function loadGallery() {
     if (allWorks.length) renderWorks();
     // Ohne echte Bilder bleiben bewusst die grauen Platzhalter sichtbar.
   } catch (error) {
-    console.warn("Die Galerie konnte nicht geladen werden:", error);
+    console.warn(t("works.galleryUnavailable"), error);
+    worksMessage.textContent = t("works.galleryUnavailable");
   }
 }
 loadGallery();
@@ -109,13 +125,13 @@ contactForm?.addEventListener("submit", async event => {
   event.preventDefault();
   const endpoint = String(config.contactEndpoint || "").trim();
   if (!endpoint || !/^https:\/\/formspree\.io\/f\/[\w-]+$/.test(endpoint)) {
-    contactStatus.textContent = "Das Kontaktformular ist noch nicht eingerichtet.";
+    contactStatus.textContent = t("contact.unconfigured");
     return;
   }
   if (contactForm.elements._gotcha?.value) return;
   const button = contactForm.querySelector('button[type="submit"]');
   button.disabled = true;
-  contactStatus.textContent = "Nachricht wird gesendet …";
+  contactStatus.textContent = t("contact.sending");
   try {
     const response = await fetch(endpoint, {
       method: "POST",
@@ -124,9 +140,9 @@ contactForm?.addEventListener("submit", async event => {
     });
     if (!response.ok) throw new Error("Submission failed");
     contactForm.reset();
-    contactStatus.textContent = "Vielen Dank. Deine Nachricht wurde versendet.";
+    contactStatus.textContent = t("contact.success");
   } catch {
-    contactStatus.textContent = "Die Nachricht konnte nicht gesendet werden. Bitte versuche es später erneut.";
+    contactStatus.textContent = t("contact.failure");
   } finally {
     button.disabled = false;
   }

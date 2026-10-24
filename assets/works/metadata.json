@@ -1,7 +1,16 @@
 {
   "2026-10-24-test-tattoo.webp": {
-    "title": "Testarbeit 01",
-    "alt": "Ornamentales Tattoo von Hals bis Brust, umgeben von floralen Tattoo-Motiven auf Schultern und Armen",
-    "category": "Ornamental"
+    "title": {
+      "de": "Testarbeit 01",
+      "en": "Test work 01"
+    },
+    "alt": {
+      "de": "Ornamentales Tattoo von Hals bis Brust, umgeben von floralen Tattoo-Motiven auf Schultern und Armen",
+      "en": "Ornamental tattoo extending from the neck to the chest, surrounded by floral tattoos across the shoulders and arms"
+    },
+    "category": {
+      "de": "Ornamental",
+      "en": "Ornamental"
+    }
   }
 }

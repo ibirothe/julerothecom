@@ -27,8 +27,10 @@ jobs:
       - name: Syntax überprüfen
         run: |
           node --check main.js
+          node --check i18n.js
           node --check site-config.js
           node --check scripts/build.mjs
+          node scripts/check-i18n.mjs
       - name: Website und Galerie erstellen
         run: node scripts/build.mjs
       - name: GitHub Pages vorbereiten

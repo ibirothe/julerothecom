@@ -1,18 +1,41 @@
 <!doctype html>
-<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Datenschutz | Jule Rothe</title><style>
-  :root{color-scheme:dark}body{margin:0;background:#041a15;color:#e8e2d7;font:16px/1.8 system-ui,sans-serif}
-  .wrap{max-width:850px;margin:0 auto;padding:64px 24px}
-  h1{font:500 clamp(3rem,8vw,5rem)/1 Georgia,serif;color:#efc68d}
-  h2{color:#d6ac70;font:500 1.6rem Georgia,serif;margin-top:36px}
-  a{color:#efc68d}p{max-width:70ch}.note{border-left:2px solid #d6ac70;padding:10px 20px;background:#09251c}
-  footer{border-top:1px solid #7c694d;margin-top:70px;padding-top:20px}
-</style></head>
-<body><div class="wrap"><a href="./index.html">← Zurück zur Startseite</a><h1>Datenschutz</h1>
-<div class="note"><strong>Platzhalter – keine fertige Datenschutzerklärung.</strong> Vor dem öffentlichen Betrieb auf Hosting, Formulardienst, Newsletter-Anbieter, Schriftanbieter und tatsächliche Datenverarbeitung anpassen und prüfen.</div>
-<h2>Verantwortliche Stelle</h2><p>[Name, Anschrift und Kontaktinformationen der verantwortlichen Stelle]</p>
-<h2>Website-Hosting</h2><p>[Hosting-Anbieter, Zwecke, Rechtsgrundlagen, Speicherdauer und ggf. Drittlandübermittlungen ergänzen]</p>
-<h2>Kontaktformular</h2><p>[Formspree oder tatsächlichen Formularanbieter sowie Zweck, Rechtsgrundlage, Datenkategorien und Löschfristen erläutern]</p>
-<h2>Newsletter (EmailOctopus)</h2><p>[Hier die tatsächliche Einbindung von EmailOctopus (externes Einbettungsskript), Zwecke, Rechtsgrundlage, Einwilligungsnachweis, Double-Opt-in, Empfänger bzw. Auftragsverarbeiter, ggf. Drittlandübermittlungen, Speicherdauer, Widerruf und Abmeldung rechtlich geprüft ergänzen.]</p>
-<h2>Schriftarten</h2><p>[Einbindung von Google Fonts prüfen; für einen datensparsamen Betrieb sollten Schriftarten lokal bereitgestellt werden]</p>
-<h2>Betroffenenrechte</h2><p>[Rechtlich geprüfte Informationen über die Betroffenenrechte und Kontaktmöglichkeiten ergänzen]</p>
-<footer><a href="./impressum.html">Impressum</a></footer></div></body></html>
+<html lang="de"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Datenschutz | Jule Rothe</title>
+<style>:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:#041a15;color:#e8e2d7;font:16px/1.8 system-ui,sans-serif}
+.wrap{max-width:850px;margin:0 auto;padding:64px 24px}
+h1{font:500 clamp(3rem,8vw,5rem)/1 Georgia,serif;color:#efc68d}
+h2{color:#d6ac70;font:500 1.6rem Georgia,serif;margin-top:36px}
+a{color:#efc68d}
+p{max-width:70ch;white-space:pre-line}
+.note{border-left:2px solid #d6ac70;padding:10px 20px;background:#09251c}
+.note p{margin:0}
+footer{border-top:1px solid #7c694d;margin-top:70px;padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.language-switch{display:flex;align-items:center;gap:14px}
+.language-switch a{color:#a5ada5;text-decoration:none}
+.language-switch a[aria-current="true"],.language-switch a:hover{color:#efc68d}
+header{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+</style>
+<script type="module" src="./i18n.js"></script>
+</head><body data-page-title="legal.privacy.title">
+<div class="wrap">
+<header><a href="./index.html" data-localized-link data-i18n="legal.home">← Zurück zur Startseite</a>
+<div class="language-switch" role="group" data-i18n-aria-label="language.label" aria-label="Sprache wählen">
+<a href="?lang=de" data-lang-switch="de" lang="de" hreflang="de" data-i18n-aria-label="language.de" aria-label="Deutsch" aria-current="true">DE</a>
+<span aria-hidden="true">/</span><a href="?lang=en" data-lang-switch="en" lang="en" hreflang="en" data-i18n-aria-label="language.en" aria-label="Englisch">EN</a>
+</div></header>
+<main>
+<h1 data-i18n="legal.privacy.title">Datenschutz</h1>
+<div class="note"><p data-i18n="legal.privacy.warning">Platzhalter – keine fertige Datenschutzerklärung. Vor dem öffentlichen Betrieb auf Hosting, Formulardienst, Newsletter-Anbieter, Schriftanbieter und tatsächliche Datenverarbeitung anpassen und prüfen.</p></div>
+<section><h2 data-i18n="legal.privacy.ownerHeading">Verantwortliche Stelle</h2><p data-i18n="legal.privacy.ownerText">[Name, Anschrift und Kontaktinformationen der verantwortlichen Stelle]</p></section>
+<section><h2 data-i18n="legal.privacy.hostingHeading">Website-Hosting</h2><p data-i18n="legal.privacy.hostingText">[Hosting-Anbieter, Zwecke, Rechtsgrundlagen, Speicherdauer und ggf. Drittlandübermittlungen ergänzen]</p></section>
+<section><h2 data-i18n="legal.privacy.contactHeading">Kontaktformular</h2><p data-i18n="legal.privacy.contactText">[Formspree und Angaben zu Zweck, Rechtsgrundlage, Datenkategorien und Löschfristen ergänzen]</p></section>
+<section><h2 data-i18n="legal.privacy.newsletterHeading">Newsletter (EmailOctopus)</h2><p data-i18n="legal.privacy.newsletterText">[Einbindung des externen EmailOctopus-Skripts, Zweck, Rechtsgrundlage, Double-Opt-in, Empfänger, ggf. Drittlandübermittlungen, Speicherdauer, Widerruf und Abmeldung rechtlich geprüft ergänzen]</p></section>
+<section><h2 data-i18n="legal.privacy.fontsHeading">Schriftarten</h2><p data-i18n="legal.privacy.fontsText">[Einbindung von Google Fonts prüfen; nach Möglichkeit Schriftarten lokal bereitstellen]</p></section>
+<section><h2 data-i18n="legal.privacy.rightsHeading">Betroffenenrechte</h2><p data-i18n="legal.privacy.rightsText">[Rechtlich geprüfte Informationen über die Betroffenenrechte ergänzen]</p></section>
+</main>
+<footer><a href="./index.html" data-localized-link data-i18n="legal.home">← Zurück zur Startseite</a>
+<a href="./impressum.html" data-localized-link data-i18n="footer.imprint">Impressum</a></footer>
+</div></body></html>

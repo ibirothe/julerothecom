@@ -187,3 +187,13 @@ button:disabled{opacity:.7;cursor:wait}
 
 /* Standard-Attribut auch bei eigenen Button-Styles respektieren. */
 [hidden]{display:none!important}
+
+/* DE / EN switch is shared between the desktop navigation and mobile menu. */
+.language-switch{display:flex;align-items:center;gap:9px;white-space:nowrap;padding-left:20px;border-left:1px solid var(--rule);font:700 11px/1.4 var(--sans);letter-spacing:.1em;color:var(--muted)}
+.language-switch a{color:var(--muted);padding:9px 3px;text-decoration:none}
+.language-switch a:hover,.language-switch a:focus-visible,.language-switch a[aria-current="true"]{color:var(--gold-light)}
+.localized-lines{white-space:pre-line}
+@media(max-width:850px){
+  .language-switch{border-left:0;border-top:1px solid var(--rule);padding:16px 6px 0;margin-top:10px;gap:16px;justify-content:flex-start}
+  .language-switch a{font-size:12px;padding:7px 0}
+}
