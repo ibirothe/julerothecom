@@ -197,3 +197,28 @@ button:disabled{opacity:.7;cursor:wait}
   .language-switch{border-left:0;border-top:1px solid var(--rule);padding:16px 6px 0;margin-top:10px;gap:16px;justify-content:flex-start}
   .language-switch a{font-size:12px;padding:7px 0}
 }
+
+/* FAQ: native accessible accordion, responsive dark green and gold */
+.faq-section{padding:62px 0 70px}
+.faq-layout{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.35fr);gap:clamp(36px,7vw,110px)}
+.faq-intro h2{font-size:clamp(2.7rem,3.8vw,4.75rem);max-width:440px;line-height:1.02}
+.faq-intro>p:not(.eyebrow){font:400 17px/1.6 var(--serif);color:#d9d6cc;max-width:400px}
+.faq-content{min-width:0}
+.faq-list{border-top:1px solid var(--rule)}
+.faq-item{border-bottom:1px solid var(--rule);min-width:0}
+.faq-question{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:22px;cursor:pointer;color:var(--gold-light);font:500 clamp(22px,2.15vw,32px)/1.18 var(--serif);padding:22px 6px 22px 0}
+.faq-question::-webkit-details-marker{display:none}
+.faq-question::marker{content:""}
+.faq-question:hover{color:#fff}
+.faq-question-title{min-width:0;overflow-wrap:anywhere}
+.faq-expand-icon{flex:none;display:grid;place-items:center;width:31px;height:31px;border:1px solid var(--rule);font:400 24px/1 var(--sans);color:var(--gold-light);transition:transform .2s ease}
+.faq-item[open] .faq-expand-icon{transform:rotate(45deg)}
+.faq-answer{padding:0 47px 23px 0;color:var(--text);overflow-wrap:anywhere}
+.faq-answer p{font:400 15px/1.75 var(--sans);margin:0 0 12px}
+.faq-answer p:last-child{margin-bottom:0}
+.faq-category{display:block;margin-bottom:9px;color:var(--gold);font:700 10px/1.5 var(--sans);letter-spacing:.17em;text-transform:uppercase}
+.faq-status{margin:16px 0;color:var(--muted);font:400 13px/1.6 var(--sans)}
+.faq-status:empty{display:none}
+@media(max-width:850px){.faq-section{padding:46px 0 55px}.faq-layout{grid-template-columns:1fr;gap:24px}.faq-intro h2{max-width:100%}}
+@media(max-width:520px){.faq-section{padding:36px 0 43px}.faq-question{font-size:24px;padding:18px 2px 18px 0;gap:16px}.faq-answer{padding-right:7px}.faq-expand-icon{width:29px;height:29px}}
+@media(prefers-reduced-motion:reduce){.faq-expand-icon{transition:none}}

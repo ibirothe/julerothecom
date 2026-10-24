@@ -85,5 +85,12 @@
   "legal.privacy.fontsHeading": "Fonts",
   "legal.privacy.fontsText": "[Review Google Fonts integration; consider self-hosting fonts]",
   "legal.privacy.rightsHeading": "Data subject rights",
-  "legal.privacy.rightsText": "[Add legally reviewed details about the rights of data subjects]"
+  "legal.privacy.rightsText": "[Add legally reviewed details about the rights of data subjects]",
+  "navigation.faq": "FAQ",
+  "faq.kicker": "Frequently asked questions",
+  "faq.title": "Lorem ipsum dolor sit amet.",
+  "faq.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "faq.loading": "Loading questions …",
+  "faq.empty": "There are no questions available yet.",
+  "faq.error": "The questions could not be loaded."
 }

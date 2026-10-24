@@ -119,3 +119,41 @@ Bestehende einfache Strings bleiben kompatibel. Für spätere FAQs kann das glei
 **Achtung EmailOctopus:** Das externe Embed-Formular wird vom Anbieter gerendert und nicht durch die Website-Übersetzung gesteuert. Die darin sichtbaren Feldnamen, Einwilligungstexte und Bestätigungen werden im EmailOctopus-Form-Editor gepflegt. Falls eine vollständig englische Registrierung benötigt wird, muss ein englisches Formular im Anbieter angelegt und dessen ID sprachabhängig eingebunden werden.
 
 **Prüfung:** `node scripts/check-i18n.mjs` validiert die Sprachdateien und alle HTML-Übersetzungsschlüssel. Der GitHub-Actions-Workflow führt diese Prüfung vor dem Build aus.
+
+## FAQ aus JSON pflegen (Issue #3)
+
+Die Fragen stehen ausschließlich in **`content/faq.json`**. Änderungen an dieser Datei per GitHub-Commit nach `main` aktualisieren die FAQ beim nächsten erfolgreichen GitHub-Pages-Deployment. Die anfänglichen Einträge sind **Lorem-Ipsum-Testtexte**.
+
+```json
+{
+  "items": [
+    {
+      "id": "anfrage",
+      "order": 10,
+      "category": {"de": "Ablauf", "en": "Process"},
+      "question": {"de": "Wie läuft die Anfrage ab?", "en": "How does the inquiry work?"},
+      "answer": {"de": "Hier steht die Antwort.", "en": "Your answer goes here."}
+    }
+  ]
+}
+```
+
+- `id` muss einmalig sein und darf Buchstaben, Zahlen, Unterstrich oder Bindestrich enthalten.
+- `order` ist optional und steuert die Sortierung (aufsteigend).
+- `question.de` und `answer.de` sind Pflicht; englische Texte (`en`) sind optional. Fehlen sie, wird Deutsch angezeigt.
+- `category` ist optional (einfacher String oder Übersetzungsobjekt mit `de`/`en`).
+- Antworten werden **als Klartext** ausgegeben, niemals als HTML interpretiert. Absätze können mittels `\\n\\n` in der JSON-Antwort getrennt werden.
+- `"items": []` ist zulässig und führt zu einem Hinweis statt eines Fehlers.
+- Fehlerhafte Einträge werden im Frontend übersprungen; Fehler beim Laden der Datei erzeugen eine übersetzte Fehlermeldung, ohne die Galerie oder Formulare zu beeinträchtigen.
+- FAQ-Abschnitt und Menüpunkt funktionieren auf Mobilgerät und Desktop. Die Einträge nutzen native `details`/`summary`-Elemente und sind per Tastatur bedienbar.
+
+Validieren und lokal ausführen:
+
+```bash
+node scripts/check-i18n.mjs
+node scripts/check-faq.mjs
+node scripts/build.mjs
+python3 -m http.server 8000 --directory dist
+```
+
+Der Build kopiert nun außerdem `i18n.js`, `locales/` und `content/` explizit nach `dist/`, damit Sprachumschalter und FAQ auch auf GitHub Pages funktionieren.

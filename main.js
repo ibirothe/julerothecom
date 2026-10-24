@@ -147,3 +147,78 @@ contactForm?.addEventListener("submit", async event => {
     button.disabled = false;
   }
 });
+
+const faqList = document.getElementById("faq-list");
+const faqStatus = document.getElementById("faq-status");
+const faqUrl = new URL("./content/faq.json", import.meta.url);
+function faqField(value) {
+  if (typeof value === "string") return value.trim();
+  if (value && typeof value === "object" && !Array.isArray(value)) {
+    if (typeof value[language] === "string" && value[language].trim()) return value[language].trim();
+    if (typeof value.de === "string") return value.de.trim();
+  }
+  return "";
+}
+async function loadFaq() {
+  if (!faqList || !faqStatus) return;
+  faqList.setAttribute("aria-busy", "true");
+  faqStatus.textContent = t("faq.loading");
+  try {
+    const response = await fetch(faqUrl, {cache:"no-store"});
+    if (!response.ok) throw new Error(`FAQ request failed: ${response.status}`);
+    const data = await response.json();
+    if (!data || !Array.isArray(data.items)) throw new Error("Invalid FAQ JSON");
+    const usedIds = new Set();
+    const items = data.items.filter(item => {
+      if (!item || typeof item !== "object" || Array.isArray(item)) return false;
+      if (typeof item.id !== "string" || !/^[a-zA-Z0-9_-]+$/.test(item.id) || usedIds.has(item.id)) return false;
+      if (!faqField(item.question) || !faqField(item.answer)) return false;
+      usedIds.add(item.id);
+      return true;
+    }).sort((a,b) => (Number.isFinite(a.order) ? a.order : 999999) - (Number.isFinite(b.order) ? b.order : 999999));
+
+    faqList.replaceChildren();
+    for (const item of items) {
+      const details = document.createElement("details");
+      details.className = "faq-item";
+      details.dataset.faqId = item.id;
+      const summary = document.createElement("summary");
+      summary.className = "faq-question";
+      const question = document.createElement("span");
+      question.className = "faq-question-title";
+      question.textContent = faqField(item.question);
+      summary.append(question);
+      const icon = document.createElement("span");
+      icon.className = "faq-expand-icon";
+      icon.setAttribute("aria-hidden", "true");
+      icon.textContent = "+";
+      summary.append(icon);
+
+      const answer = document.createElement("div");
+      answer.className = "faq-answer";
+      const category = faqField(item.category);
+      if (category) {
+        const label = document.createElement("span");
+        label.className = "faq-category";
+        label.textContent = category;
+        answer.append(label);
+      }
+      for (const paragraph of faqField(item.answer).split(/\n\s*\n/)) {
+        if (!paragraph.trim()) continue;
+        const p = document.createElement("p");
+        p.textContent = paragraph.trim();
+        answer.append(p);
+      }
+      details.append(summary, answer);
+      faqList.append(details);
+    }
+    faqStatus.textContent = items.length ? "" : t("faq.empty");
+  } catch (error) {
+    console.warn(t("faq.error"), error);
+    faqList.replaceChildren();
+    faqStatus.textContent = t("faq.error");
+  } finally {
+    faqList.setAttribute("aria-busy", "false");
+  }
+}
+loadFaq();

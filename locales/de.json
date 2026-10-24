@@ -85,5 +85,12 @@
   "legal.privacy.fontsHeading": "Schriftarten",
   "legal.privacy.fontsText": "[Einbindung von Google Fonts prüfen; nach Möglichkeit Schriftarten lokal bereitstellen]",
   "legal.privacy.rightsHeading": "Betroffenenrechte",
-  "legal.privacy.rightsText": "[Rechtlich geprüfte Informationen über die Betroffenenrechte ergänzen]"
+  "legal.privacy.rightsText": "[Rechtlich geprüfte Informationen über die Betroffenenrechte ergänzen]",
+  "navigation.faq": "FAQ",
+  "faq.kicker": "Häufige Fragen",
+  "faq.title": "Lorem ipsum dolor sit amet.",
+  "faq.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "faq.loading": "Fragen werden geladen …",
+  "faq.empty": "Aktuell sind keine Fragen hinterlegt.",
+  "faq.error": "Die Fragen konnten nicht geladen werden."
 }

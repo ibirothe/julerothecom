@@ -9,10 +9,12 @@ const allowedExtensions = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif", ".
 await rm(target, { recursive: true, force: true });
 await mkdir(target, { recursive: true });
 
-for (const file of ["index.html", "styles.css", "main.js", "site-config.js", "favicon.svg", "impressum.html", "datenschutz.html"]) {
+for (const file of ["index.html", "styles.css", "main.js", "i18n.js", "site-config.js", "favicon.svg", "impressum.html", "datenschutz.html"]) {
   await copyFile(path.join(root, file), path.join(target, file));
 }
 await cp(path.join(root, "assets"), path.join(target, "assets"), { recursive: true });
+await cp(path.join(root, "locales"), path.join(target, "locales"), { recursive: true });
+await cp(path.join(root, "content"), path.join(target, "content"), { recursive: true });
 
 let metadata = {};
 try {

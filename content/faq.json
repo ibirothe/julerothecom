@@ -1,0 +1,56 @@
+{
+  "items": [
+    {
+      "id": "faq-01",
+      "order": 10,
+      "category": {
+        "de": "Lorem ipsum",
+        "en": "Lorem ipsum"
+      },
+      "question": {
+        "de": "Lorem ipsum dolor sit amet?",
+        "en": "Lorem ipsum dolor sit amet?"
+      },
+      "answer": {
+        "de": "Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "en": "Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      }
+    },
+    {
+      "id": "faq-02",
+      "order": 20,
+      "question": {
+        "de": "Ut enim ad minim veniam?",
+        "en": "Ut enim ad minim veniam?"
+      },
+      "answer": {
+        "de": "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "en": "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      }
+    },
+    {
+      "id": "faq-03",
+      "order": 30,
+      "question": {
+        "de": "Duis aute irure dolor in reprehenderit?",
+        "en": "Duis aute irure dolor in reprehenderit?"
+      },
+      "answer": {
+        "de": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "en": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      }
+    },
+    {
+      "id": "faq-04",
+      "order": 40,
+      "question": {
+        "de": "Excepteur sint occaecat cupidatat?",
+        "en": "Excepteur sint occaecat cupidatat?"
+      },
+      "answer": {
+        "de": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "en": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      }
+    }
+  ]
+}
