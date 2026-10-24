@@ -157,3 +157,46 @@ python3 -m http.server 8000 --directory dist
 ```
 
 Der Build kopiert nun außerdem `i18n.js`, `locales/` und `content/` explizit nach `dist/`, damit Sprachumschalter und FAQ auch auf GitHub Pages funktionieren.
+
+## Testimonials / Kundenstimmen (Issue #5)
+
+Die Testimonials werden über **`content/testimonials.json`** gepflegt. Sie erscheinen in einer eigenen Sektion **unmittelbar vor dem Kontaktformular**. Die kompakte Navigation erhält dafür keinen zusätzlichen Menüpunkt.
+
+```json
+{
+  "items": [
+    {
+      "id": "kundenstimme-01",
+      "order": 10,
+      "status": "published",
+      "consentConfirmed": true,
+      "firstName": "VORNAME",
+      "quote": {
+        "de": "Freigegebenes Originalzitat.",
+        "en": "Approved translated quote."
+      },
+      "avatar": "kundenstimme-01.webp"
+    }
+  ]
+}
+```
+
+- `id`: eindeutig, nur Buchstaben, Zahlen, `-`, `_`.
+- `order`: optionale aufsteigende Reihenfolge.
+- `status`: **`demo`** für sichtbar gekennzeichnete Gestaltungsbeispiele; **`published`** ausschließlich für echte, freigegebene Zitate.
+- `firstName`: freigegebener Vorname oder Pseudonym; keine Nachnamen notwendig.
+- `quote.de` ist erforderlich, `quote.en` optional. Fehlende englische Texte fallen auf Deutsch zurück. Die Inhalte werden als sicherer Klartext eingesetzt, ohne HTML-Ausführung.
+- `avatar` optional: **Dateiname** einer JPG-, PNG-, AVIF- oder WEBP-Datei in `assets/testimonials/`. Foto vorher hochladen. Der Kreis schneidet die Aufnahme passend als Portrait zu; ohne Datei wird die Initiale des Namens angezeigt.
+- **`consentConfirmed: true`** ist für `status:published` verpflichtend. Einen nachweisbaren Einwilligungsbeleg für Zitat, Namen/Pseudonym und ggf. Portrait separat und nicht öffentlich aufbewahren; der JSON-Flag ist keine Einwilligung selbst.
+- Der Beispiel-Eintrag `demo-anna` ist fiktiv und auf der Website als **Designbeispiel, keine echte Kundenstimme** markiert.
+- Bei `"items": []`, ungültigen Datensätzen oder Ladefehlern bleibt die Testimonials-Sektion verborgen und das Kontaktformular nutzbar.
+
+Test und lokaler Build:
+
+```bash
+node scripts/check-testimonials.mjs
+node scripts/build.mjs
+python3 -m http.server 8000 --directory dist
+```
+
+Die CI validiert `content/testimonials.json` bei jedem Commit. Neue Portraitbilder und JSON-Einträge werden automatisch über GitHub Pages veröffentlicht.

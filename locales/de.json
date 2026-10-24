@@ -92,5 +92,8 @@
   "faq.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   "faq.loading": "Fragen werden geladen …",
   "faq.empty": "Aktuell sind keine Fragen hinterlegt.",
-  "faq.error": "Die Fragen konnten nicht geladen werden."
+  "faq.error": "Die Fragen konnten nicht geladen werden.",
+  "testimonials.kicker": "Kundenstimmen",
+  "testimonials.title": "Lorem ipsum dolor sit amet.",
+  "testimonials.demo": "Designbeispiel · keine echte Kundenstimme"
 }

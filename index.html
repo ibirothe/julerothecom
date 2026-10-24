@@ -109,10 +109,29 @@ consectetur.</h2>
           <p class="newsletter-privacy-note"><span data-i18n="newsletter.privacy">Informationen zur Verarbeitung deiner Daten findest du in unserer</span> <a href="./datenschutz.html" data-localized-link data-i18n="newsletter.privacyLink">Datenschutzerklärung</a>.</p>
         </article>
 
-        <article class="info-panel" id="kontakt">
+      </div>
+    </section>
+
+    <section class="testimonials-section section-line" id="testimonials" aria-labelledby="testimonials-title" hidden>
+      <div class="container testimonials-layout">
+        <div class="testimonials-intro">
+          <p class="eyebrow" data-i18n="testimonials.kicker">Kundenstimmen</p>
+          <h2 id="testimonials-title" data-i18n="testimonials.title">Lorem ipsum dolor sit amet.</h2>
+        </div>
+        <div class="testimonials-content">
+          <div id="testimonials-grid" class="testimonials-grid" aria-busy="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section section-line" id="kontakt" aria-labelledby="contact-title">
+      <div class="container contact-layout">
+        <div class="contact-intro">
           <p class="eyebrow" data-i18n="contact.kicker">Kontakt</p>
-          <h2 data-i18n="contact.title">Ut enim ad minim veniam.</h2>
+          <h2 id="contact-title" data-i18n="contact.title">Ut enim ad minim veniam.</h2>
           <p data-i18n="contact.description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.</p>
+        </div>
+        <div class="contact-form-wrap">
           <form id="contact-form" class="contact-form">
             <div class="form-row">
               <div><label class="visually-hidden" for="contact-name" data-i18n="contact.name">Dein Name</label><input id="contact-name" name="name" type="text" autocomplete="name" data-i18n-placeholder="contact.name" placeholder="Dein Name" required></div>
@@ -124,7 +143,7 @@ consectetur.</h2>
             <button class="button button-outline" type="submit"><span data-i18n="contact.send">Nachricht senden</span><span aria-hidden="true">→</span></button>
             <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
           </form>
-        </article>
+        </div>
       </div>
     </section>
 

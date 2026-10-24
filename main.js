@@ -222,3 +222,108 @@ async function loadFaq() {
   }
 }
 loadFaq();
+
+const testimonialsSection = document.getElementById("testimonials");
+const testimonialsGrid = document.getElementById("testimonials-grid");
+const testimonialsUrl = new URL("./content/testimonials.json", import.meta.url);
+
+function testimonialField(value) {
+  if (typeof value === "string") return value.trim();
+  if (value && typeof value === "object" && !Array.isArray(value)) {
+    const translated = value[language];
+    if (typeof translated === "string" && translated.trim()) return translated.trim();
+    return typeof value.de === "string" ? value.de.trim() : "";
+  }
+  return "";
+}
+
+function validTestimonial(item) {
+  if (!item || typeof item !== "object" || Array.isArray(item)) return false;
+  if (typeof item.id !== "string" || !/^[a-zA-Z0-9_-]+$/.test(item.id)) return false;
+  if (typeof item.firstName !== "string" || !item.firstName.trim()) return false;
+  if (!testimonialField(item.quote)) return false;
+  if (item.status !== "demo" && item.status !== "published") return false;
+  // The JSON field is only an administrative check; keep consent evidence private.
+  if (item.status === "published" && item.consentConfirmed !== true) return false;
+  return true;
+}
+
+function avatarFilename(value) {
+  if (typeof value !== "string" || value.length > 120) return "";
+  if (!/^[a-zA-Z0-9_-]+\.(?:jpg|jpeg|png|webp|avif)$/i.test(value)) return "";
+  return value;
+}
+
+async function loadTestimonials() {
+  if (!testimonialsSection || !testimonialsGrid) return;
+  testimonialsGrid.setAttribute("aria-busy", "true");
+  try {
+    const response = await fetch(testimonialsUrl, {cache:"no-store"});
+    if (!response.ok) throw new Error(`Testimonials request failed: ${response.status}`);
+    const data = await response.json();
+    if (!data || !Array.isArray(data.items)) throw new Error("Invalid testimonials JSON");
+    const seenIds = new Set();
+    const items = data.items.filter(item => {
+      if (!validTestimonial(item) || seenIds.has(item.id)) return false;
+      seenIds.add(item.id);
+      return true;
+    }).sort((a,b) => (Number.isFinite(a.order) ? a.order : 999999) - (Number.isFinite(b.order) ? b.order : 999999));
+    testimonialsGrid.replaceChildren();
+    for (const item of items) {
+      const card = document.createElement("article");
+      card.className = "testimonial-card";
+      card.dataset.testimonialId = item.id;
+
+      const mark = document.createElement("span");
+      mark.className = "testimonial-card-quote-mark";
+      mark.setAttribute("aria-hidden", "true");
+      mark.textContent = "“";
+
+      const quote = document.createElement("blockquote");
+      quote.className = "testimonial-quote";
+      quote.textContent = testimonialField(item.quote);
+
+      const footer = document.createElement("div");
+      footer.className = "testimonial-card-footer";
+      const avatar = document.createElement("div");
+      avatar.className = "testimonial-avatar";
+      avatar.setAttribute("aria-hidden", "true");
+      const imageName = avatarFilename(item.avatar);
+      if (imageName) {
+        const image = document.createElement("img");
+        image.alt = "";
+        image.loading = "lazy";
+        image.src = new URL("./assets/testimonials/" + encodeURIComponent(imageName), import.meta.url).href;
+        image.addEventListener("error", () => {
+          image.remove();
+          avatar.textContent = item.firstName.trim().charAt(0).toUpperCase();
+        }, {once:true});
+        avatar.append(image);
+      } else {
+        avatar.textContent = item.firstName.trim().charAt(0).toUpperCase();
+      }
+      const details = document.createElement("div");
+      const name = document.createElement("p");
+      name.className = "testimonial-card-name";
+      name.textContent = item.firstName.trim();
+      details.append(name);
+      if (item.status === "demo") {
+        const demoNote = document.createElement("div");
+        demoNote.className = "testimonial-demo-note";
+        demoNote.textContent = t("testimonials.demo");
+        details.append(demoNote);
+      }
+      footer.append(avatar, details);
+      card.append(mark, quote, footer);
+      testimonialsGrid.append(card);
+    }
+    testimonialsSection.hidden = items.length === 0;
+  } catch (error) {
+    console.warn("Testimonials unavailable:", error);
+    testimonialsGrid.replaceChildren();
+    testimonialsSection.hidden = true;
+  } finally {
+    testimonialsGrid.setAttribute("aria-busy", "false");
+  }
+}
+loadTestimonials();

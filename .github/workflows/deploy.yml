@@ -32,6 +32,7 @@ jobs:
           node --check scripts/build.mjs
           node scripts/check-i18n.mjs
           node scripts/check-faq.mjs
+          node scripts/check-testimonials.mjs
       - name: Website und Galerie erstellen
         run: node scripts/build.mjs
       - name: GitHub Pages vorbereiten

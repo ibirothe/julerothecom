@@ -1,0 +1,14 @@
+{
+  "items": [
+    {
+      "id": "demo-anna",
+      "order": 10,
+      "status": "demo",
+      "firstName": "Anna",
+      "quote": {
+        "de": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore."
+      }
+    }
+  ]
+}
