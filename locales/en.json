@@ -18,9 +18,9 @@
   "hero.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   "hero.placeholder.aria": "Placeholder for the hero image",
   "hero.placeholder.title": "Hero image",
-  "works.kicker": "Lorem ipsum dolor",
-  "works.title": "Sit amet\nconsectetur.",
-  "works.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.",
+  "works.kicker": "Portfolio",
+  "works.title": "My Work",
+  "works.description": "Here you'll find a selection of tattoos that grew out of the ideas and wishes of my wonderful clients.",
   "works.more": "View all works",
   "works.less": "Show fewer works",
   "works.placeholder": "Gallery image",
@@ -86,5 +86,6 @@
   "testimonials.kicker": "Testimonials",
   "testimonials.title": "Lorem ipsum dolor sit amet.",
   "testimonials.demo": "Design preview · not a real customer review",
-  "navigation.testimonials": "Testimonials"
+  "navigation.testimonials": "Testimonials",
+  "works.newsletter": "If you're curious about what I'm working on, my monthly newsletter will give you regular glimpses into my latest projects."
 }

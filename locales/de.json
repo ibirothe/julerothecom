@@ -18,9 +18,9 @@
   "hero.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   "hero.placeholder.aria": "Platzhalter für das Titelbild",
   "hero.placeholder.title": "Titelbild",
-  "works.kicker": "Lorem ipsum dolor",
-  "works.title": "Sit amet\nconsectetur.",
-  "works.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.",
+  "works.kicker": "Portfolio",
+  "works.title": "Meine Arbeiten",
+  "works.description": "Hier zeige ich dir eine Auswahl an Arbeiten, die aus den Ideen und Wünschen meiner wundervollen Kundinnen entstanden sind.",
   "works.more": "Alle Arbeiten ansehen",
   "works.less": "Weniger Arbeiten",
   "works.placeholder": "Galeriebild",
@@ -86,5 +86,6 @@
   "testimonials.kicker": "Kundenstimmen",
   "testimonials.title": "Lorem ipsum dolor sit amet.",
   "testimonials.demo": "Designbeispiel · keine echte Kundenstimme",
-  "navigation.testimonials": "Kundenstimmen"
+  "navigation.testimonials": "Kundenstimmen",
+  "works.newsletter": "Wenn du neugierig bist, woran ich gerade arbeite, bekommst du in meinem monatlichen Newsletter regelmäßig neue Einblicke in meine Projekte."
 }
