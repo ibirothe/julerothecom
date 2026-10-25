@@ -36,8 +36,8 @@ h2{font-size:clamp(2.4rem,3.15vw,4.5rem);margin-bottom:22px}
 .hero-description{max-width:510px;font:400 17px/1.7 var(--serif);color:var(--text);margin:0}
 .hero-description+.hero-description{margin-top:16px}
 .media-placeholder{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;color:#d8d8d8;background:linear-gradient(125deg,#515352,#676767);border:1px solid #777674}
-.hero-media{width:100%;min-height:0;max-height:620px;aspect-ratio:3/4;overflow:hidden}
-.hero-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 25%}
+.hero-media{width:min(100%,420px);min-height:0;max-height:none;aspect-ratio:auto;justify-self:end}
+.hero-media img{display:block;width:100%;height:auto;object-fit:contain}
 .placeholder-icon{font:300 35px/1 var(--sans);opacity:.7}
 .placeholder-label{font:500 10px/1.5 var(--sans);text-transform:uppercase;letter-spacing:.27em;margin-top:14px}
 .placeholder-size{font:400 10px/1.5 var(--sans);letter-spacing:.16em;opacity:.7;margin-top:6px}
@@ -130,7 +130,7 @@ button:disabled{opacity:.7;cursor:wait}
 @media(max-width:1160px){
   .container{width:min(calc(100% - 72px),var(--container))}
   .site-nav{gap:18px}.nav-link{font-size:9px}.brand-name{font-size:27px}
-  .hero-grid{gap:40px}.hero-media{min-height:290px}
+  .hero-grid{gap:40px}.hero-media{min-height:0}
   .works-layout{grid-template-columns:200px 1fr;gap:30px}
   .footer-grid{grid-template-columns:1fr auto}.footer-nav{display:none}
 }
@@ -171,7 +171,7 @@ button:disabled{opacity:.7;cursor:wait}
   .nav-link.is-active:after{width:35px;bottom:8px}
   .hero{padding:55px 0 45px}
   .hero-grid{grid-template-columns:1fr;gap:35px}
-  .hero-copy{max-width:690px}.hero-media{min-height:0;max-height:580px;aspect-ratio:3/4}
+  .hero-copy{max-width:690px}.hero-media{width:min(100%,420px);min-height:0;max-height:none;aspect-ratio:auto;justify-self:center}
   .works-layout{grid-template-columns:1fr;gap:25px}
   .works-intro{max-width:560px}.works-intro h2 br{display:none}
   .works-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -186,7 +186,7 @@ button:disabled{opacity:.7;cursor:wait}
   h1{font-size:clamp(3.7rem,14vw,5.2rem)}
   h2{font-size:clamp(2.8rem,10vw,3.6rem)}
   .hero-description{font-size:16px}
-  .hero-media{min-height:0;max-height:none;aspect-ratio:3/4}
+  .hero-media{width:100%;min-height:0;max-height:none;aspect-ratio:auto}
   .works-section{padding:35px 0}.works-grid{gap:10px}
   .work-placeholder,.work-open img{aspect-ratio:.8}
   .placeholder-icon{font-size:24px}.placeholder-label,.placeholder-size{font-size:8px}
