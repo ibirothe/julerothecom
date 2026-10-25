@@ -1,13 +1,14 @@
 {
   "items": [
     {
-      "id": "demo-anna",
+      "id": "ibi-rothe",
       "order": 10,
       "status": "demo",
-      "firstName": "Anna",
+      "firstName": "Ibi Rothe",
+      "avatar": "ibi-rothe.webp",
       "quote": {
-        "de": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
-        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore."
+        "de": "Als Jules Ehemann bin ich selbstverständlich vollkommen unvoreingenommen. Ich sehe jeden Tag, wie viel Herzblut, Geduld und Liebe zum Detail sie in ihre Tattoos steckt. Nur bei der Terminvergabe genieße ich leider keinen Familienbonus. 10/10, würde wieder heiraten.",
+        "en": "As Jule's husband, I'm obviously completely unbiased. I see every day how much heart, patience and attention to detail she puts into her tattoos. Unfortunately, I still don't get any special treatment when it comes to booking appointments. 10/10, would marry again."
       }
     }
   ]
