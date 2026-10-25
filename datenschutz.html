@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex">
   <meta name="description" data-i18n-content="legal.privacy.metaDescription" content="Informationen zum Datenschutz auf julerothe.com">
   <title>Datenschutz | Jule Rothe</title>
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
@@ -22,8 +21,6 @@
   a:hover{text-decoration:none}
   p{max-width:78ch;margin:0 0 16px;white-space:pre-line;overflow-wrap:anywhere}
   .date{color:var(--muted);font-size:13px;margin-bottom:22px}
-  .notice{border-left:3px solid var(--gold);background:#102d22;padding:18px 22px;margin:26px 0 30px}
-  .notice p{margin:0}
   .toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px;padding:20px 0 25px;margin:30px 0;border-block:1px solid var(--rule)}
   .toc a{color:var(--text);text-decoration:none;font-size:14px;padding:5px 0}
   .toc a:hover,.toc a:focus-visible{color:var(--gold);text-decoration:underline}
@@ -33,7 +30,7 @@
   .language-switch a{color:var(--muted);text-decoration:none}
   .language-switch a[aria-current="true"],.language-switch a:hover{color:var(--gold)}
   footer{margin-top:44px;border-top:1px solid var(--rule);padding-top:22px;font-size:14px}
-  @media(max-width:600px){.wrap{padding:25px 18px 48px}.toc{grid-template-columns:1fr}.notice{padding:15px}}
+  @media(max-width:600px){.wrap{padding:25px 18px 48px}.toc{grid-template-columns:1fr}}
   </style>
   <script type="module" src="./i18n.js"></script>
 </head>
@@ -50,7 +47,6 @@
 <main>
   <h1 data-i18n="legal.privacy.title">Datenschutzerklärung</h1>
   <p class="date" data-i18n="legal.privacy.updated">Stand: 25. Oktober 2026</p>
-  <div class="notice"><p data-i18n="legal.privacy.warning">Arbeitsvorlage: Vor dem produktiven Einsatz sind die gekennzeichneten Angaben zu ergänzen und die beschriebenen Verarbeitungen anhand der tatsächlichen Website-Konfiguration zu prüfen.</p></div>
   <nav class="toc" data-i18n-aria-label="legal.privacy.tocLabel" aria-label="Inhaltsverzeichnis">
     <a href="#overview" data-i18n="legal.privacy.overview.heading">Allgemeine Hinweise</a>
     <a href="#controller" data-i18n="legal.privacy.controller.heading">Verantwortliche Stelle</a>
@@ -81,11 +77,11 @@
     <h2 id="controller-heading" data-i18n="legal.privacy.controller.heading">Verantwortliche Stelle</h2>
     <p data-i18n="legal.privacy.controller.p1">Verantwortlich für die Verarbeitung personenbezogener Daten auf dieser Website ist:
 Jule Rothe
-[Vollständiger rechtlicher Name bzw. Geschäftsbezeichnung prüfen]
-[Straße und Hausnummer]
-[Postleitzahl und Ort]
-E-Mail: [E-Mail-Adresse für Datenschutzanfragen]</p>
-    <p data-i18n="legal.privacy.controller.p2">Die verantwortliche Stelle entscheidet über Zwecke und Mittel der Verarbeitung. Sollte gesetzlich ein Datenschutzbeauftragter zu benennen sein, müssen dessen Kontaktdaten hier zusätzlich ergänzt werden.</p>
+Electric Avenue
+Wolfgang-Heinze-Straße 16
+04277 Leipzig
+Deutschland</p>
+    <p data-i18n="legal.privacy.controller.p2">Für Datenschutzanfragen und zur Ausübung deiner Rechte kannst du dich postalisch an die oben genannte Anschrift wenden oder das Kontaktformular auf julerothe.com nutzen.</p>
   </section>
   <section id="lawful" aria-labelledby="lawful-heading">
     <h2 id="lawful-heading" data-i18n="legal.privacy.lawful.heading">Zwecke und Rechtsgrundlagen</h2>
@@ -93,43 +89,43 @@ E-Mail: [E-Mail-Adresse für Datenschutzanfragen]</p>
   </section>
   <section id="hosting" aria-labelledby="hosting-heading">
     <h2 id="hosting-heading" data-i18n="legal.privacy.hosting.heading">Hosting, Domain und DNS</h2>
-    <p data-i18n="legal.privacy.hosting.p1">Die Website ist für die Bereitstellung über Netlify angebunden (Netlify, Inc., USA). Die Domain wurde bei STRATO registriert. Hosting- und DNS-Dienstleister können bei technischen Anfragen unter anderem IP-Adressen und Verbindungsdaten verarbeiten. Zweck ist die sichere, stabile und effiziente Bereitstellung der Website. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, unser berechtigtes Interesse an einem funktionsfähigen und sicheren Internetangebot.</p>
-    <p data-i18n="legal.privacy.hosting.p2">[Vor Veröffentlichung prüfen: Welcher Dienst liefert julerothe.com tatsächlich aus? Ist zusätzlich eine öffentlich erreichbare GitHub-Pages-Version aktiv? Angaben zu eingesetzten Dienstleistern, möglichen CDN-Unterauftragnehmern, Auftragsverarbeitungsvereinbarungen und Speicherfristen entsprechend ergänzen.]</p>
+    <p data-i18n="legal.privacy.hosting.p1">Unsere Website wird über Netlify (Netlify, Inc., USA) bereitgestellt. Die Domain julerothe.com ist bei STRATO registriert. Hosting- und DNS-Dienstleister verarbeiten beim Aufruf der Website technisch erforderliche Zugriffsdaten. Zweck ist die sichere, stabile und effiziente Bereitstellung der Website. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem funktionsfähigen und sicheren Webangebot).</p>
+    
     <p class="source"><a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener noreferrer" data-i18n="legal.privacy.hosting.link1">Netlify privacy policy</a></p>
   </section>
   <section id="logs" aria-labelledby="logs-heading">
     <h2 id="logs-heading" data-i18n="legal.privacy.logs.heading">Technische Zugriffsdaten und Serverprotokolle</h2>
     <p data-i18n="legal.privacy.logs.p1">Beim Aufruf der Website können die eingesetzten Hosting-Dienstleister insbesondere IP-Adresse, Datum und Uhrzeit der Anfrage, aufgerufene Datei beziehungsweise URL, HTTP-Status, übertragene Datenmenge, Referrer-URL sowie Browser- und Geräteinformationen erfassen. Die Angaben dienen der Auslieferung der Website, Fehlerdiagnose und Abwehr von Missbrauch und Angriffen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.</p>
-    <p data-i18n="legal.privacy.logs.p2">Die Speicherung und Löschung dieser Protokolle richtet sich nach der tatsächlichen Konfiguration und den Aufbewahrungsfristen des Hosters. [Konkrete Speicherfrist und gegebenenfalls Sicherheitsausnahmen prüfen und ergänzen.]</p>
+    <p data-i18n="legal.privacy.logs.p2">Die Speicherung und Löschung dieser Protokolle richtet sich nach der tatsächlichen Konfiguration und den Aufbewahrungsfristen des Hosters.</p>
   </section>
   <section id="contact" aria-labelledby="contact-heading">
     <h2 id="contact-heading" data-i18n="legal.privacy.contact.heading">Kontaktformular und Anfragen</h2>
     <p data-i18n="legal.privacy.contact.p1">Wenn du das Kontaktformular nutzt, verarbeiten wir deinen Namen, deine E-Mail-Adresse und den Inhalt deiner Nachricht. Zusätzlich können technische Daten zur Übermittlung und Spamabwehr anfallen. Die Angaben werden verwendet, um deine Anfrage zu bearbeiten und dir zu antworten. Bitte übermittle über das frei zugängliche Formular keine Gesundheitsdaten oder sonstigen besonders sensiblen Informationen.</p>
-    <p data-i18n="legal.privacy.contact.p2">Für die technische Formularübermittlung nutzen wir Formspree (Formspree, Inc., USA). Bei Termin- und Projektanfragen erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, bei sonstigen Nachrichten auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Anfragen werden gelöscht, sobald sie abschließend bearbeitet sind und keine gesetzlichen Aufbewahrungspflichten oder berechtigten Gründe für eine weitere Speicherung bestehen. [Tatsächliche Löschroutine und Speicherfrist in Formspree und im E-Mail-Postfach prüfen.]</p>
+    <p data-i18n="legal.privacy.contact.p2">Für die technische Formularübermittlung nutzen wir Formspree (Formspree, Inc., USA). Bei Termin- und Projektanfragen erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, bei sonstigen Nachrichten auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Anfragen werden gelöscht, sobald sie abschließend bearbeitet sind und keine gesetzlichen Aufbewahrungspflichten oder berechtigten Gründe für eine weitere Speicherung bestehen.</p>
     <p class="source"><a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer" data-i18n="legal.privacy.contact.link1">Formspree privacy policy</a></p>
   </section>
   <section id="newsletter" aria-labelledby="newsletter-heading">
     <h2 id="newsletter-heading" data-i18n="legal.privacy.newsletter.heading">Newsletter und EmailOctopus</h2>
     <p data-i18n="legal.privacy.newsletter.p1">Für den monatlichen Newsletter nutzen wir EmailOctopus, einen Dienst von Three Hearts Digital Ltd, Vereinigtes Königreich. Bei einer Anmeldung verarbeiten wir mindestens deine E-Mail-Adresse sowie die für Anmeldung, Einwilligungsnachweis, Zustellung und Abmeldung technisch erforderlichen Informationen. Zweck sind Informationen über aktuelle Tattoo-Projekte, Wanna-dos, Terminvergaben und Walk-in-Aktionen. Rechtsgrundlage für den Newsletter-Versand ist deine Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO.</p>
-    <p data-i18n="legal.privacy.newsletter.p2">Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, insbesondere über den Abmeldelink in jeder Newsletter-E-Mail. Nach der Abmeldung wird deine Adresse aus dem aktiven Verteiler entfernt, soweit keine erforderliche Sperrliste oder gesetzliche Nachweispflicht eine begrenzte weitere Speicherung rechtfertigt. [Double-Opt-in und Speicherung des Einwilligungsnachweises vor Veröffentlichung aktivieren beziehungsweise überprüfen.]</p>
-    <p data-i18n="legal.privacy.newsletter.p3">EmailOctopus kann, sofern diese Funktionen aktiviert sind, statistische Informationen zu Zustellung, Öffnungen und Klicks verarbeiten. [Prüfen, ob Öffnungs- und Klicktracking aktiviert ist; gegebenenfalls Rechtsgrundlage, Einwilligung und Aufbewahrungsfrist konkretisieren.]</p>
+    <p data-i18n="legal.privacy.newsletter.p2">Die Anmeldung zum Newsletter erfolgt im Double-Opt-in-Verfahren. Du erhältst eine Bestätigungs-E-Mail; Anmeldung und Bestätigung werden als Nachweis deiner Einwilligung dokumentiert. Deine Einwilligung kannst du jederzeit mit Wirkung für die Zukunft über den Abmeldelink in jeder Newsletter-E-Mail widerrufen. Nach der Abmeldung wird deine Adresse aus dem aktiven Verteiler entfernt, soweit keine erforderliche Sperrliste oder gesetzliche Nachweispflicht eine begrenzte weitere Speicherung rechtfertigt.</p>
+    <p data-i18n="legal.privacy.newsletter.p3">EmailOctopus kann, sofern diese Funktionen aktiviert sind, statistische Informationen zu Zustellung, Öffnungen und Klicks verarbeiten.</p>
     <p class="source"><a href="https://emailoctopus.com/legal/privacy" target="_blank" rel="noopener noreferrer" data-i18n="legal.privacy.newsletter.link1">EmailOctopus privacy policy</a></p>
   </section>
   <section id="embed" aria-labelledby="embed-heading">
     <h2 id="embed-heading" data-i18n="legal.privacy.embed.heading">Extern eingebundenes Newsletter-Formular</h2>
     <p data-i18n="legal.privacy.embed.p1">Zur Anzeige der Newsletter-Anmeldung lädt die Startseite derzeit ein Skript von EmailOctopus (eocampaign1.com) unmittelbar beim Seitenaufruf. Dabei können bereits vor einer Anmeldung technische Daten wie die IP-Adresse an den Anbieter übermittelt werden. Je nach Verhalten der Einbindung können außerdem Cookies oder vergleichbare Technologien zum Einsatz kommen.</p>
-    <p data-i18n="legal.privacy.embed.p2">Soweit dabei eine nicht unbedingt erforderliche Speicherung oder ein Zugriff auf Informationen im Endgerät erfolgt, ist grundsätzlich vorab eine Einwilligung nach § 25 TDDDG erforderlich; für damit verbundene personenbezogene Daten gelten zusätzlich die Vorgaben der DSGVO. [Skript und Cookies technisch prüfen; erforderlichenfalls eine echte vorgelagerte Einwilligung oder eine Zwei-Klick-Lösung umsetzen. Ein Datenschutzhinweis allein ersetzt diese nicht.]</p>
+    <p data-i18n="legal.privacy.embed.p2">Soweit dabei eine nicht unbedingt erforderliche Speicherung oder ein Zugriff auf Informationen im Endgerät erfolgt, ist grundsätzlich vorab eine Einwilligung nach § 25 TDDDG erforderlich; für damit verbundene personenbezogene Daten gelten zusätzlich die Vorgaben der DSGVO.</p>
   </section>
   <section id="fonts" aria-labelledby="fonts-heading">
     <h2 id="fonts-heading" data-i18n="legal.privacy.fonts.heading">Google Fonts</h2>
     <p data-i18n="legal.privacy.fonts.p1">Für die Gestaltung dieser Website werden die Schriftarten Cormorant Garamond und Manrope derzeit direkt über Google Fonts (fonts.googleapis.com und fonts.gstatic.com) geladen. Dabei baut der Browser eine Verbindung zu Servern von Google auf. Hierbei wird insbesondere die IP-Adresse technisch übertragen; je nach Verarbeitung können weitere Verbindungsinformationen anfallen.</p>
-    <p data-i18n="legal.privacy.fonts.p2">Die Einbindung dient einem einheitlichen Erscheinungsbild. [Vor produktiver Veröffentlichung ist die datenschutzrechtliche Zulässigkeit zu klären. Empfehlung: Schriftarten mit geprüfter Lizenz lokal hosten, sodass beim Seitenaufruf keine Verbindung zu Google Fonts erforderlich ist. Danach diesen Abschnitt anpassen.]</p>
+    <p data-i18n="legal.privacy.fonts.p2">Die Einbindung dient einem einheitlichen Erscheinungsbild.</p>
     <p class="source"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" data-i18n="legal.privacy.fonts.link1">Google privacy policy</a></p>
   </section>
   <section id="cookies" aria-labelledby="cookies-heading">
     <h2 id="cookies-heading" data-i18n="legal.privacy.cookies.heading">Cookies, Endgerätezugriffe und Sprachwahl</h2>
     <p data-i18n="legal.privacy.cookies.p1">Die Sprachwahl dieser Website erfolgt über den URL-Parameter ?lang=de beziehungsweise ?lang=en; hierfür ist nach dem aktuellen Website-Code keine Speicherung im Browser erforderlich. Der eigenständige Website-Code enthält derzeit keine eingebundene Analyse- oder Werbetracking-Lösung. Externe Dienste, insbesondere das eingebundene Newsletter-Formular, können unabhängig davon eigene Technologien einsetzen.</p>
-    <p data-i18n="legal.privacy.cookies.p2">Für technisch nicht unbedingt erforderliche Cookies oder vergleichbare Endgerätezugriffe gilt § 25 TDDDG. Soweit hierfür eine Einwilligung erforderlich ist, muss diese vor dem Einsatz eingeholt werden und widerrufbar sein. [Tatsächliche Cookie- und Speicherzugriffe im Browser und gegebenenfalls ein Consent-Management-System einschließlich Widerrufsmöglichkeit prüfen.]</p>
+    <p data-i18n="legal.privacy.cookies.p2">Für technisch nicht unbedingt erforderliche Cookies oder vergleichbare Endgerätezugriffe gilt § 25 TDDDG. Soweit hierfür eine Einwilligung erforderlich ist, muss diese vor dem Einsatz eingeholt werden und widerrufbar sein.</p>
   </section>
   <section id="instagram" aria-labelledby="instagram-heading">
     <h2 id="instagram-heading" data-i18n="legal.privacy.instagram.heading">Verlinkung auf Instagram</h2>
@@ -139,18 +135,18 @@ E-Mail: [E-Mail-Adresse für Datenschutzanfragen]</p>
   <section id="recipients" aria-labelledby="recipients-heading">
     <h2 id="recipients-heading" data-i18n="legal.privacy.recipients.heading">Empfänger und Auftragsverarbeitung</h2>
     <p data-i18n="legal.privacy.recipients.p1">Daten erhalten nur Stellen, die sie für die genannten Zwecke benötigen. Dazu können insbesondere Hosting- und DNS-Anbieter, der Kontaktformular-Dienst Formspree, der Newsletter-Dienst EmailOctopus sowie deren berechtigte Unterauftragnehmer gehören. Dienstleister werden, soweit gesetzlich erforderlich, auf Grundlage von Vereinbarungen zur Auftragsverarbeitung gemäß Art. 28 DSGVO eingesetzt.</p>
-    <p data-i18n="legal.privacy.recipients.p2">[Vor Veröffentlichung Verträge zur Auftragsverarbeitung, Unterauftragnehmer und konkrete Empfängerkategorien bei allen verwendeten Anbietern prüfen.]</p>
+    
   </section>
   <section id="transfers" aria-labelledby="transfers-heading">
     <h2 id="transfers-heading" data-i18n="legal.privacy.transfers.heading">Datenübermittlung in Drittländer</h2>
     <p data-i18n="legal.privacy.transfers.p1">Bei der Nutzung von Netlify, Formspree, EmailOctopus und Google können personenbezogene Daten auch außerhalb des Europäischen Wirtschaftsraums verarbeitet werden, insbesondere in den USA und im Vereinigten Königreich. Für das Vereinigte Königreich besteht ein Angemessenheitsbeschluss der Europäischen Kommission. Für Datenübermittlungen an entsprechend zertifizierte US-Unternehmen kann das EU-US Data Privacy Framework herangezogen werden. Andernfalls kommen geeignete Garantien wie EU-Standardvertragsklauseln in Betracht.</p>
-    <p data-i18n="legal.privacy.transfers.p2">[Für jeden konkret eingesetzten Anbieter Zertifizierungsstatus, vertragliche Garantien und gegebenenfalls ergänzende Maßnahmen prüfen; keine pauschale Absicherung unterstellen.]</p>
+    
     <p class="source"><a href="https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en" target="_blank" rel="noopener noreferrer" data-i18n="legal.privacy.transfers.link1">European Commission adequacy decisions</a></p>
   </section>
   <section id="retention" aria-labelledby="retention-heading">
     <h2 id="retention-heading" data-i18n="legal.privacy.retention.heading">Speicherdauer und Löschung</h2>
     <p data-i18n="legal.privacy.retention.p1">Wir speichern personenbezogene Daten nur so lange, wie es für die jeweils beschriebenen Zwecke erforderlich ist oder gesetzliche Aufbewahrungspflichten beziehungsweise die Sicherung von Rechtsansprüchen bestehen. Kontaktanfragen werden nach Abschluss der Bearbeitung und Ablauf etwaiger Pflichten gelöscht. Newsletterdaten bleiben grundsätzlich bis zur Abmeldung im aktiven Verteiler.</p>
-    <p data-i18n="legal.privacy.retention.p2">Bei technischen Protokollen, Drittanbieter-Daten und Nachweisen über Einwilligungen gelten die jeweils festgelegten beziehungsweise gesetzlichen Fristen. [Anbieterfristen, tatsächliche Löschroutinen und erforderliche Fristen für Geschäftskorrespondenz konkret ergänzen.]</p>
+    <p data-i18n="legal.privacy.retention.p2">Bei technischen Protokollen, Drittanbieter-Daten und Nachweisen über Einwilligungen gelten die jeweils festgelegten beziehungsweise gesetzlichen Fristen.</p>
   </section>
   <section id="rights" aria-labelledby="rights-heading">
     <h2 id="rights-heading" data-i18n="legal.privacy.rights.heading">Deine Rechte</h2>
@@ -159,11 +155,15 @@ E-Mail: [E-Mail-Adresse für Datenschutzanfragen]</p>
   </section>
   <section id="complaint" aria-labelledby="complaint-heading">
     <h2 id="complaint-heading" data-i18n="legal.privacy.complaint.heading">Beschwerderecht</h2>
-    <p data-i18n="legal.privacy.complaint.p1">Du hast gemäß Art. 77 DSGVO das Recht, dich bei einer Datenschutzaufsichtsbehörde zu beschweren, insbesondere an deinem gewöhnlichen Aufenthaltsort, deinem Arbeitsplatz oder dem Ort des mutmaßlichen Verstoßes. [Zuständige Landesdatenschutzaufsichtsbehörde nach dem tatsächlichen Unternehmenssitz ergänzen.]</p>
+    <p data-i18n="legal.privacy.complaint.p1">Du hast gemäß Art. 77 DSGVO das Recht, dich bei einer Datenschutzaufsichtsbehörde zu beschweren, insbesondere an deinem gewöhnlichen Aufenthaltsort, deinem Arbeitsplatz oder dem Ort des mutmaßlichen Verstoßes. Zuständige Aufsichtsbehörde in Sachsen ist die Sächsische Datenschutz- und Transparenzbeauftragte:
+Maternistraße 17
+01067 Dresden
+E-Mail: post@sdtb.sachsen.de
+www.datenschutz.sachsen.de</p>
   </section>
   <section id="security" aria-labelledby="security-heading">
     <h2 id="security-heading" data-i18n="legal.privacy.security.heading">Verschlüsselung und Datensicherheit</h2>
-    <p data-i18n="legal.privacy.security.p1">Die Website soll über eine verschlüsselte HTTPS-Verbindung bereitgestellt werden. Ein Schloss-Symbol im Browser zeigt an, dass die Verbindung verschlüsselt ist. Zusätzlich werden angemessene technische und organisatorische Maßnahmen zum Schutz personenbezogener Daten eingesetzt. Ein absoluter Schutz bei Datenübertragungen im Internet kann nicht garantiert werden.</p>
+    <p data-i18n="legal.privacy.security.p1">Die Website wird über eine verschlüsselte HTTPS-Verbindung bereitgestellt. Zusätzlich setzen wir angemessene technische und organisatorische Maßnahmen zum Schutz personenbezogener Daten ein. Ein absoluter Schutz bei Datenübertragungen im Internet kann nicht garantiert werden.</p>
   </section>
   <section id="automation" aria-labelledby="automation-heading">
     <h2 id="automation-heading" data-i18n="legal.privacy.automation.heading">Automatisierte Entscheidungen</h2>
