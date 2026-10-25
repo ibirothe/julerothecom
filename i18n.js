@@ -1,30 +1,44 @@
 const fallbackLanguage = "de";
 const languages = new Set(["de", "en"]);
-const queryLanguage = new URLSearchParams(window.location.search).get("lang");
-const requestedLanguage = languages.has(queryLanguage) ? queryLanguage : fallbackLanguage;
+const params = new URLSearchParams(window.location.search);
+const queryLanguage = params.get("lang");
+const pathIsEnglish = /\/en\/(?:index\.html|impressum\.html|datenschutz\.html)?$/.test(window.location.pathname);
+const pageLanguage = pathIsEnglish ? "en" : fallbackLanguage;
+const currentFilename = window.location.pathname.split("/").pop();
+const pageFilename = !currentFilename || currentFilename === "index.html" ? "" : currentFilename;
+const siteRoot = new URL(pathIsEnglish ? "../" : "./", window.location.href);
+
+function pageUrl(language) {
+  return new URL((language === "en" ? "en/" : "") + pageFilename, siteRoot);
+}
+
+// Backward compatibility for links that used ?lang=de or ?lang=en.
+if (languages.has(queryLanguage) && queryLanguage !== pageLanguage) {
+  const target = pageUrl(queryLanguage);
+  for (const [key, value] of params) if (key !== "lang") target.searchParams.append(key, value);
+  target.hash = window.location.hash;
+  window.location.replace(target.href);
+}
 
 async function loadDictionary(language) {
-  const response = await fetch(new URL(`./locales/${language}.json`, import.meta.url));
-  if (!response.ok) throw new Error(`Translation load failed: ${language}`);
+  const response = await fetch(new URL("./locales/" + language + ".json", import.meta.url));
+  if (!response.ok) throw new Error("Translation load failed: " + language);
   return response.json();
 }
 
 async function initializeI18n() {
   let base = {};
   let translated = {};
-  let language = fallbackLanguage;
+  let language = pageLanguage;
   try {
     base = await loadDictionary(fallbackLanguage);
-    if (requestedLanguage !== fallbackLanguage) {
-      translated = await loadDictionary(requestedLanguage);
-      language = requestedLanguage;
-    }
+    if (pageLanguage !== fallbackLanguage) translated = await loadDictionary(pageLanguage);
   } catch (error) {
-    console.warn("Translation files unavailable. Falling back to German.", error);
-    language = fallbackLanguage;
+    console.warn("Translation files unavailable. Keeping pre-rendered page text.", error);
+    // Build output already contains localized text in the original HTML.
   }
   const dictionary = { ...base, ...translated };
-  const t = (key) => dictionary[key] ?? base[key] ?? key;
+  const t = key => dictionary[key] ?? base[key] ?? key;
   document.documentElement.lang = language;
 
   for (const element of document.querySelectorAll("[data-i18n]")) {
@@ -32,13 +46,13 @@ async function initializeI18n() {
     if (text !== element.dataset.i18n) element.textContent = text;
   }
   const attributes = {
-    "data-i18n-placeholder":"placeholder",
-    "data-i18n-aria-label":"aria-label",
-    "data-i18n-content":"content",
-    "data-i18n-title":"title"
+    "data-i18n-placeholder": "placeholder",
+    "data-i18n-aria-label": "aria-label",
+    "data-i18n-content": "content",
+    "data-i18n-title": "title"
   };
   for (const [dataAttribute, attribute] of Object.entries(attributes)) {
-    for (const element of document.querySelectorAll(`[${dataAttribute}]`)) {
+    for (const element of document.querySelectorAll("[" + dataAttribute + "]")) {
       const key = element.getAttribute(dataAttribute);
       const text = t(key);
       if (text !== key) element.setAttribute(attribute, text);
@@ -46,24 +60,22 @@ async function initializeI18n() {
   }
   document.title = t(document.body.dataset.pageTitle || "page.title");
 
-  // Carry ?lang= through links to the legal pages and back.
+  // Links to legal pages retain their current language.
   for (const anchor of document.querySelectorAll("a[data-localized-link]")) {
     const target = new URL(anchor.getAttribute("href"), window.location.href);
-    target.searchParams.set("lang", language);
+    target.searchParams.delete("lang");
     anchor.href = target.href;
   }
 
-  // Language links preserve the current path, other query parameters and hash.
+  // Language switching preserves the page, extra query parameters and the fragment.
   for (const anchor of document.querySelectorAll("[data-lang-switch]")) {
-    const targetLanguage = anchor.dataset.langSwitch;
-    const target = new URL(window.location.href);
-    target.searchParams.set("lang", targetLanguage);
+    const nextLanguage = anchor.dataset.langSwitch;
+    const target = pageUrl(nextLanguage);
+    for (const [key, value] of params) if (key !== "lang") target.searchParams.append(key, value);
+    target.hash = window.location.hash;
     anchor.href = target.href;
-    if (targetLanguage === language) {
-      anchor.setAttribute("aria-current", "true");
-    } else {
-      anchor.removeAttribute("aria-current");
-    }
+    if (nextLanguage === language) anchor.setAttribute("aria-current", "true");
+    else anchor.removeAttribute("aria-current");
   }
   return { language, t };
 }

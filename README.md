@@ -215,3 +215,9 @@ Die Startseite hat diese feste Abschnitts- und Navigationsreihenfolge:
 Der frühere Bereich **Über Jule** und das separate Lorem-Ipsum-Hinweisband wurden entfernt. Newsletter ist jetzt ein eigenständiger, responsiver Abschnitt. Die FAQ bleibt als letztes Element auf der Startseite erhalten. Die Haupt- und Footernavigation bieten in DE und EN dieselben sechs Abschnitte an; DE/EN steht zusätzlich als Sprachumschalter im Menü.
 
 `node scripts/check-layout.mjs` validiert Navigation und Abschnittsreihenfolge bei jedem GitHub-Actions-Build.
+
+## SEO und statische Sprachversionen
+
+`node scripts/build.mjs` erzeugt in `dist/` die deutschen Seiten `/`, `/impressum.html` und `/datenschutz.html` sowie die englischen Versionen unter `/en/`. Titel, Meta-Beschreibungen, sichtbare Übersetzungen und die Galerie werden für Suchmaschinen direkt in das HTML geschrieben. Der Build erzeugt außerdem `robots.txt` und `sitemap.xml` mit kanonischen URLs auf `https://julerothe.com/`, hreflang-Tags, Open-Graph-Metadaten und strukturierte Person-Daten. Die JS-Sprachumschaltung bleibt erhalten; frühere `?lang=`-Links werden weiterhin unterstützt.
+
+Der automatische Test `node scripts/check-seo.mjs` läuft im GitHub-Actions-Workflow nach dem Build. Netlify verwendet über `netlify.toml` denselben `dist/`-Build. Für die Vorschau lokal: `node scripts/build.mjs`, danach `python3 -m http.server --directory dist 8000` und `http://localhost:8000/` beziehungsweise `/en/` öffnen. Die Basis-URL in Metadaten bleibt dabei bewusst auf die Produktionsdomain eingestellt.

@@ -1,6 +1,6 @@
 {
-  "page.title": "Jule Rothe — Electric Avenue",
-  "page.description": "Jule Rothe – Electric Avenue. Portfolio, newsletter and contact.",
+  "page.title": "Jule Rothe | Tattoo Artist in Leipzig – Electric Avenue",
+  "page.description": "Custom tattoos by Jule Rothe at Electric Avenue in Leipzig. Explore floral and ornamental tattoo work and get in touch about your idea.",
   "skip": "Skip to content",
   "brand.home": "Jule Rothe – Home",
   "menu.open": "Open menu",
@@ -132,5 +132,6 @@
   "legal.privacy.automation.heading": "Automated decision-making",
   "legal.privacy.automation.p1": "According to the current website functionality, no decisions are made solely by automated processing that produce legal effects or similarly significantly affect you (Article 22 GDPR).",
   "legal.privacy.updates.heading": "Updates to this notice",
-  "legal.privacy.updates.p1": "We update this privacy notice if legal requirements, services or data processing activities change. The version published on this website applies."
+  "legal.privacy.updates.p1": "We update this privacy notice if legal requirements, services or data processing activities change. The version published on this website applies.",
+  "legal.imprint.metaDescription": "Legal notice for Jule Rothe at Electric Avenue in Leipzig: responsible person and contact information."
 }
