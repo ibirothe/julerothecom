@@ -31,7 +31,7 @@ for (const route of routes) {
   }
   if (route.lang === "en") {
     assert.ok(html.includes('src="../i18n.js"') || html.includes('src="../main.js"'), "English asset prefix " + route.file);
-    assert.ok(html.includes('href="../" data-lang-switch="de"'), "German switch " + route.file);
+    assert.ok(html.includes('href="../' + (route.file === "en/index.html" ? "" : route.file.slice(3)) + '" data-lang-switch="de"'), "German switch " + route.file);
   } else {
     assert.ok(html.includes('href="./en/' + (route.file === "index.html" ? "" : route.file) + '" data-lang-switch="en"'), "English switch " + route.file);
   }
