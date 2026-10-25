@@ -13,9 +13,9 @@
   "language.label": "Sprache wählen",
   "language.de": "Deutsch",
   "language.en": "Englisch",
-  "hero.kicker": "Lorem ipsum dolor sit amet",
-  "hero.title": "Consectetur\nadipiscing elit.",
-  "hero.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "hero.kicker": "Leipzig-Connewitz · seit 2015",
+  "hero.title": "Tattoos mit Haltung",
+  "hero.description": "Mich interessiert nicht, wie ein Körper aussehen sollte, sondern was Menschen mit ihm ausdrücken möchten. Female Empowerment, Body Positivity und ein respektvoller Safe Space sind deshalb für mich selbstverständliche Bestandteile des Tätowierens.",
   "hero.placeholder.aria": "Platzhalter für das Titelbild",
   "hero.placeholder.title": "Titelbild",
   "works.kicker": "Portfolio",
@@ -133,5 +133,6 @@
   "legal.privacy.automation.p1": "Auf dieser Website werden nach dem aktuellen Funktionsumfang keine Entscheidungen getroffen, die ausschließlich auf einer automatisierten Verarbeitung beruhen und dir gegenüber rechtliche Wirkung entfalten oder dich in ähnlicher Weise erheblich beeinträchtigen (Art. 22 DSGVO).",
   "legal.privacy.updates.heading": "Änderungen dieser Erklärung",
   "legal.privacy.updates.p1": "Wir passen diese Datenschutzerklärung an, wenn sich rechtliche Anforderungen oder die eingesetzten Dienste und Verarbeitungen ändern. Es gilt die jeweils auf dieser Website veröffentlichte Fassung.",
-  "legal.imprint.metaDescription": "Impressum von Jule Rothe bei Electric Avenue in Leipzig: Verantwortliche Person und Kontakt."
+  "legal.imprint.metaDescription": "Impressum von Jule Rothe bei Electric Avenue in Leipzig: Verantwortliche Person und Kontakt.",
+  "hero.description2": "Mein Schwerpunkt liegt auf kreativen, ausdrucksstarken Tattoos mit floralen und ornamentalen Elementen."
 }

@@ -13,9 +13,9 @@
   "language.label": "Select language",
   "language.de": "German",
   "language.en": "English",
-  "hero.kicker": "Lorem ipsum dolor sit amet",
-  "hero.title": "Consectetur\nadipiscing elit.",
-  "hero.description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "hero.kicker": "Leipzig-Connewitz · since 2015",
+  "hero.title": "Tattoos with conviction",
+  "hero.description": "I'm not interested in how a body is supposed to look, but in what people want to express through it. Female empowerment, body positivity and a respectful safe space are therefore natural parts of how I approach tattooing.",
   "hero.placeholder.aria": "Placeholder for the hero image",
   "hero.placeholder.title": "Hero image",
   "works.kicker": "Portfolio",
@@ -133,5 +133,6 @@
   "legal.privacy.automation.p1": "According to the current website functionality, no decisions are made solely by automated processing that produce legal effects or similarly significantly affect you (Article 22 GDPR).",
   "legal.privacy.updates.heading": "Updates to this notice",
   "legal.privacy.updates.p1": "We update this privacy notice if legal requirements, services or data processing activities change. The version published on this website applies.",
-  "legal.imprint.metaDescription": "Legal notice for Jule Rothe at Electric Avenue in Leipzig: responsible person and contact information."
+  "legal.imprint.metaDescription": "Legal notice for Jule Rothe at Electric Avenue in Leipzig: responsible person and contact information.",
+  "hero.description2": "I focus on creative, expressive tattoos with floral and ornamental elements."
 }

@@ -34,6 +34,7 @@ h2{font-size:clamp(2.4rem,3.15vw,4.5rem);margin-bottom:22px}
 .hero-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr);gap:clamp(36px,5.6vw,85px);align-items:center}
 .hero-copy{max-width:620px;padding:15px 0}
 .hero-description{max-width:510px;font:400 17px/1.7 var(--serif);color:var(--text);margin:0}
+.hero-description+.hero-description{margin-top:16px}
 .media-placeholder{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;color:#d8d8d8;background:linear-gradient(125deg,#515352,#676767);border:1px solid #777674}
 .hero-media{min-height:340px;aspect-ratio:1.72}
 .placeholder-icon{font:300 35px/1 var(--sans);opacity:.7}
