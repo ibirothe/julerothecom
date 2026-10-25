@@ -1,58 +1,156 @@
 {
-  "2026-10-24-test-tattoo.webp": {
+  "2026-10-25-11-florales-rueckenornament.avif": {
     "title": {
-      "de": "Testarbeit 01",
-      "en": "Test work 01"
+      "de": "Florales Rückenornament",
+      "en": "Floral back ornament"
     },
     "alt": {
-      "de": "Ornamentales Tattoo von Hals bis Brust, umgeben von floralen Tattoo-Motiven auf Schultern und Armen",
-      "en": "Ornamental tattoo extending from the neck to the chest, surrounded by floral tattoos across the shoulders and arms"
+      "de": "Blüten und filigranes Blackwork-Ornament auf Rücken und Hüften.",
+      "en": "Floral blackwork with a delicate central ornamental panel across the back and hips."
+    },
+    "category": {
+      "de": "Floral & Ornamental",
+      "en": "Floral & Ornamental"
+    }
+  },
+  "2026-10-25-06-mandala-rueckentattoo.avif": {
+    "title": {
+      "de": "Mandala und florales Blackwork",
+      "en": "Mandala and floral blackwork"
+    },
+    "alt": {
+      "de": "Großflächiges Rückentattoo mit Mandala, Blüten und symmetrischer Linienführung.",
+      "en": "Large back tattoo featuring a mandala, flowers and symmetrical linework."
     },
     "category": {
       "de": "Ornamental",
       "en": "Ornamental"
     }
   },
-  "2026-10-25-03-floral-backpiece.avif": {
+  "2026-10-25-04-ornament-rotes-kleid.avif": {
     "title": {
-      "de": "Florales Rücken-Tattoo",
-      "en": "Floral back tattoo"
+      "de": "Ornamentales Rückenstück",
+      "en": "Ornamental backpiece"
     },
     "alt": {
-      "de": "Großflächiges florales Blackwork mit symmetrischem Ornament und Blumenmotiven auf Rücken und Hüfte.",
-      "en": "Large-scale floral blackwork tattoo with a symmetrical ornament and flowers across the back and hip."
+      "de": "Schwarz gestochenes florales Rückenornament mit großer zentraler Schmuckform.",
+      "en": "Blackwork floral backpiece with a large central ornamental motif."
     },
     "category": {
       "de": "Floral Blackwork",
-      "en": "Floral blackwork"
+      "en": "Floral Blackwork"
     }
   },
-  "2026-10-25-02-botanical-moth.avif": {
+  "2026-10-25-07-blumen-und-ornamente.avif": {
     "title": {
-      "de": "Botanisches Motten-Tattoo",
-      "en": "Botanical moth tattoo"
+      "de": "Florales Rückenmotiv",
+      "en": "Floral back tattoo"
     },
     "alt": {
-      "de": "Fein ausgearbeitetes Motten-Tattoo mit Sonnen- und Mondsymbolen zwischen Blüten, Blättern und Beeren auf einem Unterarm.",
-      "en": "Detailed moth tattoo with sun and moon motifs surrounded by flowers, leaves and berries on a forearm."
+      "de": "Florale Blackwork-Tätowierung auf Rücken und Schulter neben einem Blumenstrauß.",
+      "en": "Floral blackwork tattoo on the back and shoulder next to a bouquet."
+    },
+    "category": {
+      "de": "Floral",
+      "en": "Floral"
+    }
+  },
+  "2026-10-25-08-floraler-ruecken-fenster.avif": {
+    "title": {
+      "de": "Florales Rückentattoo",
+      "en": "Floral back tattoo"
+    },
+    "alt": {
+      "de": "Großflächiges florales Rückentattoo mit symmetrischem Ornament vor einem hellen Fenster.",
+      "en": "Large floral back tattoo with a symmetrical ornamental centre, photographed in front of a bright window."
+    },
+    "category": {
+      "de": "Floral & Ornamental",
+      "en": "Floral & Ornamental"
+    }
+  },
+  "2026-10-25-05-symmetrisches-rueckenornament.avif": {
+    "title": {
+      "de": "Symmetrisches Rückenornament",
+      "en": "Symmetrical back ornament"
+    },
+    "alt": {
+      "de": "Schwarzweißaufnahme eines ornamentalen Rückentattoos mit Blüten und symmetrischen Linien.",
+      "en": "Black and white photograph of an ornamental back tattoo with flowers and symmetrical linework."
+    },
+    "category": {
+      "de": "Ornamental",
+      "en": "Ornamental"
+    }
+  },
+  "2026-10-25-03-ornamental-blackwork-sitzend.avif": {
+    "title": {
+      "de": "Ornamental Blackwork",
+      "en": "Ornamental blackwork"
+    },
+    "alt": {
+      "de": "Schwarzweißaufnahme einer sitzenden Person mit großflächigem floralem Tattoo auf Rücken und Hüfte.",
+      "en": "Black-and-white photo showing floral tattoo work across the back and hip of a seated person."
+    },
+    "category": {
+      "de": "Ornamental Blackwork",
+      "en": "Ornamental Blackwork"
+    }
+  },
+  "2026-10-25-02-floraler-arm.avif": {
+    "title": {
+      "de": "Florales Arm-Tattoo",
+      "en": "Floral arm tattoo"
+    },
+    "alt": {
+      "de": "Florale Linienarbeit mit Blüten und Ornamenten über Schulter, Oberarm und Unterarm.",
+      "en": "Floral linework with blossoms and ornamentation across shoulder, upper arm and forearm."
+    },
+    "category": {
+      "de": "Floral",
+      "en": "Floral"
+    }
+  },
+  "2026-10-25-09-blumen-und-vase.avif": {
+    "title": {
+      "de": "Blumen und ornamentale Vase",
+      "en": "Flowers and ornamental vase"
+    },
+    "alt": {
+      "de": "Blackwork-Tätowierung mit Blüten, Blättern und dekorativer Vase auf dem Unterarm.",
+      "en": "Blackwork tattoo showing flowers, leaves and a decorative vase on the forearm."
     },
     "category": {
       "de": "Botanical",
       "en": "Botanical"
     }
   },
-  "2026-10-25-01-ornamental-leg.avif": {
+  "2026-10-25-10-ornamentale-brust.avif": {
     "title": {
-      "de": "Ornamentales Bein-Tattoo",
-      "en": "Ornamental leg tattoo"
+      "de": "Ornamentales Dekolleté",
+      "en": "Ornamental chest tattoo"
     },
     "alt": {
-      "de": "Großflächiges ornamentales Bein-Tattoo mit floralen Mandalaformen, schwungvollen Linien und Dotwork.",
-      "en": "Large ornamental leg tattoo with floral mandala shapes, flowing linework and dotwork."
+      "de": "Symmetrisches ornamentales Tattoo über Hals und Dekolleté zwischen floralen Motiven.",
+      "en": "Symmetrical ornamental neck and chest tattoo framed by floral motifs."
     },
     "category": {
       "de": "Ornamental",
       "en": "Ornamental"
+    }
+  },
+  "2026-10-25-01-beinornamente.avif": {
+    "title": {
+      "de": "Florale Beinornamente",
+      "en": "Floral leg ornaments"
+    },
+    "alt": {
+      "de": "Zwei großflächige florale Blackwork-Motive mit dekorativen Linien auf den Beinen.",
+      "en": "Two large-scale floral blackwork tattoos with ornamental linework on the legs."
+    },
+    "category": {
+      "de": "Ornamental Blackwork",
+      "en": "Ornamental Blackwork"
     }
   }
 }
