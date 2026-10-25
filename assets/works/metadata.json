@@ -11,7 +11,8 @@
     "category": {
       "de": "Floral & Ornamental",
       "en": "Floral & Ornamental"
-    }
+    },
+    "order": 6
   },
   "2026-10-25-06-mandala-rueckentattoo.avif": {
     "title": {
@@ -25,7 +26,8 @@
     "category": {
       "de": "Ornamental",
       "en": "Ornamental"
-    }
+    },
+    "order": 7
   },
   "2026-10-25-04-ornament-rotes-kleid.avif": {
     "title": {
@@ -39,7 +41,8 @@
     "category": {
       "de": "Floral Blackwork",
       "en": "Floral Blackwork"
-    }
+    },
+    "order": 11
   },
   "2026-10-25-07-blumen-und-ornamente.avif": {
     "title": {
@@ -53,7 +56,8 @@
     "category": {
       "de": "Floral",
       "en": "Floral"
-    }
+    },
+    "order": 9
   },
   "2026-10-25-08-floraler-ruecken-fenster.avif": {
     "title": {
@@ -67,7 +71,8 @@
     "category": {
       "de": "Floral & Ornamental",
       "en": "Floral & Ornamental"
-    }
+    },
+    "order": 10
   },
   "2026-10-25-05-symmetrisches-rueckenornament.avif": {
     "title": {
@@ -81,7 +86,8 @@
     "category": {
       "de": "Ornamental",
       "en": "Ornamental"
-    }
+    },
+    "order": 8
   },
   "2026-10-25-03-ornamental-blackwork-sitzend.avif": {
     "title": {
@@ -95,7 +101,8 @@
     "category": {
       "de": "Ornamental Blackwork",
       "en": "Ornamental Blackwork"
-    }
+    },
+    "order": 4
   },
   "2026-10-25-02-floraler-arm.avif": {
     "title": {
@@ -109,7 +116,8 @@
     "category": {
       "de": "Floral",
       "en": "Floral"
-    }
+    },
+    "order": 5
   },
   "2026-10-25-09-blumen-und-vase.avif": {
     "title": {
@@ -123,7 +131,8 @@
     "category": {
       "de": "Botanical",
       "en": "Botanical"
-    }
+    },
+    "order": 3
   },
   "2026-10-25-10-ornamentale-brust.avif": {
     "title": {
@@ -137,7 +146,8 @@
     "category": {
       "de": "Ornamental",
       "en": "Ornamental"
-    }
+    },
+    "order": 2
   },
   "2026-10-25-01-beinornamente.avif": {
     "title": {
@@ -151,6 +161,7 @@
     "category": {
       "de": "Ornamental Blackwork",
       "en": "Ornamental Blackwork"
-    }
+    },
+    "order": 1
   }
 }

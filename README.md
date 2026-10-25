@@ -19,7 +19,7 @@ Danach im Browser `http://localhost:8000` öffnen. Alternativ kann `dist` auf ei
 2. Neue JPG-, JPEG-, PNG-, WEBP-, AVIF- oder GIF-Dateien hochladen (z. B. über **Add file → Upload files**).
 3. Die Änderung nach `main` committen. GitHub Actions baut `dist/gallery.json` automatisch neu und veröffentlicht die Website. Neue Bilder erscheinen ohne Codeänderungen in der Galerie.
 
-Die Sortierung erfolgt absteigend nach Dateiname. Für aktuelle Arbeiten empfiehlt sich z. B. `2026-10-24-tattoo-01.webp`. Für gute Ladezeiten Fotos vor dem Upload auf ca. 1200–1800 px Kantenlänge und möglichst unter 500 KB pro Bild optimieren.
+Die Sortierung erfolgt aufsteigend anhand des optionalen Felds `order` in `assets/works/metadata.json` (Dateien ohne `order` folgen danach, absteigend nach Dateiname). Für aktuelle Arbeiten empfiehlt sich z. B. `2026-10-24-tattoo-01.webp`. Für gute Ladezeiten Fotos vor dem Upload auf ca. 1200–1800 px Kantenlänge und möglichst unter 500 KB pro Bild optimieren.
 
 **Optional:** In `assets/works/metadata.json` können Titel und Bildbeschreibungen gepflegt werden:
 

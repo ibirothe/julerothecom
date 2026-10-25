@@ -40,7 +40,10 @@ try {
 const filenames = (await readdir(worksDir, { withFileTypes: true }))
   .filter(entry => entry.isFile() && allowedExtensions.has(path.extname(entry.name).toLowerCase()))
   .map(entry => entry.name)
-  .sort((a, b) => b.localeCompare(a, "de"));
+  .sort((a, b) => {
+    const rank = name => Number.isFinite(metadata[name]?.order) ? metadata[name].order : Number.MAX_SAFE_INTEGER;
+    return rank(a) - rank(b) || b.localeCompare(a, "de");
+  });
 
 const translatedField = (value, fallback = "") => {
   if (typeof value === "string") return value;

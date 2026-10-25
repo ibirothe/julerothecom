@@ -37,8 +37,21 @@ for (const route of routes) {
   }
 }
 assert.ok(xml.match(/<loc>/g)?.length === routes.length, "Sitemap page count");
+const requestedOrder = [1, 10, 9, 3, 2, 11, 6, 5, 7, 8, 4];
+const gallery = JSON.parse(await read("gallery.json"));
+const imageNumbers = gallery.works.map(work => {
+  const match = work.src.match(/\d{4}-\d{2}-\d{2}-(\d{2})-/);
+  assert.ok(match, "Unexpected gallery filename " + work.src);
+  return Number(match[1]);
+});
+assert.deepEqual(imageNumbers, requestedOrder, "Gallery must follow the specified order");
 const de = await read("index.html");
 const en = await read("en/index.html");
+const staticWorks = (markup, prefix) => [...markup.matchAll(new RegExp('<img src="' + prefix + 'assets/works/([^"]+)"', "g"))].map(match => match[1]);
+const firstFour = gallery.works.slice(0, 4).map(work => work.src.slice("./assets/works/".length));
+assert.deepEqual(staticWorks(de, "./"), firstFour, "German pre-rendered gallery order must match gallery.json");
+assert.deepEqual(staticWorks(en, "../"), firstFour, "English pre-rendered gallery order must match gallery.json");
+
 assert.ok(de.includes("Meine Arbeiten") && en.includes("My Work"), "Pre-rendering localized content");
 assert.ok(de.includes("Deine Fragen, Ideen und Anfragen") && en.includes("Your Questions, Ideas and Enquiries"), "Content translations");
 assert.ok(en.includes('src="../main.js"'), "EN scripts");
