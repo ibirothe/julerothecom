@@ -84,8 +84,9 @@
   "faq.empty": "There are no questions available yet.",
   "faq.error": "The questions could not be loaded.",
   "testimonials.kicker": "Testimonials",
-  "testimonials.title": "Lorem ipsum dolor sit amet.",
+  "testimonials.title": "What my clients say",
   "testimonials.demo": "Design preview · not a real customer review",
   "navigation.testimonials": "Testimonials",
-  "works.newsletter": "If you're curious about what I'm working on, my monthly newsletter will give you regular glimpses into my latest projects."
+  "works.newsletter": "If you're curious about what I'm working on, my monthly newsletter will give you regular glimpses into my latest projects.",
+  "testimonials.description": "The process of creating a tattoo is just as important as its design and execution. That's why I'd like to give some of my clients a voice here, to share what pictures alone can't show."
 }

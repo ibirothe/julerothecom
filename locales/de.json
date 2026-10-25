@@ -84,8 +84,9 @@
   "faq.empty": "Aktuell sind keine Fragen hinterlegt.",
   "faq.error": "Die Fragen konnten nicht geladen werden.",
   "testimonials.kicker": "Kundenstimmen",
-  "testimonials.title": "Lorem ipsum dolor sit amet.",
+  "testimonials.title": "Was meine Kundinnen sagen",
   "testimonials.demo": "Designbeispiel · keine echte Kundenstimme",
   "navigation.testimonials": "Kundenstimmen",
-  "works.newsletter": "Wenn du neugierig bist, woran ich gerade arbeite, bekommst du in meinem monatlichen Newsletter regelmäßig neue Einblicke in meine Projekte."
+  "works.newsletter": "Wenn du neugierig bist, woran ich gerade arbeite, bekommst du in meinem monatlichen Newsletter regelmäßig neue Einblicke in meine Projekte.",
+  "testimonials.description": "Der Entstehungsprozess einer Tätowierung ist genauso wichtig wie ihr Entwurf und ihre Umsetzung. Darum möchte ich hier einige meiner Kundinnen zu Wort kommen lassen, um das zu erzählen, was Bilder allein nicht zeigen können."
 }
