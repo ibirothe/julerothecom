@@ -1,3 +1,7 @@
 [build]
 command = "node scripts/build.mjs"
 publish = "dist"
+
+# Temporarily skip all Git-triggered Netlify builds; GitHub Pages remains the deployment target.
+# To enable Netlify again, remove this ignore directive and reactivate builds in Netlify.
+ignore = "exit 0"
