@@ -37,14 +37,22 @@ for (const route of routes) {
   }
 }
 assert.ok(xml.match(/<loc>/g)?.length === routes.length, "Sitemap page count");
-const requestedOrder = [1, 10, 9, 3, 2, 11, 6, 5, 7, 8, 4];
+const expectedImageNames = [
+  "2026-10-25-11-florales-rueckenornament.avif",
+  "2026-10-25-10-ornamentale-brust.avif",
+  "2026-10-25-09-blumen-und-vase.avif",
+  "2026-10-25-04-ornament-rotes-kleid.avif",
+  "2026-10-25-06-mandala-rueckentattoo.avif",
+  "2026-10-25-01-beinornamente.avif",
+  "2026-10-25-05-symmetrisches-rueckenornament.avif",
+  "2026-10-25-08-floraler-ruecken-fenster.avif",
+  "2026-10-25-03-ornamental-blackwork-sitzend.avif",
+  "2026-10-25-02-floraler-arm.avif",
+  "2026-10-25-07-blumen-und-ornamente.avif"
+];
 const gallery = JSON.parse(await read("gallery.json"));
-const imageNumbers = gallery.works.map(work => {
-  const match = work.src.match(/\d{4}-\d{2}-\d{2}-(\d{2})-/);
-  assert.ok(match, "Unexpected gallery filename " + work.src);
-  return Number(match[1]);
-});
-assert.deepEqual(imageNumbers, requestedOrder, "Gallery must follow the specified order");
+const actualImageNames = gallery.works.map(work => decodeURIComponent(work.src.slice("./assets/works/".length)));
+assert.deepEqual(actualImageNames, expectedImageNames, "Gallery must follow the user-specified order of uploaded photos");
 const de = await read("index.html");
 const en = await read("en/index.html");
 const staticWorks = (markup, prefix) => [...markup.matchAll(new RegExp('<img src="' + prefix + 'assets/works/([^"]+)"', "g"))].map(match => match[1]);
