@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, access } from "node:fs/promises";
 
 const html = await readFile("index.html", "utf8");
 const order = ["start", "arbeiten", "newsletter", "testimonials", "kontakt", "faq"];
@@ -25,4 +25,8 @@ assert.ok(html.includes('data-form="7ca9f130-cfae-11f1-86da-f5e17363f70f"'), "Em
 assert.ok(html.includes('id="contact-form"'), "Contact form must be kept");
 assert.ok(html.includes('id="faq-list"'), "FAQ content must be kept");
 assert.ok(html.includes('id="testimonials-grid"'), "Testimonials content must be kept");
+assert.ok(html.includes('class="brand brand-header"'), "Header must include the branded lockup");
+assert.ok(html.includes('class="brand-mark" aria-hidden="true"'), "Decorative brand mark must be hidden from screen readers");
+assert.ok(html.includes('class="brand-wordmark"'), "Brand name and subtitle must remain visible");
+await access("assets/brand/jule-mark.svg");
 console.log("Page structure validated: " + order.join(" → "));
