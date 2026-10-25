@@ -57,7 +57,7 @@ const de = await read("index.html");
 const en = await read("en/index.html");
 // Both localized pages must resolve the hero to the same existing root asset.
 const heroSrc = html => {
-  const match = html.match(/<div class="hero-media">[\\s\\S]*?<img[^>]*\\bsrc="([^"]+)"/);
+  const match = html.match(/<div class="hero-media">[\s\S]*?<img[^>]*\bsrc="([^"]+)"/);
   assert.ok(match, "Hero image missing");
   return match[1];
 };
