@@ -12,5 +12,47 @@
       "de": "Ornamental",
       "en": "Ornamental"
     }
+  },
+  "2026-10-25-03-floral-backpiece.avif": {
+    "title": {
+      "de": "Florales Rücken-Tattoo",
+      "en": "Floral back tattoo"
+    },
+    "alt": {
+      "de": "Großflächiges florales Blackwork mit symmetrischem Ornament und Blumenmotiven auf Rücken und Hüfte.",
+      "en": "Large-scale floral blackwork tattoo with a symmetrical ornament and flowers across the back and hip."
+    },
+    "category": {
+      "de": "Floral Blackwork",
+      "en": "Floral blackwork"
+    }
+  },
+  "2026-10-25-02-botanical-moth.avif": {
+    "title": {
+      "de": "Botanisches Motten-Tattoo",
+      "en": "Botanical moth tattoo"
+    },
+    "alt": {
+      "de": "Fein ausgearbeitetes Motten-Tattoo mit Sonnen- und Mondsymbolen zwischen Blüten, Blättern und Beeren auf einem Unterarm.",
+      "en": "Detailed moth tattoo with sun and moon motifs surrounded by flowers, leaves and berries on a forearm."
+    },
+    "category": {
+      "de": "Botanical",
+      "en": "Botanical"
+    }
+  },
+  "2026-10-25-01-ornamental-leg.avif": {
+    "title": {
+      "de": "Ornamentales Bein-Tattoo",
+      "en": "Ornamental leg tattoo"
+    },
+    "alt": {
+      "de": "Großflächiges ornamentales Bein-Tattoo mit floralen Mandalaformen, schwungvollen Linien und Dotwork.",
+      "en": "Large ornamental leg tattoo with floral mandala shapes, flowing linework and dotwork."
+    },
+    "category": {
+      "de": "Ornamental",
+      "en": "Ornamental"
+    }
   }
 }
