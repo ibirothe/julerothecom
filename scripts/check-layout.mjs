@@ -21,7 +21,8 @@ assert.deepEqual(navKeys(nav[1]), expected, "Header navigation order must match 
 assert.deepEqual(navKeys(footer[1]), expected, "Footer navigation order must match requested sections");
 assert.ok(!html.includes('id="ueber"') && !html.includes('href="#ueber"'), "About section must be removed");
 assert.ok(!html.includes('notice-band'), "Notice band must be removed");
-assert.ok(html.includes('data-form="7ca9f130-cfae-11f1-86da-f5e17363f70f"'), "EmailOctopus embed must be kept");
+const newsletterEmbed = html.match(/<script async src="https:\/\/eocampaign1\.com\/form\/([0-9a-f-]+)\.js" data-form="([0-9a-f-]+)"><\/script>/);
+assert.ok(newsletterEmbed && newsletterEmbed[1] === newsletterEmbed[2], "EmailOctopus embed must use a matching script URL and form ID");
 assert.ok(html.includes('id="contact-form"'), "Contact form must be kept");
 assert.ok(html.includes('id="faq-list"'), "FAQ content must be kept");
 assert.ok(html.includes('id="testimonials-grid"'), "Testimonials content must be kept");
