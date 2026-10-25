@@ -55,6 +55,19 @@ const actualImageNames = gallery.works.map(work => decodeURIComponent(work.src.s
 assert.deepEqual(actualImageNames, expectedImageNames, "Gallery must follow the user-specified order of uploaded photos");
 const de = await read("index.html");
 const en = await read("en/index.html");
+// Both localized pages must resolve the hero to the same existing root asset.
+const heroSrc = html => {
+  const match = html.match(/<div class="hero-media">[\\s\\S]*?<img[^>]*\\bsrc="([^"]+)"/);
+  assert.ok(match, "Hero image missing");
+  return match[1];
+};
+const deHero = heroSrc(de);
+const enHero = heroSrc(en);
+assert.ok(deHero.startsWith("./assets/hero/"), "German hero must use root-level assets");
+assert.equal(enHero, "../" + deHero.slice(2), "English hero path must point to shared assets");
+await readFile("dist/" + deHero.slice(2)); // Asset must exist in the production output.
+assert.ok(!en.includes('src="./assets/'), "English images cannot reference /en/assets/");
+assert.ok(!en.includes('href="./assets/'), "English asset links cannot reference /en/assets/");
 const staticWorks = (markup, prefix) => [...markup.matchAll(new RegExp('<img src="' + prefix + 'assets/works/([^"]+)"', "g"))].map(match => match[1]);
 const firstFour = gallery.works.slice(0, 4).map(work => work.src.slice("./assets/works/".length));
 assert.deepEqual(staticWorks(de, "./"), firstFour, "German pre-rendered gallery order must match gallery.json");

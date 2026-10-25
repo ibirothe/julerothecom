@@ -119,6 +119,8 @@ function renderPage(source, lang, page) {
   if (page.name === "home") html = renderGallery(html, lang);
   if (isEnglish) {
     html = html.replace(/((?:src|href)=")\.\/(styles\.css|main\.js|i18n\.js|site-config\.js|favicon\.svg)"/g, '$1../$2"');
+    // English HTML lives in /en/, while images live in the shared /assets/ directory.
+    html = html.replace(/((?:src|href)=")\.\/assets\//g, '$1../assets/');
   }
   // Static language links and local legal links also work without JavaScript.
   html = html.replace(/<a\b[^>]*data-lang-switch="(de|en)"[^>]*>/g, (tag, targetLang) => {
