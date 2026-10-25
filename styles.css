@@ -17,9 +17,6 @@ h2{font-size:clamp(2.4rem,3.15vw,4.5rem);margin-bottom:22px}
 .brand{display:inline-flex;flex-direction:column;align-items:center;flex-shrink:0;line-height:1;text-transform:uppercase;color:var(--gold-light);white-space:nowrap}
 .brand-name{font-family:var(--serif);font-size:31px;line-height:1;letter-spacing:.19em}
 .brand-subtitle{font-size:8px;letter-spacing:.54em;margin-top:7px;color:#c3b5a0}
-.brand-header{flex-direction:row;align-items:center;gap:13px}
-.brand-wordmark{display:flex;flex-direction:column;align-items:center}
-.brand-mark{display:block;flex:none;width:50px;height:55px;background:var(--gold);-webkit-mask:url("./assets/brand/jule-mark.svg") center/contain no-repeat;mask:url("./assets/brand/jule-mark.svg") center/contain no-repeat}
 .site-nav{display:flex;align-items:center;gap:clamp(18px,2.6vw,45px)}
 .nav-link,.footer-nav a,.footer-end a{font-size:10px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
 .nav-link{position:relative;padding:14px 0;color:#ddd9cf;transition:color .2s ease}
@@ -133,7 +130,6 @@ button:disabled{opacity:.7;cursor:wait}
 @media(max-width:1160px){
   .container{width:min(calc(100% - 72px),var(--container))}
   .site-nav{gap:18px}.nav-link{font-size:9px}.brand-name{font-size:27px}
-  .brand-header{gap:10px}.brand-mark{width:42px;height:47px}
   .hero-grid{gap:40px}.hero-media{min-height:290px}
   .works-layout{grid-template-columns:200px 1fr;gap:30px}
   .footer-grid{grid-template-columns:1fr auto}.footer-nav{display:none}
@@ -185,7 +181,6 @@ button:disabled{opacity:.7;cursor:wait}
 @media(max-width:520px){
   .container{width:calc(100% - 36px)}
   .site-header{height:70px}.brand-name{font-size:23px}.brand-subtitle{font-size:7px}
-  .brand-header{gap:9px}.brand-mark{width:35px;height:40px}
   .site-nav{top:70px}
   .hero{padding:44px 0 35px}.hero-copy{padding:0}
   h1{font-size:clamp(3.7rem,14vw,5.2rem)}
