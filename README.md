@@ -20,7 +20,7 @@ Danach im Browser `http://localhost:8000` öffnen. Alternativ kann `dist` auf ei
 3. Die Änderung nach `main` committen. GitHub Actions baut `dist/gallery.json` automatisch neu und veröffentlicht die Website. Neue Bilder erscheinen ohne Codeänderungen in der Galerie.
 
 Die Sortierung erfolgt aufsteigend anhand des optionalen Felds `order` in `assets/works/metadata.json` (Dateien ohne `order` folgen danach, absteigend nach Dateiname).
-Die Bildnummern in Dateinamen entsprechen nicht immer der ursprünglichen Upload-Reihenfolge. Für die aktuelle manuelle Reihenfolge wurden die `order`-Werte in `assets/works/metadata.json` anhand der 11 hochgeladenen Bilder gesetzt (Upload-Bildnummern: 01, 10, 09, 03, 02, 11, 06, 05, 07, 08, 04). Für aktuelle Arbeiten empfiehlt sich z. B. `2026-10-24-tattoo-01.webp`. Für gute Ladezeiten Fotos vor dem Upload auf ca. 1200–1800 px Kantenlänge und möglichst unter 500 KB pro Bild optimieren.
+Die Dateinamen müssen das Motiv nicht beschreiben. Beispielsweise sind `01.avif` oder `jule_rothe_tattoo_electric_avenue_01.avif` geeignet. Die Anzeigereihenfolge steuert `order` in `assets/works/metadata.json`; suchmaschinen- und barrierefreiheitsrelevante Bildbeschreibungen stehen dort in `alt` und `title`. Für gute Ladezeiten Fotos vor dem Upload auf ca. 1200–1800 px Kantenlänge und möglichst unter 500 KB pro Bild optimieren.
 
 **Optional:** In `assets/works/metadata.json` können Titel und Bildbeschreibungen gepflegt werden:
 

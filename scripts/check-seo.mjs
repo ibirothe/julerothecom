@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 
 const domain = "https://julerothe.com/";
 const routes = [
@@ -37,22 +37,28 @@ for (const route of routes) {
   }
 }
 assert.ok(xml.match(/<loc>/g)?.length === routes.length, "Sitemap page count");
-const expectedImageNames = [
-  "2026-10-25-11-florales-rueckenornament.avif",
-  "2026-10-25-10-ornamentale-brust.avif",
-  "2026-10-25-09-blumen-und-vase.avif",
-  "2026-10-25-04-ornament-rotes-kleid.avif",
-  "2026-10-25-06-mandala-rueckentattoo.avif",
-  "2026-10-25-01-beinornamente.avif",
-  "2026-10-25-05-symmetrisches-rueckenornament.avif",
-  "2026-10-25-08-floraler-ruecken-fenster.avif",
-  "2026-10-25-03-ornamental-blackwork-sitzend.avif",
-  "2026-10-25-02-floraler-arm.avif",
-  "2026-10-25-07-blumen-und-ornamente.avif"
-];
+// File names are intentionally independent from image content and can be renamed.
+// The build sorts by metadata.order, with reverse filename sorting as fallback.
+const metadata = JSON.parse(await readFile("assets/works/metadata.json", "utf8"));
+const imageFiles = (await readdir("assets/works"))
+  .filter(name => /\.(?:avif|jpe?g|png|webp|gif)$/i.test(name));
+const rank = name => Number.isFinite(metadata[name]?.order)
+  ? metadata[name].order : Number.MAX_SAFE_INTEGER;
+const expectedImageNames = imageFiles.sort((a, b) => rank(a) - rank(b) || b.localeCompare(a, "de"));
 const gallery = JSON.parse(await read("gallery.json"));
-const actualImageNames = gallery.works.map(work => decodeURIComponent(work.src.slice("./assets/works/".length)));
-assert.deepEqual(actualImageNames, expectedImageNames, "Gallery must follow the user-specified order of uploaded photos");
+assert.ok(Array.isArray(gallery.works), "Gallery JSON must contain works");
+const actualImageNames = gallery.works.map(work => {
+  assert.ok(typeof work.src === "string" && work.src.startsWith("./assets/works/"), "Invalid gallery asset path");
+  return decodeURIComponent(work.src.slice("./assets/works/".length));
+});
+assert.deepEqual(actualImageNames, expectedImageNames, "Gallery order must match metadata.order and available image files");
+assert.equal(new Set(actualImageNames).size, actualImageNames.length, "Gallery must not contain duplicate images");
+for (const work of gallery.works) {
+  for (const lang of ["de", "en"]) {
+    const alt = typeof work.alt === "string" ? work.alt : (work.alt?.[lang] ?? work.alt?.de);
+    assert.ok(typeof alt === "string" && alt.trim(), "Missing " + lang + " image alt text: " + work.src);
+  }
+}
 const de = await read("index.html");
 const en = await read("en/index.html");
 // Both localized pages must resolve the hero to the same existing root asset.
