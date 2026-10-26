@@ -1,65 +1,65 @@
 {
-  "2026-10-25-11-florales-rueckenornament.avif": {
+  "01.avif": {
     "title": {
-      "de": "Florales Rückenornament",
-      "en": "Floral back ornament"
+      "de": "2025/26",
+      "en": "2025/26"
     },
     "alt": {
-      "de": "Blüten und filigranes Blackwork-Ornament auf Rücken und Hüften.",
-      "en": "Floral blackwork with a delicate central ornamental panel across the back and hips."
+      "de": "Blüten und Blackwork-Ornament auf Rücken",
+      "en": "Floral blackwork with a central ornamental panel"
     },
     "category": {
-      "de": "Floral & Ornamental",
-      "en": "Floral & Ornamental"
+      "de": "Backpiece",
+      "en": "Backpiece"
     },
     "order": 1
   },
-  "2026-10-25-06-mandala-rueckentattoo.avif": {
+  "02.avif": {
     "title": {
-      "de": "Mandala und florales Blackwork",
-      "en": "Mandala and floral blackwork"
+      "de": "2018/19",
+      "en": "2018/19"
     },
     "alt": {
-      "de": "Großflächiges Rückentattoo mit Mandala, Blüten und symmetrischer Linienführung.",
-      "en": "Large back tattoo featuring a mandala, flowers and symmetrical linework."
+      "de": "Großflächiges Sleave mit gepatchten Einzelmotiven.",
+      "en": "Large sleeve tattoo with patchwork of individual motifs."
     },
     "category": {
-      "de": "Ornamental",
-      "en": "Ornamental"
+      "de": "Full Sleave Patchwork",
+      "en": "Full Sleave Patchwork"
     },
-    "order": 5
+    "order": 2
   },
-  "2026-10-25-04-ornament-rotes-kleid.avif": {
+  "03.avif": {
     "title": {
-      "de": "Ornamentales Rückenstück",
-      "en": "Ornamental backpiece"
+      "de": "2018/19",
+      "en": "2018/19"
     },
     "alt": {
-      "de": "Schwarz gestochenes florales Rückenornament mit großer zentraler Schmuckform.",
-      "en": "Blackwork floral backpiece with a large central ornamental motif."
+      "de": "Blüten und Blackwork-Ornament auf Rücken mit Einbindung bestehender Tattoos",
+      "en": "Flowers and blackwork ornament on the back with integration of existing tattoos"
     },
     "category": {
       "de": "Floral Blackwork",
       "en": "Floral Blackwork"
     },
-    "order": 4
+    "order": 3
   },
-  "2026-10-25-07-blumen-und-ornamente.avif": {
+  "04.avif": {
     "title": {
-      "de": "Florales Rückenmotiv",
-      "en": "Floral back tattoo"
+      "de": "2020",
+      "en": "2020"
     },
     "alt": {
-      "de": "Florale Blackwork-Tätowierung auf Rücken und Schulter neben einem Blumenstrauß.",
-      "en": "Floral blackwork tattoo on the back and shoulder next to a bouquet."
+      "de": "Unterarmtattoo mit Blumenbouquet in ornamentale Vase",
+      "en": "Forearm tattoo showing a bouquet of flowers in an ornamental vase"
     },
     "category": {
-      "de": "Floral",
-      "en": "Floral"
+      "de": "Blumen und ornamentale Vase",
+      "en": "Flowers and ornamental vase"
     },
-    "order": 11
+    "order": 4
   },
-  "2026-10-25-08-floraler-ruecken-fenster.avif": {
+  "05.avif": {
     "title": {
       "de": "Florales Rückentattoo",
       "en": "Floral back tattoo"
@@ -72,9 +72,9 @@
       "de": "Floral & Ornamental",
       "en": "Floral & Ornamental"
     },
-    "order": 8
+    "order": 5
   },
-  "2026-10-25-05-symmetrisches-rueckenornament.avif": {
+  "06.avif": {
     "title": {
       "de": "Symmetrisches Rückenornament",
       "en": "Symmetrical back ornament"
@@ -87,9 +87,9 @@
       "de": "Ornamental",
       "en": "Ornamental"
     },
-    "order": 7
+    "order": 6
   },
-  "2026-10-25-03-ornamental-blackwork-sitzend.avif": {
+  "07.avif": {
     "title": {
       "de": "Ornamental Blackwork",
       "en": "Ornamental blackwork"
@@ -102,9 +102,9 @@
       "de": "Ornamental Blackwork",
       "en": "Ornamental Blackwork"
     },
-    "order": 9
+    "order": 7
   },
-  "2026-10-25-02-floraler-arm.avif": {
+  "08.avif": {
     "title": {
       "de": "Florales Arm-Tattoo",
       "en": "Floral arm tattoo"
@@ -117,9 +117,9 @@
       "de": "Floral",
       "en": "Floral"
     },
-    "order": 10
+    "order": 8
   },
-  "2026-10-25-09-blumen-und-vase.avif": {
+  "09.avif": {
     "title": {
       "de": "Blumen und ornamentale Vase",
       "en": "Flowers and ornamental vase"
@@ -132,9 +132,9 @@
       "de": "Botanical",
       "en": "Botanical"
     },
-    "order": 3
+    "order": 9
   },
-  "2026-10-25-10-ornamentale-brust.avif": {
+  "10.avif": {
     "title": {
       "de": "Ornamentales Dekolleté",
       "en": "Ornamental chest tattoo"
@@ -147,9 +147,9 @@
       "de": "Ornamental",
       "en": "Ornamental"
     },
-    "order": 2
+    "order": 10
   },
-  "2026-10-25-01-beinornamente.avif": {
+  "11.avif": {
     "title": {
       "de": "Florale Beinornamente",
       "en": "Floral leg ornaments"
@@ -162,6 +162,6 @@
       "de": "Ornamental Blackwork",
       "en": "Ornamental Blackwork"
     },
-    "order": 6
+    "order": 11
   }
 }
