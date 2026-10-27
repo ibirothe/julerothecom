@@ -14,18 +14,18 @@
     {
       "id": "franzi",
       "order": 2,
-      "status": "production",
+      "status": "draft",
       "firstName": "Franzi",
       "avatar": "franzi.jpg",
       "quote": {
         "de": "Als ich Jule 2017 hier auf Instagram entdeckt habe, war ich schockverliebt in ihre Kunst. Seit dem zieren unzählige ihrer wundervollen Kunstwerke meinen Körper. Termine mit Jule sind Balsam für die Seele.",
         "en": "When I discovered Jule on Instagram back in 2017, I instantly fell head over heels for her art. Since then, countless pieces of her beautiful artwork have found a home on my body. Appointments with Jule are food for the soul."
       }
-    }
+    },
     {
       "id": "lena",
       "order": 10,
-      "status": "demo",
+      "status": "draft",
       "firstName": "Ibi Rothe",
       "avatar": "ibi-rothe.webp",
       "quote": {

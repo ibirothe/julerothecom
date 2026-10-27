@@ -184,7 +184,7 @@ Die Testimonials werden über **`content/testimonials.json`** gepflegt. Sie ersc
 
 - `id`: eindeutig, nur Buchstaben, Zahlen, `-`, `_`.
 - `order`: optionale aufsteigende Reihenfolge.
-- `status`: **`demo`** für sichtbar gekennzeichnete Gestaltungsbeispiele; **`published`** ausschließlich für echte, freigegebene Zitate.
+- `status`: **`draft`** für vorbereitete Einträge (auf der Website unsichtbar), **`demo`** für sichtbar gekennzeichnete Gestaltungsbeispiele, **`published`** ausschließlich für echte, freigegebene Zitate. Für die Veröffentlichung `status` auf `published` setzen und `consentConfirmed: true` ergänzen, nachdem die Freigabe für Zitat, Namen und ggf. Portrait nachweislich vorliegt.
 - `firstName`: freigegebener Vorname oder Pseudonym; keine Nachnamen notwendig.
 - `quote.de` ist erforderlich, `quote.en` optional. Fehlende englische Texte fallen auf Deutsch zurück. Die Inhalte werden als sicherer Klartext eingesetzt, ohne HTML-Ausführung.
 - `avatar` optional: **Dateiname** einer JPG-, PNG-, AVIF- oder WEBP-Datei in `assets/testimonials/`. Foto vorher hochladen. Der Kreis schneidet die Aufnahme passend als Portrait zu; ohne Datei wird die Initiale des Namens angezeigt.

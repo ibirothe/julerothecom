@@ -16,7 +16,7 @@ async function check(items) {
     assert.ok(!seen.has(item.id),`Duplicate testimonial ID: ${item.id}`);
     seen.add(item.id);
     assert.ok(typeof item.firstName==="string" && item.firstName.trim(), `${item.id}: firstName is required`);
-    assert.ok(["demo","published"].includes(item.status), `${item.id}: invalid status`);
+    assert.ok(["draft","demo","published"].includes(item.status), `${item.id}: invalid status (use draft, demo or published)`);
     if(item.status==="published")assert.equal(item.consentConfirmed,true,`${item.id}: verify documented consent first`);
     assert.ok(item.quote && typeof item.quote==="object"&&!Array.isArray(item.quote)&&typeof item.quote.de==="string"&&item.quote.de.trim(),
       `${item.id}: quote.de is required`);
