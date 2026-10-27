@@ -47,6 +47,22 @@
         "en": "Website Tester"
       },
       "consentConfirmed": true
+    },
+    {
+      "id": "claudia",
+      "order": 3,
+      "status": "published",
+      "consentConfirmed": true,
+      "firstName": "Claudia",
+      "avatar": "claudia.webp",
+      "subtitle": {
+        "de": "Kundin seit 2025",
+        "en": "Client since 2025"
+      },
+      "quote": {
+        "de": "Jule hat mir dieses Jahr ein wunderschönes Backpiece gestochen. Vom Erstkontakt bis zur Nachsorge ist Jule eine super herzliche und liebe Tätowiererin, die einen empathisch auch durch die schlimmsten Schmerzen begleitet.",
+        "en": "Jule tattooed a beautiful back piece for me this year. From our very first conversation to the aftercare, she's been an incredibly warm and caring tattoo artist, compassionately guiding me through even the most painful moments."
+      }
     }
   ]
 }
