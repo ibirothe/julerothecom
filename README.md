@@ -34,7 +34,7 @@ Die Dateinamen müssen das Motiv nicht beschreiben. Beispielsweise sind `01.avif
 }
 ```
 
-Die Metadaten-Datei ist **nicht erforderlich**. Ohne sie wird ein lesbarer Titel aus dem Dateinamen gebildet. Vier Arbeiten werden zunächst angezeigt; bei mehr als vier erscheint ein Umschalter für die vollständige Galerie. Klick auf ein Bild öffnet die Großansicht. Wenn noch keine Arbeiten vorhanden sind, erscheinen vier graue Platzhalter.
+Die Metadaten-Datei ist **nicht erforderlich**. Unter den Portfoliobildern und in der Großansicht erscheinen bewusst **keine sichtbaren Titel, Kategorien oder Bildunterschriften**. Alt-Texte für Barrierefreiheit und Bildersuche werden weiterhin aus `assets/works/metadata.json` bezogen. Vier Arbeiten werden zunächst angezeigt; bei mehr als vier erscheint ein Umschalter für die vollständige Galerie. Klick auf ein Bild öffnet die Großansicht. Wenn noch keine Arbeiten vorhanden sind, erscheinen vier graue Platzhalter.
 
 ## GitHub Pages einschalten
 

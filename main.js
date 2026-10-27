@@ -8,7 +8,6 @@ const viewAllButton = document.getElementById("view-all-works");
 const worksMessage = document.getElementById("works-message");
 const lightbox = document.getElementById("work-lightbox");
 const lightboxImage = document.getElementById("lightbox-image");
-const lightboxCaption = document.getElementById("lightbox-caption");
 const galleryUrl = new URL("./gallery.json", import.meta.url);
 
 menuButton?.addEventListener("click", () => {
@@ -44,8 +43,7 @@ const openLightbox = (work, src) => {
     return;
   }
   lightboxImage.src = src;
-  lightboxImage.alt = localized(work.alt, localized(work.title, t("works.defaultTitle")));
-  lightboxCaption.textContent = localized(work.title);
+  lightboxImage.alt = localized(work.alt, t("works.defaultTitle"));
   lightbox.showModal();
 };
 document.getElementById("lightbox-close")?.addEventListener("click", () => lightbox.close());
@@ -65,7 +63,7 @@ function renderWorks() {
     const button = document.createElement("button");
     button.className = "work-open";
     button.type = "button";
-    button.setAttribute("aria-label", localized(work.title, t("works.defaultTitle")) + " " + t("works.zoom"));
+    button.setAttribute("aria-label", localized(work.alt, t("works.defaultTitle")) + " " + t("works.zoom"));
     const picture = document.createElement("img");
     picture.src = src;
     picture.alt = localized(work.alt, localized(work.title, t("works.defaultTitle")));
@@ -73,18 +71,6 @@ function renderWorks() {
     button.append(picture);
     button.addEventListener("click", () => openLightbox(work, src));
     article.append(button);
-    if (work.title) {
-      const title = document.createElement("span");
-      title.className = "work-title";
-      title.textContent = localized(work.title);
-      article.append(title);
-    }
-    if (work.category) {
-      const category = document.createElement("span");
-      category.className = "work-category";
-      category.textContent = localized(work.category);
-      article.append(category);
-    }
     galleryGrid.append(article);
   }
   viewAllButton.hidden = allWorks.length <= 4;

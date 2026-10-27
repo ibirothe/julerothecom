@@ -55,8 +55,6 @@ h2{font-size:clamp(2.4rem,3.15vw,4.5rem);margin-bottom:22px}
 .work-open{width:100%;padding:0;border:1px solid rgba(220,192,148,.3);background:#565958;display:block;overflow:hidden}
 .work-open img{width:100%;aspect-ratio:1.23;object-fit:cover;transition:transform .35s}
 .work-open:hover img{transform:scale(1.04)}
-.work-title{display:block;margin-top:10px;font:600 10px/1.6 var(--sans);letter-spacing:.18em;color:var(--gold-light);text-transform:uppercase}
-.work-category{display:block;font:400 11px/1.4 var(--sans);color:var(--muted);margin-top:3px}
 .works-message{color:var(--muted);font-size:12px;margin:10px 0 0}
 .newsletter-section{padding:59px 0 67px}
 .newsletter-layout{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.45fr);gap:clamp(36px,6.4vw,100px);align-items:start}
@@ -119,7 +117,6 @@ button:disabled{opacity:.7;cursor:wait}
 .lightbox{position:fixed;max-width:min(94vw,1050px);max-height:92vh;padding:40px 20px 14px;border:1px solid var(--gold);background:var(--bg-2);color:var(--gold-light)}
 .lightbox::backdrop{background:rgba(0,0,0,.89)}
 .lightbox img{max-height:73vh;width:auto;max-width:100%;margin:auto;object-fit:contain}
-.lightbox p{margin:10px 0 0;text-align:center;font:400 19px var(--serif)}
 .lightbox-close{position:absolute;right:8px;top:0;padding:0 12px;border:0;background:transparent;color:var(--gold-light);font-size:30px}
 .skip-link,.visually-hidden:not(input){position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 .skip-link:focus{clip:auto;z-index:99;top:0;left:0;width:auto;height:auto;padding:10px;background:var(--gold-light);color:#000}

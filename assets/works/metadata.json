@@ -163,5 +163,40 @@
       "en": "Ornamental Blackwork"
     },
     "order": 11
+  },
+  "12.avif": {
+    "alt": {
+      "de": "Symmetrisches florales Rückenornament von Nacken bis Hüfte mit Blüten und geschwungenen Linien.",
+      "en": "Symmetrical floral back tattoo extending from the neck to the hips, with flowers and flowing linework."
+    },
+    "order": 12
+  },
+  "13.avif": {
+    "alt": {
+      "de": "Großflächiges ornamentales Rückentattoo mit feinen Konturen und floralen Motiven auf den Hüften.",
+      "en": "Large ornamental back tattoo with intricate linework and floral motifs across the hips."
+    },
+    "order": 13
+  },
+  "14.avif": {
+    "alt": {
+      "de": "Großflächige florale Tätowierung mit Blüten und Blattmotiven auf dem Rücken.",
+      "en": "Large floral tattoo with flowers and leaves across the back."
+    },
+    "order": 14
+  },
+  "15.avif": {
+    "alt": {
+      "de": "Florales und ornamentales Rückentattoo mit Blüten und geometrischen Mustern auf einer liegenden Person.",
+      "en": "Floral and ornamental back tattoo with flowers and geometric patterns on a reclining person."
+    },
+    "order": 15
+  },
+  "16.avif": {
+    "alt": {
+      "de": "Zwei symmetrische ornamentale Blackwork-Tattoos auf den Beinen, jeweils mit einer zentralen Blüte.",
+      "en": "Two symmetrical ornamental blackwork tattoos on the legs, each with a central flower."
+    },
+    "order": 16
   }
 }

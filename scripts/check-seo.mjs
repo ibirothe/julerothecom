@@ -53,6 +53,7 @@ const actualImageNames = gallery.works.map(work => {
 });
 assert.deepEqual(actualImageNames, expectedImageNames, "Gallery order must match metadata.order and available image files");
 assert.equal(new Set(actualImageNames).size, actualImageNames.length, "Gallery must not contain duplicate images");
+assert.ok(gallery.works.every(work => !Object.hasOwn(work, "title") && !Object.hasOwn(work, "category")), "Gallery JSON must contain no visible captions");
 for (const work of gallery.works) {
   for (const lang of ["de", "en"]) {
     const alt = typeof work.alt === "string" ? work.alt : (work.alt?.[lang] ?? work.alt?.de);
@@ -78,6 +79,12 @@ const staticWorks = (markup, prefix) => [...markup.matchAll(new RegExp('<img src
 const firstFour = gallery.works.slice(0, 4).map(work => work.src.slice("./assets/works/".length));
 assert.deepEqual(staticWorks(de, "./"), firstFour, "German pre-rendered gallery order must match gallery.json");
 assert.deepEqual(staticWorks(en, "../"), firstFour, "English pre-rendered gallery order must match gallery.json");
+for (const html of [de, en]) {
+  assert.ok(!html.includes('class="work-title"') && !html.includes('class="work-category"'), "No visible captions in pre-rendered gallery");
+  assert.ok(!html.includes('id="lightbox-caption"'), "Lightbox must have no visible caption");
+}
+const browserJs = await readFile("main.js", "utf8");
+assert.ok(!browserJs.includes('className = "work-title"') && !browserJs.includes('className = "work-category"'), "Browser gallery must not render captions");
 
 assert.ok(de.includes("Meine Arbeiten") && en.includes("My Work"), "Pre-rendering localized content");
 assert.ok(de.includes("Deine Fragen, Ideen und Anfragen") && en.includes("Your Questions, Ideas and Enquiries"), "Content translations");

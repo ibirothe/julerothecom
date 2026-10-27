@@ -56,12 +56,10 @@ const translatedField = (value, fallback = "") => {
 };
 const gallery = filenames.map(name => {
   const details = metadata[name] || {};
-  const fallback = path.parse(name).name.replace(/^\d{4}-\d{2}-\d{2}[-_]?/, "").replace(/[-_]+/g, " ").trim();
   return {
     src: "./assets/works/" + encodeURIComponent(name),
-    title: translatedField(details.title, fallback || "Tattoo-Arbeit"),
-    alt: translatedField(details.alt, translatedField(details.title, fallback || "Tattoo-Arbeit")),
-    category: translatedField(details.category)
+    // Alternative text is retained for accessibility and image search, never displayed as a caption.
+    alt: translatedField(details.alt, "Tattoo-Arbeit von Jule Rothe")
   };
 });
 await writeFile(path.join(target, "gallery.json"), JSON.stringify({ works: gallery }, null, 2) + "\n");
@@ -73,14 +71,10 @@ function renderGallery(html, lang) {
   const assetPrefix = lang === "en" ? "../" : "./";
   const cards = gallery.slice(0, 4).map(work => {
     const image = assetPrefix + work.src.slice(2);
-    const title = fieldFor(work.title, lang);
-    const alt = fieldFor(work.alt, lang) || title;
-    const category = fieldFor(work.category, lang);
+    const alt = fieldFor(work.alt, lang) || tr(lang, "works.defaultTitle");
     return '            <article class="work-card">' +
-      '<a class="work-open" href="' + escapeAttr(image) + '" target="_blank" rel="noopener" aria-label="' + escapeAttr(title + " " + tr(lang, "works.zoom")) + '">' +
+      '<a class="work-open" href="' + escapeAttr(image) + '" target="_blank" rel="noopener" aria-label="' + escapeAttr(alt + " " + tr(lang, "works.zoom")) + '">' +
       '<img src="' + escapeAttr(image) + '" alt="' + escapeAttr(alt) + '" loading="lazy" decoding="async"></a>' +
-      (title ? '<span class="work-title">' + escapeHTML(title) + '</span>' : "") +
-      (category ? '<span class="work-category">' + escapeHTML(category) + '</span>' : "") +
       '</article>';
   }).join("\n");
   const pattern = /(<div class="works-grid" id="works-grid" aria-live="polite">)[\s\S]*?(\n          <\/div>\s*\n          <p class="works-message")/;
