@@ -26,4 +26,12 @@ assert.ok(newsletterEmbed && newsletterEmbed[1] === newsletterEmbed[2], "EmailOc
 assert.ok(html.includes('id="contact-form"'), "Contact form must be kept");
 assert.ok(html.includes('id="faq-list"'), "FAQ content must be kept");
 assert.ok(html.includes('id="testimonials-grid"'), "Testimonials content must be kept");
+for (const id of ["testimonials-controls", "testimonials-progress", "testimonials-previous", "testimonials-next"]) {
+  assert.ok(html.includes('id="' + id + '"'), "Missing carousel control: " + id);
+}
+assert.ok(html.includes('data-i18n-aria-label="testimonials.carousel"'), "Carousel region must have a localized accessible label");
+const stylesheet = await readFile("styles.css", "utf8");
+assert.match(stylesheet, /\.testimonials-grid\{[^}]*scroll-snap-type:x mandatory/, "Testimonials need CSS scroll snapping");
+const javascript = await readFile("main.js", "utf8");
+assert.ok(javascript.includes("function updateTestimonialCarousel()"), "Testimonials must update navigation on scroll and resize");
 console.log("Page structure validated: " + order.join(" → "));

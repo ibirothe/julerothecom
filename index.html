@@ -103,7 +103,14 @@
           <p data-i18n="testimonials.description">Der Entstehungsprozess einer Tätowierung ist genauso wichtig wie ihr Entwurf und ihre Umsetzung. Darum möchte ich hier einige meiner Kundinnen zu Wort kommen lassen, um das zu erzählen, was Bilder allein nicht zeigen können.</p>
         </div>
         <div class="testimonials-content">
-          <div id="testimonials-grid" class="testimonials-grid" aria-busy="true"></div>
+          <div id="testimonials-grid" class="testimonials-grid" role="region" tabindex="-1" aria-busy="true" data-i18n-aria-label="testimonials.carousel" aria-label="Kundenstimmen horizontal durchblättern"></div>
+          <div id="testimonials-controls" class="testimonials-controls" hidden>
+            <span id="testimonials-progress" class="testimonials-progress" aria-live="polite" aria-atomic="true"></span>
+            <div class="testimonials-arrows">
+              <button type="button" id="testimonials-previous" class="testimonials-arrow" aria-controls="testimonials-grid" data-i18n-aria-label="testimonials.previous" aria-label="Vorherige Kundenstimme"><span aria-hidden="true">←</span></button>
+              <button type="button" id="testimonials-next" class="testimonials-arrow" aria-controls="testimonials-grid" data-i18n-aria-label="testimonials.next" aria-label="Nächste Kundenstimme"><span aria-hidden="true">→</span></button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

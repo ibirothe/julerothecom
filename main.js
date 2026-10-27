@@ -213,6 +213,70 @@ const testimonialsSection = document.getElementById("testimonials");
 const testimonialsGrid = document.getElementById("testimonials-grid");
 const testimonialsUrl = new URL("./content/testimonials.json", import.meta.url);
 
+const testimonialsControls = document.getElementById("testimonials-controls");
+const testimonialsProgress = document.getElementById("testimonials-progress");
+const testimonialsPrevious = document.getElementById("testimonials-previous");
+const testimonialsNext = document.getElementById("testimonials-next");
+let testimonialUpdatePending = false;
+
+// One card per swipe/click, with two visible where the content column has room.
+function testimonialStep() {
+  const cards = testimonialsGrid?.querySelectorAll(".testimonial-card");
+  if (!cards?.length) return { count: 0, step: 0, visible: 0 };
+  if (cards.length === 1) return { count: 1, step: cards[0].getBoundingClientRect().width, visible: 1 };
+  const step = cards[1].getBoundingClientRect().left - cards[0].getBoundingClientRect().left;
+  return { count: cards.length, step, visible: Math.max(1, Math.min(cards.length, Math.round(testimonialsGrid.clientWidth / step))) };
+}
+
+function updateTestimonialCarousel() {
+  if (!testimonialsGrid || !testimonialsControls || !testimonialsProgress || !testimonialsPrevious || !testimonialsNext) return;
+  const { count, step, visible } = testimonialStep();
+  const maxScroll = Math.max(0, testimonialsGrid.scrollWidth - testimonialsGrid.clientWidth);
+  const canScroll = count > visible && maxScroll > 2;
+  testimonialsControls.hidden = !canScroll;
+  testimonialsGrid.tabIndex = canScroll ? 0 : -1;
+  if (!canScroll) return;
+  const first = Math.max(0, Math.min(count - visible, Math.round(testimonialsGrid.scrollLeft / step)));
+  const last = Math.min(count, first + visible);
+  const numbered = value => String(value).padStart(2, "0");
+  testimonialsProgress.textContent = numbered(first + 1) + (last > first + 1 ? "–" + numbered(last) : "") + " / " + numbered(count);
+  testimonialsPrevious.disabled = testimonialsGrid.scrollLeft <= 2;
+  testimonialsNext.disabled = maxScroll - testimonialsGrid.scrollLeft <= 2;
+}
+
+function queueTestimonialUpdate() {
+  if (testimonialUpdatePending) return;
+  testimonialUpdatePending = true;
+  requestAnimationFrame(() => {
+    testimonialUpdatePending = false;
+    updateTestimonialCarousel();
+  });
+}
+
+function moveTestimonial(direction) {
+  if (!testimonialsGrid) return;
+  const { step } = testimonialStep();
+  if (!step) return;
+  testimonialsGrid.scrollBy({
+    left: direction * step,
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+  });
+}
+
+testimonialsPrevious?.addEventListener("click", () => moveTestimonial(-1));
+testimonialsNext?.addEventListener("click", () => moveTestimonial(1));
+testimonialsGrid?.addEventListener("scroll", queueTestimonialUpdate, { passive: true });
+testimonialsGrid?.addEventListener("keydown", event => {
+  if (event.target !== testimonialsGrid || event.altKey || event.ctrlKey || event.metaKey) return;
+  if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+  event.preventDefault();
+  moveTestimonial(event.key === "ArrowRight" ? 1 : -1);
+});
+if (testimonialsGrid && typeof ResizeObserver !== "undefined") {
+  new ResizeObserver(queueTestimonialUpdate).observe(testimonialsGrid);
+}
+window.addEventListener("resize", queueTestimonialUpdate);
+
 function testimonialField(value) {
   if (typeof value === "string") return value.trim();
   if (value && typeof value === "object" && !Array.isArray(value)) {
@@ -305,10 +369,12 @@ async function loadTestimonials() {
       testimonialsGrid.append(card);
     }
     testimonialsSection.hidden = items.length === 0;
+    updateTestimonialCarousel();
   } catch (error) {
     console.warn("Testimonials unavailable:", error);
     testimonialsGrid.replaceChildren();
     testimonialsSection.hidden = true;
+    testimonialsControls.hidden = true;
   } finally {
     testimonialsGrid.setAttribute("aria-busy", "false");
   }
