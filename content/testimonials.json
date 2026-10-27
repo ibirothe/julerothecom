@@ -1,7 +1,29 @@
 {
   "items": [
     {
-      "id": "ibi-rothe",
+      "id": "julia",
+      "order": 1,
+      "status": "demo",
+      "firstName": "Ibi Rothe",
+      "avatar": "ibi-rothe.webp",
+      "quote": {
+        "de": "Als Jules Ehemann bin ich selbstverständlich vollkommen unvoreingenommen. Ich sehe jeden Tag, wie viel Herzblut, Geduld und Liebe zum Detail sie in ihre Tattoos steckt. Nur bei der Terminvergabe genieße ich leider keinen Familienbonus. 10/10, würde wieder heiraten.",
+        "en": "As Jule's husband, I'm obviously completely unbiased. I see every day how much heart, patience and attention to detail she puts into her tattoos. Unfortunately, I still don't get any special treatment when it comes to booking appointments. 10/10, would marry again."
+      }
+    },
+    {
+      "id": "franzi",
+      "order": 2,
+      "status": "production",
+      "firstName": "Franzi",
+      "avatar": "franzi.jpg",
+      "quote": {
+        "de": "Als ich Jule 2017 hier auf Instagram entdeckt habe, war ich schockverliebt in ihre Kunst. Seit dem zieren unzählige ihrer wundervollen Kunstwerke meinen Körper. Termine mit Jule sind Balsam für die Seele.",
+        "en": "When I discovered Jule on Instagram back in 2017, I instantly fell head over heels for her art. Since then, countless pieces of her beautiful artwork have found a home on my body. Appointments with Jule are food for the soul."
+      }
+    }
+    {
+      "id": "lena",
       "order": 10,
       "status": "demo",
       "firstName": "Ibi Rothe",
