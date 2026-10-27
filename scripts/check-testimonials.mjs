@@ -22,6 +22,16 @@ async function check(items) {
       `${item.id}: quote.de is required`);
     if(item.quote.en!==undefined)assert.ok(typeof item.quote.en==="string"&&item.quote.en.trim(),
       `${item.id}: quote.en must be nonempty if provided`);
+    if(item.subtitle!==undefined){
+      assert.ok(item.subtitle && typeof item.subtitle==="object" && !Array.isArray(item.subtitle),
+        `${item.id}: subtitle must be a localized object with de and optional en`);
+      assert.ok(typeof item.subtitle.de==="string" && item.subtitle.de.trim(),
+        `${item.id}: subtitle.de must be nonempty when a subtitle is provided`);
+      if(item.subtitle.en!==undefined)assert.ok(typeof item.subtitle.en==="string" && item.subtitle.en.trim(),
+        `${item.id}: subtitle.en must be nonempty if provided`);
+    }
+    if(item.status==="demo")assert.ok(item.subtitle?.de?.trim(),
+      `${item.id}: demo entries need an explicit subtitle that identifies the example`);
     if(item.order!==undefined)assert.ok(typeof item.order==="number"&&Number.isFinite(item.order),
       `${item.id}: order must be a number`);
     if(item.avatar!==undefined){

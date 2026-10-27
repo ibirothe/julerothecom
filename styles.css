@@ -247,7 +247,7 @@ button:disabled{opacity:.7;cursor:wait}
 .testimonial-avatar{width:56px;height:56px;flex:none;display:grid;place-items:center;overflow:hidden;border:1px solid var(--gold);border-radius:50%;background:linear-gradient(130deg,#1f4a37,#10281f);color:var(--gold-light);font:500 25px/1 var(--serif)}
 .testimonial-avatar img{width:100%;height:100%;object-fit:cover;display:block}
 .testimonial-card-name{margin:0;color:var(--text);font:700 12px/1.5 var(--sans);letter-spacing:.12em}
-.testimonial-demo-note{font:600 9px/1.55 var(--sans);letter-spacing:.07em;color:var(--muted);text-transform:uppercase;margin-top:4px}
+.testimonial-subtitle{font:600 9px/1.55 var(--sans);letter-spacing:.07em;color:var(--muted);text-transform:uppercase;margin-top:4px}
 .contact-section{padding:57px 0 67px}
 .contact-layout{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.35fr);gap:clamp(36px,7vw,110px);align-items:start}
 .contact-intro h2{font-size:clamp(2.8rem,3.8vw,4.75rem);max-width:440px;line-height:1.02}

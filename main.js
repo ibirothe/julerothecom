@@ -293,11 +293,12 @@ async function loadTestimonials() {
       name.className = "testimonial-card-name";
       name.textContent = item.firstName.trim();
       details.append(name);
-      if (item.status === "demo") {
-        const demoNote = document.createElement("div");
-        demoNote.className = "testimonial-demo-note";
-        demoNote.textContent = t("testimonials.demo");
-        details.append(demoNote);
+      const subtitle = testimonialField(item.subtitle);
+      if (subtitle) {
+        const subtitleElement = document.createElement("div");
+        subtitleElement.className = "testimonial-subtitle";
+        subtitleElement.textContent = subtitle;
+        details.append(subtitleElement);
       }
       footer.append(avatar, details);
       card.append(mark, quote, footer);

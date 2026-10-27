@@ -172,6 +172,10 @@ Die Testimonials werden über **`content/testimonials.json`** gepflegt. Sie ersc
       "status": "published",
       "consentConfirmed": true,
       "firstName": "VORNAME",
+      "subtitle": {
+        "de": "Langjährige Kundin",
+        "en": "Long-time client"
+      },
       "quote": {
         "de": "Freigegebenes Originalzitat.",
         "en": "Approved translated quote."
@@ -186,10 +190,11 @@ Die Testimonials werden über **`content/testimonials.json`** gepflegt. Sie ersc
 - `order`: optionale aufsteigende Reihenfolge.
 - `status`: **`draft`** für vorbereitete Einträge (auf der Website unsichtbar), **`demo`** für sichtbar gekennzeichnete Gestaltungsbeispiele, **`published`** ausschließlich für echte, freigegebene Zitate. Für die Veröffentlichung `status` auf `published` setzen und `consentConfirmed: true` ergänzen, nachdem die Freigabe für Zitat, Namen und ggf. Portrait nachweislich vorliegt.
 - `firstName`: freigegebener Vorname oder Pseudonym; keine Nachnamen notwendig.
+- `subtitle`: optionaler Untertitel direkt pro Testimonial als `{"de":"…","en":"…"}`. Bei fehlendem `en` wird der deutsche Text angezeigt. Ohne `subtitle` wird keine zweite Zeile eingeblendet. Demo-Beispiele benötigen einen eindeutig als Beispiel erkennbaren Untertitel; es gibt keinen globalen Untertitel mehr.
 - `quote.de` ist erforderlich, `quote.en` optional. Fehlende englische Texte fallen auf Deutsch zurück. Die Inhalte werden als sicherer Klartext eingesetzt, ohne HTML-Ausführung.
 - `avatar` optional: **Dateiname** einer JPG-, PNG-, AVIF- oder WEBP-Datei in `assets/testimonials/`. Foto vorher hochladen. Der Kreis schneidet die Aufnahme passend als Portrait zu; ohne Datei wird die Initiale des Namens angezeigt.
 - **`consentConfirmed: true`** ist für `status:published` verpflichtend. Einen nachweisbaren Einwilligungsbeleg für Zitat, Namen/Pseudonym und ggf. Portrait separat und nicht öffentlich aufbewahren; der JSON-Flag ist keine Einwilligung selbst.
-- Der Beispiel-Eintrag `demo-anna` ist fiktiv und auf der Website als **Designbeispiel, keine echte Kundenstimme** markiert.
+- Der Demo-Eintrag `julia` (Ibi Rothe) bleibt als humorvolles Beispiel gekennzeichnet. Sein sichtbarer Untertitel wird wie bei allen anderen Einträgen direkt über `subtitle.de` und `subtitle.en` gepflegt.
 - Bei `"items": []`, ungültigen Datensätzen oder Ladefehlern bleibt die Testimonials-Sektion verborgen und das Kontaktformular nutzbar.
 
 Test und lokaler Build:
