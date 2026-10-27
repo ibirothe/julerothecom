@@ -3,13 +3,14 @@
     {
       "id": "elaine",
       "order": 1,
-      "status": "production",
+      "status": "published",
       "firstName": "Elaine",
       "avatar": "elaine.jpg",
       "quote": {
         "de": "Jule ist ein super herzlicher Mensch und ich fühle mich immer wohl, wenn ich ins Studio komme. Ich kann jedes Bedürfnis und jede Sorge bedenkenlos mitteilen und sie geht schon vorm Termin ausführlich auf jede Frage ein und gestaltet in ihrem Stil alles nach meinen eigenen Vorstellungen.",
         "en": "Jule is such a warm and kind person, and I always feel completely at ease whenever I visit the studio. I can openly share any needs or concerns without hesitation. She takes the time to answer every question thoroughly, even before the appointment, and creates designs in her own unique style while staying true to my personal vision."
-      }
+      },
+      "consentConfirmed": true
     },
     {
       "id": "franzi",
