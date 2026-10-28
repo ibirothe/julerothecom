@@ -63,6 +63,18 @@
         "de": "Jule hat mir dieses Jahr ein wunderschönes Backpiece gestochen. Vom Erstkontakt bis zur Nachsorge ist Jule eine super herzliche und liebe Tätowiererin, die einen empathisch auch durch die schlimmsten Schmerzen begleitet.",
         "en": "Jule tattooed a beautiful back piece for me this year. From our very first conversation to the aftercare, she's been an incredibly warm and caring tattoo artist, compassionately guiding me through even the most painful moments."
       }
+    },
+    {
+      "id": "catha",
+      "order": 4,
+      "status": "published",
+      "firstName": "Catha",
+      "avatar": "catha.webp",
+      "quote": {
+        "de": "Bei Jule fühle ich mich einfach rundum wohl und bestens aufgehoben. Es wird gelacht, geschnattert und die Zeit vergeht wie im Flug. Ich würde immer wieder zu ihr gehen und kann sie von Herzen weiterempfehlen!",
+        "en": "I always feel completely at ease and in the best hands with Jule. We laugh, chat, and time just flies by. I'd go back to her again and again and can wholeheartedly recommend her!"
+      },
+      "consentConfirmed": true
     }
   ]
 }
