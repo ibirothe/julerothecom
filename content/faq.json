@@ -4,52 +4,144 @@
       "id": "faq-01",
       "order": 10,
       "category": {
-        "de": "Lorem ipsum",
-        "en": "Lorem ipsum"
+        "de": "Termine & Planung",
+        "en": "Appointments & planning"
       },
       "question": {
-        "de": "Lorem ipsum dolor sit amet?",
-        "en": "Lorem ipsum dolor sit amet?"
+        "de": "Wie kann ich einen Termin vereinbaren?",
+        "en": "How can I book an appointment?"
       },
       "answer": {
-        "de": "Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "en": "Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "de": "Etwa alle drei Monate öffne ich meine Bücher für neue Tattoo-Anfragen. Innerhalb eines zweitägigen Zeitfensters kannst du mir deine Idee schicken. In den darauffolgenden Wochen melde ich mich mit konkreten Terminvorschlägen bei dir. Damit du den nächsten Buchungsstart nicht verpasst, abonniere am besten meinen Newsletter und tritt meinem Instagram-News-Channel bei.",
+        "en": "I open my books for new tattoo enquiries roughly once every three months. You'll have a two-day window to send me your idea. Over the following weeks, I'll get back to you with specific appointment options. To make sure you don't miss the next booking window, subscribe to my newsletter and join my Instagram broadcast channel."
       }
     },
     {
       "id": "faq-02",
       "order": 20,
+      "category": {
+        "de": "Termine & Planung",
+        "en": "Appointments & planning"
+      },
       "question": {
-        "de": "Ut enim ad minim veniam?",
-        "en": "Ut enim ad minim veniam?"
+        "de": "Welche Informationen brauchst du von mir für die Terminvereinbarung?",
+        "en": "What information do you need for my appointment enquiry?"
       },
       "answer": {
-        "de": "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "en": "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        "de": "Schick mir eine möglichst genaue Beschreibung deines Wunschmotivs und, falls vorhanden, passende Referenzbilder. Wichtig sind außerdem die gewünschte Körperstelle und die ungefähre Größe. Wenn das neue Tattoo an bestehende Motive angrenzen soll, hilft mir ein Foto der freien Hautstelle. Teile mir bitte auch mit, wann du grundsätzlich Zeit hast – so kann ich passende Termine leichter planen.",
+        "en": "Please send me a detailed description of the tattoo you have in mind and relevant reference images, if you have any. I'll also need to know where on your body you'd like it and roughly how big it should be. If the new tattoo will sit next to existing pieces, a photo of the available space is helpful. Please also let me know your general availability so I can suggest suitable dates."
       }
     },
     {
       "id": "faq-03",
       "order": 30,
+      "category": {
+        "de": "Termine & Planung",
+        "en": "Appointments & planning"
+      },
       "question": {
-        "de": "Duis aute irure dolor in reprehenderit?",
-        "en": "Duis aute irure dolor in reprehenderit?"
+        "de": "Wie läuft die Erstellung meines Tattoo-Entwurfs ab?",
+        "en": "How does the design process work?"
       },
       "answer": {
-        "de": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        "en": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+        "de": "Einige Tage vor deinem Termin melde ich mich bei dir, um offene Fragen zu klären. Anschließend schicke ich dir eine erste Skizze deines Motivs. Der genaue zeitliche Ablauf kann je nach Größe und Komplexität des Tattoos variieren.",
+        "en": "I'll get in touch a few days before your appointment to go over any outstanding questions. After that, I'll send you an initial sketch of your design. The exact timing can vary depending on the size and complexity of your tattoo."
       }
     },
     {
       "id": "faq-04",
       "order": 40,
+      "category": {
+        "de": "Termine & Planung",
+        "en": "Appointments & planning"
+      },
       "question": {
-        "de": "Excepteur sint occaecat cupidatat?",
-        "en": "Excepteur sint occaecat cupidatat?"
+        "de": "Was passiert, wenn ich meinen Termin nicht wahrnehmen kann?",
+        "en": "What if I can't make my appointment?"
       },
       "answer": {
-        "de": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "en": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        "de": "Wenn du deinen Termin nicht wahrnehmen kannst, sag mir bitte so früh wie möglich Bescheid. Dann können wir besprechen, wie es weitergeht und ob sich ein neuer Termin finden lässt. Kurzfristige Absagen sind für meine Planung besonders schwierig – danke für dein Verständnis.",
+        "en": "If you can't make your appointment, please let me know as early as possible. We can then discuss the next steps and whether a new date is possible. Last-minute cancellations are particularly difficult to accommodate in my schedule, so I appreciate your understanding."
+      }
+    },
+    {
+      "id": "faq-05",
+      "order": 50,
+      "category": {
+        "de": "Tattoos & Motive",
+        "en": "Tattoos & designs"
+      },
+      "question": {
+        "de": "Sind Cover-ups und Blastovers möglich?",
+        "en": "Do you do cover-ups and blastovers?"
+      },
+      "answer": {
+        "de": "Du möchtest ein bestehendes Tattoo überarbeiten oder in ein neues Motiv einbeziehen? Schick mir bei deiner Anfrage bitte ein gut erkennbares Foto und beschreibe deine Idee. Ob ein Cover-up oder Blastover möglich ist, hängt unter anderem vom vorhandenen Tattoo, der Körperstelle und dem gewünschten Motiv ab. Das schauen wir uns individuell an.",
+        "en": "Would you like to rework an existing tattoo or incorporate it into a new design? Please include a clear photo and a description of your idea in your enquiry. Whether a cover-up or blastover is possible depends on the existing tattoo, its placement and the design you have in mind. We'll look at the options individually."
+      }
+    },
+    {
+      "id": "faq-06",
+      "order": 60,
+      "category": {
+        "de": "Tattoos & Motive",
+        "en": "Tattoos & designs"
+      },
+      "question": {
+        "de": "Wie pflege ich mein neues Tattoo nach dem Termin?",
+        "en": "How should I care for my new tattoo?"
+      },
+      "answer": {
+        "de": "Damit dein Tattoo gut abheilen kann, ist die richtige Pflege wichtig. Halte dich an die Pflegehinweise, die du bei deinem Termin erhältst, und achte besonders auf saubere Hände und einen schonenden Umgang mit der tätowierten Stelle. Bitte nicht kratzen und während der Heilung auf Schwimmbad, Sauna und direkte Sonne verzichten. Bei Fragen zur Pflege kannst du dich gern bei mir melden. Starke oder zunehmende Beschwerden solltest du ärztlich abklären lassen.",
+        "en": "Good aftercare is important for your tattoo to heal properly. Follow the aftercare instructions you receive at your appointment, keep your hands clean and treat the tattooed area gently. Avoid scratching, swimming pools, saunas and direct sunlight while it heals. Feel free to contact me if you have questions about aftercare. If you experience severe or worsening symptoms, seek medical advice."
+      }
+    },
+    {
+      "id": "faq-07",
+      "order": 70,
+      "category": {
+        "de": "Studio & Besuch",
+        "en": "Studio & visits"
+      },
+      "question": {
+        "de": "Wo finde ich das Studio ELECTRIC AVENUE?",
+        "en": "Where can I find the ELECTRIC AVENUE studio?"
+      },
+      "answer": {
+        "de": "Du findest mich im Studio ELECTRIC AVENUE in der Wolfgang-Heinze-Straße 16, 04277 Leipzig. Wenn du Fragen zur Anreise hast, melde dich gern vor deinem Termin.",
+        "en": "You'll find me at the ELECTRIC AVENUE studio, Wolfgang-Heinze-Straße 16, 04277 Leipzig, Germany. If you have any questions about getting here, feel free to get in touch before your appointment."
+      }
+    },
+    {
+      "id": "faq-08",
+      "order": 80,
+      "category": {
+        "de": "Studio & Besuch",
+        "en": "Studio & visits"
+      },
+      "question": {
+        "de": "Kann ich eine Begleitperson zu meinem Termin mitbringen?",
+        "en": "Can I bring someone with me to my appointment?"
+      },
+      "answer": {
+        "de": "Wenn du gern jemanden zu deinem Termin mitbringen möchtest, sprich das bitte vorher mit mir ab. So können wir gemeinsam schauen, ob es für deinen Termin und die Situation im Studio passt.",
+        "en": "If you'd like to bring someone to your appointment, please check with me beforehand. That way, we can make sure it works for your session and the studio."
+      }
+    },
+    {
+      "id": "faq-09",
+      "order": 90,
+      "category": {
+        "de": "Unterwegs",
+        "en": "On the road"
+      },
+      "question": {
+        "de": "Bist du auch auf Gastspots und Tattoo-Conventions anzutreffen?",
+        "en": "Do you also attend guest spots and tattoo conventions?"
+      },
+      "answer": {
+        "de": "Wenn Gastspots oder Tattoo-Conventions anstehen, erfährst du davon über meinen Newsletter und meinen Instagram-News-Channel. Dort teile ich auch, wie du für diese Termine eine Anfrage stellen kannst.",
+        "en": "Whenever I have guest spots or tattoo conventions coming up, I'll share the details in my newsletter and Instagram broadcast channel. That's also where you'll find out how to enquire about appointments at those events."
       }
     }
   ]
