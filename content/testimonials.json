@@ -75,6 +75,22 @@
         "en": "I always feel completely at ease and in the best hands with Jule. We laugh, chat, and time just flies by. I'd go back to her again and again and can wholeheartedly recommend her!"
       },
       "consentConfirmed": true
+    },
+    {
+      "id": "anna",
+      "order": 5,
+      "status": "published",
+      "consentConfirmed": true,
+      "firstName": "Anna",
+      "avatar": "anna.webp",
+      "subtitle": {
+        "de": "Kundin seit 2021",
+        "en": "Client since 2021"
+      },
+      "quote": {
+        "de": "Jule schafft mit ihrer einfühlsamen & warmen Art bei ihren Sitzungen eine absolute Wohlfühlatmosphäre. Sie nimmt sich viel Zeit für Wünsche, tolle Gespräche & hat mir mit ihrer Kunst zu einem positiven Körpergefühl und mehr Selbstvertrauen verholfen. Ich bin sehr dankbar & unheimlich glücklich.",
+        "en": "Jule’s warm, empathetic nature creates an atmosphere where I feel completely at ease during her sessions. She takes plenty of time to listen to my wishes and for wonderful conversations, and through her art she has helped me develop a more positive body image and greater self-confidence. I’m incredibly grateful and happy."
+      }
     }
   ]
 }
