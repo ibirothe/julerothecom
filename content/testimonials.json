@@ -34,19 +34,15 @@
     },
     {
       "id": "lena",
-      "order": 10,
-      "status": "draft",
-      "firstName": "Ibi Rothe",
-      "avatar": "ibi-rothe.webp",
+      "order": 6,
+      "status": "published",
+      "consentConfirmed": true,
+      "firstName": "Lena",
+      "avatar": "lena.webp",
       "quote": {
-        "de": "Als Jules Ehemann bin ich selbstverständlich vollkommen unvoreingenommen. Ich sehe jeden Tag, wie viel Herzblut, Geduld und Liebe zum Detail sie in ihre Tattoos steckt. Nur bei der Terminvergabe genieße ich leider keinen Familienbonus. 10/10, würde wieder heiraten.",
-        "en": "As Jule's husband, I'm obviously completely unbiased. I see every day how much heart, patience and attention to detail she puts into her tattoos. Unfortunately, I still don't get any special treatment when it comes to booking appointments. 10/10, would marry again."
-      },
-      "subtitle": {
-        "de": "Website-Tester",
-        "en": "Website Tester"
-      },
-      "consentConfirmed": true
+        "de": "Als ich zum ersten Mal zu Jule kam, fühlte ich mich direkt wohl. Jule ist eine super offene, einladende und herzliche Person, die zudem auch noch wunderschöne Tattoos macht. Bei jeder Session fühlte ich mich bestens aufgehoben und tolle Gespräche ließen auch den Schmerz fast vergessen.",
+        "en": "From the very first time I visited Jule, I felt completely at ease. Jule is such an open, welcoming, and warm-hearted person who also creates beautiful tattoos. I felt in the best hands at every session, and our lovely conversations almost made me forget the pain."
+      }
     },
     {
       "id": "claudia",
