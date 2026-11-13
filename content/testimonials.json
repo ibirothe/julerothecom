@@ -98,6 +98,25 @@
       "quote": {
         "de": "Ich kann Jule aus vollem Herzen empfehlen.\nBei ihr bekommst du mehr als ein Tattoo. Sie begleitet dich durch die Sessions, mit so viel Wärme und Wertschätzung. Tausend Dank für diesen liebevollen Prozess rund um deine wunderschöne Kunst.",
         "en": "I can wholeheartedly recommend Jule. With her, you get more than just a tattoo. She guides you through each session with so much warmth and appreciation. A thousand thanks for this loving experience surrounding your beautiful art."
+      },
+      "subtitle": {
+        "de": "Kundin seit 2025",
+        "en": "Client since 2025"
+      }
+    },
+    {
+      "id": "friedi",
+      "order": 8,
+      "status": "published",
+      "consentConfirmed": true,
+      "firstName": "Friedi",
+      "subtitle": {
+        "de": "Kundin seit 2023",
+        "en": "Client since 2023"
+      },
+      "quote": {
+        "de": "Jule ist ein absoluter safe space. Es ist jedes Mal so schön zu sehen, wie sehr sie sich mit einem freut, wenn man total happy mit dem neuen Tattoo ist und sie gibt sich immer unendlich viel Mühe, damit man mit dem Endergebnis glücklich ist. Jeder Termin fühlt sich so an, als würde man eine Freundin besuchen.",
+        "en": "Jule creates a truly safe space. Every time, it's so lovely to see how genuinely happy she is for you when you're thrilled with your new tattoo. She always puts so much care and effort into making sure you're happy with the final result. Every appointment feels like visiting a friend."
       }
     }
   ]
