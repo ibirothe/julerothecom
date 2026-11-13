@@ -118,6 +118,18 @@
         "de": "Jule ist ein absoluter safe space. Es ist jedes Mal so schön zu sehen, wie sehr sie sich mit einem freut, wenn man total happy mit dem neuen Tattoo ist und sie gibt sich immer unendlich viel Mühe, damit man mit dem Endergebnis glücklich ist. Jeder Termin fühlt sich so an, als würde man eine Freundin besuchen.",
         "en": "Jule creates a truly safe space. Every time, it's so lovely to see how genuinely happy she is for you when you're thrilled with your new tattoo. She always puts so much care and effort into making sure you're happy with the final result. Every appointment feels like visiting a friend."
       }
+    },
+    {
+      "id": "jessy",
+      "order": 9,
+      "status": "published",
+      "consentConfirmed": true,
+      "firstName": "Jessy",
+      "avatar": "jessy.webp",
+      "quote": {
+        "de": "Hier ist immer Raum für Vertrauen, die lustigsten Geschichten und vor allem für die schönste Kunst, die ich mir vorstellen kann. Danke von Herzen, Jule, für dich und deine Arbeit.",
+        "en": "There’s always room here for trust, the funniest stories and, above all, the most beautiful art I could imagine. Thank you from the bottom of my heart, Jule, for being you and for your work."
+      }
     }
   ]
 }
