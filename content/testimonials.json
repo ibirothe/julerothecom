@@ -87,6 +87,18 @@
         "de": "Jule schafft mit ihrer einfühlsamen & warmen Art bei ihren Sitzungen eine absolute Wohlfühlatmosphäre. Sie nimmt sich viel Zeit für Wünsche, tolle Gespräche & hat mir mit ihrer Kunst zu einem positiven Körpergefühl und mehr Selbstvertrauen verholfen. Ich bin sehr dankbar & unheimlich glücklich.",
         "en": "Jule’s warm, empathetic nature creates an atmosphere where I feel completely at ease during her sessions. She takes plenty of time to listen to my wishes and for wonderful conversations, and through her art she has helped me develop a more positive body image and greater self-confidence. I’m incredibly grateful and happy."
       }
+    },
+    {
+      "id": "josi",
+      "order": 7,
+      "status": "published",
+      "consentConfirmed": true,
+      "firstName": "Josi",
+      "avatar": "josi.webp",
+      "quote": {
+        "de": "Ich kann Jule aus vollem Herzen empfehlen.\nBei ihr bekommst du mehr als ein Tattoo. Sie begleitet dich durch die Sessions, mit so viel Wärme und Wertschätzung. Tausend Dank für diesen liebevollen Prozess rund um deine wunderschöne Kunst.",
+        "en": "I can wholeheartedly recommend Jule. With her, you get more than just a tattoo. She guides you through each session with so much warmth and appreciation. A thousand thanks for this loving experience surrounding your beautiful art."
+      }
     }
   ]
 }
