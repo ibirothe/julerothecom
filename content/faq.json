@@ -60,8 +60,8 @@
         "en": "What if I can't make my appointment?"
       },
       "answer": {
-        "de": "Wenn du deinen Termin nicht wahrnehmen kannst, sag mir bitte so früh wie möglich Bescheid. Dann können wir besprechen, wie es weitergeht und ob sich ein neuer Termin finden lässt. Kurzfristige Absagen sind für meine Planung besonders schwierig – danke für dein Verständnis.",
-        "en": "If you can't make your appointment, please let me know as early as possible. We can then discuss the next steps and whether a new date is possible. Last-minute cancellations are particularly difficult to accommodate in my schedule, so I appreciate your understanding."
+        "de": "Wenn du deinen Termin nicht wahrnehmen kannst, sag mir bitte so frühstmöglich Bescheid. Vor allem kurzfristige Absagen sind für meine Planung besonders schwierig – darum fällt bei Absagen innerhalb von 48 Stunden vor dem Termin eine Ausfallgebühr von 150€ an.",
+        "en": "If you can't make your appointment, please let me know as soon as possible. Short-notice cancellations are particularly difficult for my planning, so a cancellation fee of €150 applies for cancellations made within 48 hours of the appointment."
       }
     },
     {
@@ -76,8 +76,8 @@
         "en": "Do you do cover-ups and blastovers?"
       },
       "answer": {
-        "de": "Du möchtest ein bestehendes Tattoo überarbeiten oder in ein neues Motiv einbeziehen? Schick mir bei deiner Anfrage bitte ein gut erkennbares Foto und beschreibe deine Idee. Ob ein Cover-up oder Blastover möglich ist, hängt unter anderem vom vorhandenen Tattoo, der Körperstelle und dem gewünschten Motiv ab. Das schauen wir uns individuell an.",
-        "en": "Would you like to rework an existing tattoo or incorporate it into a new design? Please include a clear photo and a description of your idea in your enquiry. Whether a cover-up or blastover is possible depends on the existing tattoo, its placement and the design you have in mind. We'll look at the options individually."
+        "de": "Du möchtest ein bestehendes Tattoo überarbeiten oder in ein neues Motiv einbeziehen? Schick mir bei deiner Anfrage bitte ein gut erkennbares Foto und beschreibe deine Idee. Ob ein Cover-up oder Blastover möglich ist, hängt unter anderem vom vorhandenen Tattoo, der Körperstelle und dem gewünschten Motiv ab. Lass uns die Möglichkeiten gern gemeinsam betrachten.",
+        "en": "Would you like to rework an existing tattoo or incorporate it into a new design? Please send me a clear photo of the tattoo and describe your idea when you make your enquiry. Whether a cover-up or blastover is possible depends on the existing tattoo, the location on your body, and the design you want. Let's explore the possibilities together."
       }
     },
     {
@@ -92,8 +92,8 @@
         "en": "How should I care for my new tattoo?"
       },
       "answer": {
-        "de": "Damit dein Tattoo gut abheilen kann, ist die richtige Pflege wichtig. Halte dich an die Pflegehinweise, die du bei deinem Termin erhältst, und achte besonders auf saubere Hände und einen schonenden Umgang mit der tätowierten Stelle. Bitte nicht kratzen und während der Heilung auf Schwimmbad, Sauna und direkte Sonne verzichten. Bei Fragen zur Pflege kannst du dich gern bei mir melden. Starke oder zunehmende Beschwerden solltest du ärztlich abklären lassen.",
-        "en": "Good aftercare is important for your tattoo to heal properly. Follow the aftercare instructions you receive at your appointment, keep your hands clean and treat the tattooed area gently. Avoid scratching, swimming pools, saunas and direct sunlight while it heals. Feel free to contact me if you have questions about aftercare. If you experience severe or worsening symptoms, seek medical advice."
+        "de": "Damit dein Tattoo gut abheilen kann, ist die richtige Pflege wichtig. Halte dich an die Pflegehinweise, die du bei deinem Termin erhältst und achte besonders auf saubere Hände und einen schonenden Umgang mit der tätowierten Stelle. Bitte nicht kratzen und während der Heilung auf Schwimmbad, Sauna und direkte Sonne verzichten. Bei Fragen zur Pflege kannst du dich gern bei mir melden. Da der Abheilprozess je nach Motiv und Körperstelle variiert, werde ich dir zum Termin genau erklären, wie du dein Tattoo im Speziellen pflegen solltest.",
+        "en": "Good aftercare is important for your tattoo to heal properly. Please follow the aftercare instructions you receive at your appointment, and pay special attention to keeping your hands clean and treating the tattooed area gently. Avoid scratching, swimming pools, saunas, and direct sunlight during the healing process. If you have any questions about aftercare, feel free to reach out to me. Since the healing process can vary depending on the design and location on your body, I will explain exactly how to care for your tattoo during your appointment."
       }
     },
     {
@@ -108,8 +108,8 @@
         "en": "Where can I find the ELECTRIC AVENUE studio?"
       },
       "answer": {
-        "de": "Du findest mich im Studio ELECTRIC AVENUE in der Wolfgang-Heinze-Straße 16, 04277 Leipzig. Wenn du Fragen zur Anreise hast, melde dich gern vor deinem Termin.",
-        "en": "You'll find me at the ELECTRIC AVENUE studio, Wolfgang-Heinze-Straße 16, 04277 Leipzig, Germany. If you have any questions about getting here, feel free to get in touch before your appointment."
+        "de": "Du findest mich im Studio ELECTRIC AVENUE in Leipzig-Connewitz. Die genaue Adresse teile ich dir vor deinem Termin mit. Wenn du Fragen zur Anreise hast, melde dich gern.",
+        "en": "You'll find me at the ELECTRIC AVENUE studio in Leipzig-Connewitz. I'll share the exact address with you before your appointment. If you have any questions about getting here, feel free to get in touch."
       }
     },
     {
@@ -140,8 +140,8 @@
         "en": "Do you also attend guest spots and tattoo conventions?"
       },
       "answer": {
-        "de": "Wenn Gastspots oder Tattoo-Conventions anstehen, erfährst du davon über meinen Newsletter und meinen Instagram-News-Channel. Dort teile ich auch, wie du für diese Termine eine Anfrage stellen kannst.",
-        "en": "Whenever I have guest spots or tattoo conventions coming up, I'll share the details in my newsletter and Instagram broadcast channel. That's also where you'll find out how to enquire about appointments at those events."
+        "de": "Im Moment habe ich keine Gastspots oder Conventions geplant. Aktuelles dazu erfährst du über meinen Newsletter und meinen Instagram-News-Channel.",
+        "en": "At the moment, I don't have any guest spots or conventions planned. You can find the latest updates via my newsletter and Instagram broadcast channel."
       }
     }
   ]
