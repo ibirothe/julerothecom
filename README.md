@@ -123,7 +123,7 @@ Bestehende einfache Strings bleiben kompatibel. Für spätere FAQs kann das glei
 
 ## FAQ aus JSON pflegen (Issue #3)
 
-Die Fragen stehen ausschließlich in **`content/faq.json`**. Änderungen an dieser Datei per GitHub-Commit nach `main` aktualisieren die FAQ beim nächsten erfolgreichen GitHub-Pages-Deployment. Die anfänglichen Einträge sind **Lorem-Ipsum-Testtexte**.
+Die Fragen stehen ausschließlich in **`content/faq.json`**. Änderungen an dieser Datei per GitHub-Commit nach `main` aktualisieren die FAQ beim nächsten erfolgreichen GitHub-Pages-Deployment. Die FAQ enthalten redigierte deutsche und englische Texte; Änderungen an Fragen und Antworten erfolgen weiterhin ausschließlich in dieser JSON-Datei.
 
 ```json
 {
