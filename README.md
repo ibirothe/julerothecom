@@ -207,7 +207,7 @@ python3 -m http.server 8000 --directory dist
 
 Die CI validiert `content/testimonials.json` bei jedem Commit. Neue Portraitbilder und JSON-Einträge werden automatisch über GitHub Pages veröffentlicht.
 
-**Kundenstimmen-Karussell:** Einträge mit `status: published` oder `demo` erscheinen in `order`-Reihenfolge in einer horizontalen Galerie mit Scroll-Snap, Touch-/Trackpad-Swipe und Pfeiltastensteuerung. Je nach Breite der Karten-Spalte sind eine oder zwei Stimmen sichtbar; bei Überlauf erscheinen dezente Zurück-/Weiter-Buttons und eine Positionsanzeige. Ohne Überlauf bleiben die Steuerelemente verborgen. Das Karussell wechselt nicht automatisch, respektiert reduzierte Bewegung und benötigt keine externe Bibliothek. Neue veröffentlichte Einträge werden ohne JavaScript- oder CSS-Anpassung aufgenommen.
+**Kundenstimmen-Karussell:** Bei jedem Seitenaufruf werden veröffentlichte und als Demo gekennzeichnete Einträge mit Fisher-Yates **zufällig gemischt**; während des Besuchs bleibt diese Reihenfolge bestehen. `order` ist weiterhin ein optionales redaktionelles Metadatenfeld, steuert aber die angezeigte Reihenfolge nicht mehr. Das Karussell zeigt je nach verfügbarer Breite eine oder zwei Karten. Pfeile, Tastatur und Touch-/Trackpad-Swipes laufen **endlos in beide Richtungen**; nach dem Scrollen wird unsichtbar auf dieselbe Position im mittleren Kartenblock gewechselt. Die Positionsanzeige zählt zyklisch (z. B. `09–01 / 09`). Bei nur einer Karte oder zwei nebeneinander sichtbaren Karten werden keine Kopien oder Steuerknöpfe angezeigt. Keine automatische Rotation, keine externe Bibliothek, Unterstützung für reduzierte Bewegung und Screenreader.
 
 ## Seitenstruktur (Stand Oktober 2026)
 

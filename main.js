@@ -1,4 +1,5 @@
 import { i18nReady } from "./i18n.js";
+import { createTestimonialCarousel } from "./testimonial-carousel.js";
 const { t, language } = await i18nReady;
 const config = window.JULE_SITE_CONFIG || {};
 const menuButton = document.querySelector(".menu-toggle");
@@ -217,65 +218,15 @@ const testimonialsControls = document.getElementById("testimonials-controls");
 const testimonialsProgress = document.getElementById("testimonials-progress");
 const testimonialsPrevious = document.getElementById("testimonials-previous");
 const testimonialsNext = document.getElementById("testimonials-next");
-let testimonialUpdatePending = false;
 
-// One card per swipe/click, with two visible where the content column has room.
-function testimonialStep() {
-  const cards = testimonialsGrid?.querySelectorAll(".testimonial-card");
-  if (!cards?.length) return { count: 0, step: 0, visible: 0 };
-  if (cards.length === 1) return { count: 1, step: cards[0].getBoundingClientRect().width, visible: 1 };
-  const step = cards[1].getBoundingClientRect().left - cards[0].getBoundingClientRect().left;
-  return { count: cards.length, step, visible: Math.max(1, Math.min(cards.length, Math.round(testimonialsGrid.clientWidth / step))) };
-}
-
-function updateTestimonialCarousel() {
-  if (!testimonialsGrid || !testimonialsControls || !testimonialsProgress || !testimonialsPrevious || !testimonialsNext) return;
-  const { count, step, visible } = testimonialStep();
-  const maxScroll = Math.max(0, testimonialsGrid.scrollWidth - testimonialsGrid.clientWidth);
-  const canScroll = count > visible && maxScroll > 2;
-  testimonialsControls.hidden = !canScroll;
-  testimonialsGrid.tabIndex = canScroll ? 0 : -1;
-  if (!canScroll) return;
-  const first = Math.max(0, Math.min(count - visible, Math.round(testimonialsGrid.scrollLeft / step)));
-  const last = Math.min(count, first + visible);
-  const numbered = value => String(value).padStart(2, "0");
-  testimonialsProgress.textContent = numbered(first + 1) + (last > first + 1 ? "–" + numbered(last) : "") + " / " + numbered(count);
-  testimonialsPrevious.disabled = testimonialsGrid.scrollLeft <= 2;
-  testimonialsNext.disabled = maxScroll - testimonialsGrid.scrollLeft <= 2;
-}
-
-function queueTestimonialUpdate() {
-  if (testimonialUpdatePending) return;
-  testimonialUpdatePending = true;
-  requestAnimationFrame(() => {
-    testimonialUpdatePending = false;
-    updateTestimonialCarousel();
-  });
-}
-
-function moveTestimonial(direction) {
-  if (!testimonialsGrid) return;
-  const { step } = testimonialStep();
-  if (!step) return;
-  testimonialsGrid.scrollBy({
-    left: direction * step,
-    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
-  });
-}
-
-testimonialsPrevious?.addEventListener("click", () => moveTestimonial(-1));
-testimonialsNext?.addEventListener("click", () => moveTestimonial(1));
-testimonialsGrid?.addEventListener("scroll", queueTestimonialUpdate, { passive: true });
-testimonialsGrid?.addEventListener("keydown", event => {
-  if (event.target !== testimonialsGrid || event.altKey || event.ctrlKey || event.metaKey) return;
-  if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
-  event.preventDefault();
-  moveTestimonial(event.key === "ArrowRight" ? 1 : -1);
+const testimonialCarousel = createTestimonialCarousel({
+  grid: testimonialsGrid,
+  controls: testimonialsControls,
+  progress: testimonialsProgress,
+  previous: testimonialsPrevious,
+  next: testimonialsNext,
+  createCard: createTestimonialCard
 });
-if (testimonialsGrid && typeof ResizeObserver !== "undefined") {
-  new ResizeObserver(queueTestimonialUpdate).observe(testimonialsGrid);
-}
-window.addEventListener("resize", queueTestimonialUpdate);
 
 function testimonialField(value) {
   if (typeof value === "string") return value.trim();
@@ -304,6 +255,56 @@ function avatarFilename(value) {
   return value;
 }
 
+function createTestimonialCard(item) {
+  const card = document.createElement("article");
+  card.className = "testimonial-card";
+  card.dataset.testimonialId = item.id;
+
+  const mark = document.createElement("span");
+  mark.className = "testimonial-card-quote-mark";
+  mark.setAttribute("aria-hidden", "true");
+  mark.textContent = "“";
+
+  const quote = document.createElement("blockquote");
+  quote.className = "testimonial-quote";
+  quote.textContent = testimonialField(item.quote);
+
+  const footer = document.createElement("div");
+  footer.className = "testimonial-card-footer";
+  const avatar = document.createElement("div");
+  avatar.className = "testimonial-avatar";
+  avatar.setAttribute("aria-hidden", "true");
+  const imageName = avatarFilename(item.avatar);
+  if (imageName) {
+    const image = document.createElement("img");
+    image.alt = "";
+    image.loading = "lazy";
+    image.src = new URL("./assets/testimonials/" + encodeURIComponent(imageName), import.meta.url).href;
+    image.addEventListener("error", () => {
+      image.remove();
+      avatar.textContent = item.firstName.trim().charAt(0).toUpperCase();
+    }, {once:true});
+    avatar.append(image);
+  } else {
+    avatar.textContent = item.firstName.trim().charAt(0).toUpperCase();
+  }
+  const details = document.createElement("div");
+  const name = document.createElement("p");
+  name.className = "testimonial-card-name";
+  name.textContent = item.firstName.trim();
+  details.append(name);
+  const subtitle = testimonialField(item.subtitle);
+  if (subtitle) {
+    const subtitleElement = document.createElement("div");
+    subtitleElement.className = "testimonial-subtitle";
+    subtitleElement.textContent = subtitle;
+    details.append(subtitleElement);
+  }
+  footer.append(avatar, details);
+  card.append(mark, quote, footer);
+  return card;
+}
+
 async function loadTestimonials() {
   if (!testimonialsSection || !testimonialsGrid) return;
   testimonialsGrid.setAttribute("aria-busy", "true");
@@ -317,62 +318,13 @@ async function loadTestimonials() {
       if (!validTestimonial(item) || seenIds.has(item.id)) return false;
       seenIds.add(item.id);
       return true;
-    }).sort((a,b) => (Number.isFinite(a.order) ? a.order : 999999) - (Number.isFinite(b.order) ? b.order : 999999));
+    });
     testimonialsGrid.replaceChildren();
-    for (const item of items) {
-      const card = document.createElement("article");
-      card.className = "testimonial-card";
-      card.dataset.testimonialId = item.id;
-
-      const mark = document.createElement("span");
-      mark.className = "testimonial-card-quote-mark";
-      mark.setAttribute("aria-hidden", "true");
-      mark.textContent = "“";
-
-      const quote = document.createElement("blockquote");
-      quote.className = "testimonial-quote";
-      quote.textContent = testimonialField(item.quote);
-
-      const footer = document.createElement("div");
-      footer.className = "testimonial-card-footer";
-      const avatar = document.createElement("div");
-      avatar.className = "testimonial-avatar";
-      avatar.setAttribute("aria-hidden", "true");
-      const imageName = avatarFilename(item.avatar);
-      if (imageName) {
-        const image = document.createElement("img");
-        image.alt = "";
-        image.loading = "lazy";
-        image.src = new URL("./assets/testimonials/" + encodeURIComponent(imageName), import.meta.url).href;
-        image.addEventListener("error", () => {
-          image.remove();
-          avatar.textContent = item.firstName.trim().charAt(0).toUpperCase();
-        }, {once:true});
-        avatar.append(image);
-      } else {
-        avatar.textContent = item.firstName.trim().charAt(0).toUpperCase();
-      }
-      const details = document.createElement("div");
-      const name = document.createElement("p");
-      name.className = "testimonial-card-name";
-      name.textContent = item.firstName.trim();
-      details.append(name);
-      const subtitle = testimonialField(item.subtitle);
-      if (subtitle) {
-        const subtitleElement = document.createElement("div");
-        subtitleElement.className = "testimonial-subtitle";
-        subtitleElement.textContent = subtitle;
-        details.append(subtitleElement);
-      }
-      footer.append(avatar, details);
-      card.append(mark, quote, footer);
-      testimonialsGrid.append(card);
-    }
     testimonialsSection.hidden = items.length === 0;
-    updateTestimonialCarousel();
+    testimonialCarousel.setItems(items);
   } catch (error) {
     console.warn("Testimonials unavailable:", error);
-    testimonialsGrid.replaceChildren();
+    testimonialCarousel.setItems([]);
     testimonialsSection.hidden = true;
     testimonialsControls.hidden = true;
   } finally {

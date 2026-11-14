@@ -23,7 +23,7 @@ const urlFor = (lang, page) => domain + "/" + (lang === "en" ? "en/" : "") + pag
 
 await rm(target, { recursive: true, force: true });
 await mkdir(target, { recursive: true });
-for (const file of ["styles.css", "main.js", "i18n.js", "site-config.js", "favicon.svg"]) {
+for (const file of ["styles.css", "main.js", "testimonial-carousel.js", "i18n.js", "site-config.js", "favicon.svg"]) {
   await copyFile(path.join(root, file), path.join(target, file));
 }
 for (const dir of ["assets", "locales", "content"]) {

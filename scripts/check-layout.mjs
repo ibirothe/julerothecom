@@ -33,5 +33,5 @@ assert.ok(html.includes('data-i18n-aria-label="testimonials.carousel"'), "Carous
 const stylesheet = await readFile("styles.css", "utf8");
 assert.match(stylesheet, /\.testimonials-grid\{[^}]*scroll-snap-type:x mandatory/, "Testimonials need CSS scroll snapping");
 const javascript = await readFile("main.js", "utf8");
-assert.ok(javascript.includes("function updateTestimonialCarousel()"), "Testimonials must update navigation on scroll and resize");
+assert.ok(javascript.includes("createTestimonialCarousel"), "Testimonials must initialize the carousel");
 console.log("Page structure validated: " + order.join(" → "));
