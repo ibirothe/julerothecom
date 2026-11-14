@@ -130,6 +130,22 @@
         "de": "Hier ist immer Raum für Vertrauen, die lustigsten Geschichten und vor allem für die schönste Kunst, die ich mir vorstellen kann. Danke von Herzen, Jule, für dich und deine Arbeit.",
         "en": "There’s always room here for trust, the funniest stories and, above all, the most beautiful art I could imagine. Thank you from the bottom of my heart, Jule, for being you and for your work."
       }
+    },
+    {
+      "id": "julia",
+      "order": 10,
+      "status": "published",
+      "consentConfirmed": true,
+      "firstName": "Julia",
+      "avatar": "julia.webp",
+      "subtitle": {
+        "de": "Kundin seit 2016",
+        "en": "Client since 2016"
+      },
+      "quote": {
+        "de": "Eins meiner allerersten Tattoos habe ich damals in 2016 ganz spontan von Jule bekommen, nachdem ich Wanna Dos von ihr auf Facebook gesehen hab. Mittlerweile versammeln sich knapp 25 Kunstwerke von Jule auf meiner Haut und wir sind noch lange nicht fertig.",
+        "en": "I got one of my very first tattoos from Jule on a whim back in 2016, after seeing some of her wanna-do designs on Facebook. By now, I have nearly 25 pieces of Jule's art on my skin, and we're nowhere near finished."
+      }
     }
   ]
 }
